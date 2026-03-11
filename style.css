@@ -586,3 +586,35 @@ img {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(255, 122, 0, 0.45);
 }
+
+/* HAMBURGER */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #0a3d62;
+    border-radius: 2px;
+}
+
+@media(max-width:768px) {
+
+    .menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+}
+
+.hamburger span {
+    transition: 0.3s;
+}
