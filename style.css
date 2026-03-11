@@ -235,6 +235,30 @@ body {
     border-radius: 10px;
 }
 
+.about {
+    background: #f7fbff;
+    padding: 80px 20px;
+}
+
+.about h2 {
+    color: #0a4a7a;
+}
+
+.about p {
+    color: #555;
+}
+
+.about img {
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 
 /* GRID */
 
