@@ -200,6 +200,16 @@ body {
     gap: 25px;
 }
 
+/* DESTINATION DESKTOP LAYOUT */
+
+@media (min-width: 900px) {
+
+    #destinasi .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
 /* CARD */
 
 .card {
@@ -323,6 +333,18 @@ body {
     width: 100%;
 }
 
+/* FASILITAS DESKTOP 3x3 */
+
+@media (min-width:900px) {
+
+    .facility-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+}
+
 .facility-card {
     background: rgba(255, 255, 255, .92);
     padding: 25px;
@@ -384,7 +406,11 @@ body {
 
     background:
         linear-gradient(rgba(0, 80, 150, .45), rgba(0, 0, 0, .55)),
-        url("images/komodo2.jpg") center/cover no-repeat;
+        url("images/komodo2.jpg");
+
+    background-size: cover;
+    background-position: 25% 18%;
+    background-repeat: no-repeat;
 
     color: white;
     display: flex;
@@ -396,6 +422,10 @@ body {
 .cta h2 {
     font-size: 34px;
     margin-bottom: 25px;
+}
+
+.cta h2 {
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .cta .btn {
@@ -569,4 +599,12 @@ body {
 section {
     max-width: 100%;
     overflow: hidden;
+}
+
+@media(max-width:768px) {
+
+    .cta h2 {
+        font-size: 26px;
+    }
+
 }
