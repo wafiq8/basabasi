@@ -481,8 +481,10 @@ footer {
     .facility-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 12px;
-        max-width: 360px;
-        margin: auto;
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        justify-content: center;
     }
 
     .facility-card {
@@ -554,4 +556,17 @@ footer {
 .trust-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 45px rgba(0, 0, 0, .15);
+}
+
+/* FIX MOBILE OVERFLOW */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+section {
+    max-width: 100%;
+    overflow: hidden;
 }
