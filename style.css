@@ -608,3 +608,24 @@ section {
     }
 
 }
+
+/* SMALLER FACILITY CARD - MOBILE ONLY */
+
+@media (max-width:768px) {
+
+    .facility-card {
+        padding: 12px 6px;
+        border-radius: 16px;
+    }
+
+    .facility-icon {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    .facility-card h3 {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+}
