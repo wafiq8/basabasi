@@ -423,6 +423,16 @@ body {
         padding: 14px 8px;
     }
 
+    @media (max-width:768px) {
+
+        .facility-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            justify-items: center;
+        }
+
+    }
+
 }
 
 /* CTA */
@@ -785,4 +795,12 @@ img {
 html,
 body {
     overflow-x: hidden;
+}
+
+@media (max-width:768px) {
+
+    .facility-section {
+        padding: 60px 16px;
+    }
+
 }
