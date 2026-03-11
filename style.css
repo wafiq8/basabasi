@@ -1083,3 +1083,40 @@ img {
 .about h2 {
     text-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
 }
+
+/* ===== FACILITIES MOBILE OPTIMIZATION ===== */
+
+.facilities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.facility-card {
+    background: white;
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    height: auto;
+}
+
+.facility-card img {
+    width: 32px;
+    margin-bottom: 6px;
+}
+
+.facility-card h3 {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.facility-card p {
+    display: none;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
