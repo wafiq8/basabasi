@@ -133,7 +133,7 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
-    background-attachment: fixed;
+
 }
 
 
@@ -549,7 +549,6 @@ footer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     position: relative;
 }
 
@@ -583,6 +582,48 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
+    /* MOBILE FACILITY GRID */
+
+    @media(max-width:768px) {
+
+        .facility-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .facility-card {
+            padding: 20px 15px;
+            border-radius: 12px;
+        }
+
+        .facility-icon {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .facility-card h3 {
+            font-size: 16px;
+        }
+
+        .facility-card p {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+    }
+
+    @media(max-width:768px) {
+
+        .facility-section {
+            padding: 60px 5%;
+        }
+
+        .facility-title {
+            font-size: 24px;
+            margin-bottom: 35px;
+        }
+
+    }
 }
 
 .facility-card {
@@ -932,4 +973,89 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* =========================
+   DESTINATION MOBILE UPGRADE
+========================= */
+
+@media(max-width:768px) {
+
+    #destinasi .grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    #destinasi .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 18px;
+    }
+
+    #destinasi .card img {
+        height: 230px;
+        object-fit: cover;
+    }
+
+    /* overlay gradient */
+
+    #destinasi .card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60%;
+
+        background: linear-gradient(to top,
+                rgba(0, 0, 0, 0.85),
+                rgba(0, 0, 0, 0.0));
+    }
+
+    /* title overlay */
+
+    #destinasi .card h3 {
+        position: absolute;
+        bottom: 18px;
+        left: 20px;
+
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+
+        z-index: 2;
+        margin: 0;
+    }
+
+    /* hover effect ringan */
+
+    #destinasi .card:hover img {
+        transform: scale(1.05);
+        transition: 0.4s;
+    }
+
+}
+
+#destinasi .card img {
+    transition: transform 0.4s ease;
+}
+
+/* FIX DARK SECTION MOBILE */
+
+@media(max-width:768px) {
+
+    .section.about {
+        background: linear-gradient(180deg,
+                #0b1622 0%,
+                #0f2235 100%);
+    }
+
+    .about-text p {
+        color: #cbd5e1;
+    }
+
+}
+
+.about h2 {
+    text-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
 }
