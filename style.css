@@ -386,6 +386,25 @@ body {
     margin-bottom: 8px;
 }
 
+@media (max-width:768px) {
+
+    .facility-section {
+        padding: 60px 20px;
+    }
+
+    .facility-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        justify-items: center;
+    }
+
+}
+
+.facility-card {
+    width: 100%;
+    max-width: 110px;
+}
+
 /* CTA */
 
 .cta {
@@ -679,4 +698,45 @@ img {
     body {
         overflow-x: hidden;
     }
+}
+
+/* HERO MOBILE IMPROVEMENT */
+
+@media (max-width:768px) {
+
+    .hero {
+        min-height: 75vh;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        padding: 28px 20px;
+        border-radius: 18px;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(6px);
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
+
+    .hero .btn {
+        padding: 14px 26px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+}
+
+.hero {
+    background-position: center;
+    background-size: cover;
 }
