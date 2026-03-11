@@ -405,6 +405,26 @@ body {
     max-width: 110px;
 }
 
+/* FIX MOBILE FACILITY GRID */
+
+@media (max-width:768px) {
+
+    .facility-section {
+        padding: 60px 16px;
+    }
+
+    .facility-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        width: 100%;
+    }
+
+    .facility-card {
+        padding: 14px 8px;
+    }
+
+}
+
 /* CTA */
 
 .cta {
@@ -739,4 +759,9 @@ img {
 .hero {
     background-position: center;
     background-size: cover;
+}
+
+html,
+body {
+    overflow-x: hidden;
 }
