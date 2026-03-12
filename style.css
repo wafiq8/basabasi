@@ -704,6 +704,28 @@ section {
     font-weight: 600;
 }
 
+.accordion-content p {
+    position: relative;
+    padding-left: 20px;
+    margin: 18px 0;
+    line-height: 1.7;
+}
+
+.accordion-content p::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: #1c7ed6;
+    border-radius: 50%;
+}
+
+.accordion-content {
+    border-left: 2px solid #1c7ed6;
+}
+
 .trip-experience {
     padding: 90px 20px;
     background: linear-gradient(180deg, #f8fbff, #eef5ff);
