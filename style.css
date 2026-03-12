@@ -506,16 +506,19 @@ body {
 .wa-tooltip {
     position: absolute;
     right: 75px;
+    top: 50%;
+    transform: translateY(-50%);
     background: #25D366;
     color: white;
     padding: 10px 16px;
     border-radius: 30px;
     font-size: 14px;
-    display: inline-block;
     white-space: nowrap;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    opacity: 1;
-    transform: none;
+}
+
+.wa-float {
+    overflow: visible;
 }
 
 .wa-float {
@@ -535,8 +538,6 @@ body {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
 }
-
-
 
 @media (max-width:768px) {
 
