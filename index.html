@@ -282,7 +282,81 @@
 
     </section>
 
+    <section class="trip-experience">
 
+        <h2>Trip Experience</h2>
+        <p class="trip-subtitle">
+            Ikuti perjalanan seru menjelajahi Taman Nasional Komodo dengan kapal phinisi.
+        </p>
+
+        <div class="accordion">
+
+            <div class="accordion-item">
+                <button class="accordion-header">Day 1 — Island Warm-Up & Sunset</button>
+                <div class="accordion-content">
+
+                    <p><strong>Pickup & Boarding (08:00–11:00)</strong><br>
+                        Penjemputan dari bandara atau hotel di Labuan Bajo, lalu menuju pelabuhan untuk naik kapal
+                        phinisi.</p>
+
+                    <p><strong>Kelor Island — Trekking</strong><br>
+                        Pendakian singkat ke puncak pulau untuk menikmati panorama laut Labuan Bajo.</p>
+
+                    <p><strong>Manjarite — Snorkeling</strong><br>
+                        Snorkeling di perairan jernih dengan terumbu karang yang indah.</p>
+
+                    <p><strong>Kalong Island — Sunset</strong><br>
+                        Menikmati sunset sambil melihat ribuan kelelawar keluar dari Pulau Kalong.</p>
+
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <button class="accordion-header">Day 2 — Komodo National Park Exploration</button>
+                <div class="accordion-content">
+
+                    <p><strong>Padar Island — Trekking</strong><br>
+                        Pendakian ke puncak Pulau Padar dengan panorama paling ikonik di Labuan Bajo.</p>
+
+                    <p><strong>Pink Beach — Snorkeling</strong><br>
+                        Pantai dengan pasir merah muda yang unik dan air laut jernih.</p>
+
+                    <p><strong>Komodo Island — Wildlife Trekking</strong><br>
+                        Trekking bersama ranger untuk melihat komodo di habitat aslinya.</p>
+
+                    <p><strong>Taka Makassar — Sandbank</strong><br>
+                        Pulau pasir timbul yang dikelilingi laut biru jernih.</p>
+
+                    <p><strong>Manta Point — Snorkeling</strong><br>
+                        Berenang bersama manta ray di salah satu spot terbaik.</p>
+
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <button class="accordion-header">Day 3 — Last Snorkeling & Return</button>
+                <div class="accordion-content">
+
+                    <p><strong>Kanawa Island — Snorkeling</strong><br>
+                        Snorkeling terakhir di perairan jernih dengan terumbu karang alami.</p>
+
+                    <p><strong>Return to Labuan Bajo (12:00–13:00)</strong><br>
+                        Trip selesai dan peserta kembali ke Labuan Bajo.</p>
+
+                    <p><em>Disarankan mengambil jadwal penerbangan setelah pukul 13:30.</em></p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <p class="trip-note">
+            Durasi kunjungan dapat berubah menyesuaikan kondisi cuaca dan keputusan guide di lapangan.
+        </p>
+
+    </section>
 
     <!-- FASILITAS -->
 
@@ -415,7 +489,28 @@
         });
 
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
+            const headers = document.querySelectorAll(".accordion-header");
+
+            headers.forEach(header => {
+                header.addEventListener("click", function () {
+
+                    const content = this.nextElementSibling;
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+
+                });
+
+            });
+
+        });
+    </script>
 </body>
 
 </html>
