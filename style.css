@@ -95,9 +95,11 @@ body {
 /* HERO */
 
 .hero {
-    min-height: 90vh;
+    position: relative;
+    min-height: 100vh;
+
     background:
-        linear-gradient(rgba(0, 80, 150, .45), rgba(0, 0, 0, .45)),
+        linear-gradient(rgba(0, 80, 150, 0.45), rgba(0, 0, 0, 0.45)),
         url("images/padar.jpg") center/cover no-repeat;
 
     display: flex;
@@ -109,18 +111,41 @@ body {
 }
 
 .hero-content {
-    background: rgba(0, 0, 0, .35);
+    max-width: 750px;
+    background: rgba(0, 0, 0, 0.35);
     padding: 40px;
     border-radius: 12px;
 }
 
 .hero h1 {
     font-size: 42px;
-    margin-bottom: 15px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .hero p {
-    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #1c7ed6;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1864ab;
+}
+
+.hero-content {
+    backdrop-filter: blur(4px);
 }
 
 /* BUTTON */
@@ -162,34 +187,51 @@ body {
 /* ABOUT */
 
 .about {
-    background: #f7fbff;
     padding: 80px 20px;
+    background: #f8fbff;
 }
 
-.about-wrapper {
-    display: flex;
+.about-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-.about-text {
-    flex: 1;
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1c3d5a;
 }
 
 .about-text p {
-    text-align: justify;
-    line-height: 1.8;
-}
-
-.about-image {
-    flex: 1;
+    margin-bottom: 18px;
+    line-height: 1.7;
+    color: #555;
 }
 
 .about-image img {
     width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.about-btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #1c7ed6;
+    color: white;
+    padding: 12px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background: #1864ab;
 }
 
 /* GRID */
