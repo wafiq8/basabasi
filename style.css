@@ -1281,3 +1281,29 @@ section {
     }
 
 }
+
+/* MOBILE 3x3 FACILITY GRID */
+
+@media (max-width:768px) {
+
+    .facility-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .facility-card {
+        padding: 10px 6px;
+        border-radius: 12px;
+    }
+
+    .facility-icon {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .facility-card h3 {
+        font-size: 11px;
+        line-height: 1.2;
+    }
+
+}
