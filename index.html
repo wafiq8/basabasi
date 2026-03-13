@@ -136,43 +136,36 @@
     <!-- ABOUT -->
 
     <section id="about" class="about">
-
         <div class="container about-grid">
 
             <div class="about-text">
-
                 <h2>Petualangan Tak Terlupakan di Labuan Bajo</h2>
-
                 <p>
                     Labuan Bajo adalah gerbang menuju keajaiban alam Taman Nasional Komodo.
                     Di sini Anda dapat menjelajahi pulau-pulau eksotis, snorkeling di laut
                     biru yang jernih, dan melihat komodo langsung di habitat aslinya.
                 </p>
-
                 <p>
                     Melalui Basabasi Trip, kami menghadirkan pengalaman sailing trip yang
                     aman, seru, dan penuh kenangan. Dengan kapal yang nyaman dan kru yang
                     berpengalaman, perjalanan Anda menjelajahi Komodo akan menjadi
                     petualangan yang tak terlupakan.
                 </p>
+            </div>
 
+            <div class="about-image">
+                <img src="images/komodo.jpg" alt="Komodo Island">
+            </div>
+
+            <div class="about-action">
                 <a href="https://wa.me/6285713541147?text=Halo%20kak%2C%20saya%20melihat%20website%20Basabasi%20Trip%20dan%20mau%20tanya%20lebih%20lanjut%20tentang%20Trip%20Labuan%20Bajo."
                     class="about-btn" target="_blank">
                     Tanya Detail Trip
                 </a>
-
-            </div>
-
-            <div class="about-image">
-
-                <img src="images/komodo.jpg" alt="Komodo Island">
-
             </div>
 
         </div>
-
     </section>
-
 
 
     <!-- DESTINASI -->
@@ -287,7 +280,8 @@
                 </div>
 
 
-                <div class="package-box">
+                <div class="package-box best-seller-card">
+                    <div class="best-seller-badge">⭐ Favorit Traveler</div>
 
                     <h3>3 Days 2 Nights</h3>
 
@@ -666,57 +660,83 @@
 
     </a>
 
-
-
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.querySelector(".hamburger");
+            const menu = document.querySelector(".menu");
+            const menuLinks = document.querySelectorAll(".menu a");
 
-        const hamburger = document.querySelector(".hamburger");
-        const menu = document.querySelector(".menu");
+            // Pastikan elemen ditemukan agar tidak terjadi error
+            if (hamburger && menu) {
+                // 1. Buka/tutup menu saat ikon hamburger diklik
+                hamburger.addEventListener("click", function () {
+                    menu.classList.toggle("active");
+                });
 
-        hamburger.addEventListener("click", () => {
-            menu.classList.toggle("active");
+                // 2. Tutup menu otomatis saat link (Destinasi, Paket, dll) diklik
+                menuLinks.forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        menu.classList.remove("active");
+                    });
+                });
+            }
         });
-
     </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-
             const headers = document.querySelectorAll(".accordion-header");
 
             headers.forEach(header => {
                 header.addEventListener("click", function () {
+                    // Tutup semua accordion yang lain terlebih dahulu
+                    headers.forEach(otherHeader => {
+                        if (otherHeader !== this) {
+                            otherHeader.nextElementSibling.style.maxHeight = null;
+                        }
+                    });
 
+                    // Buka atau tutup accordion yang sedang diklik
                     const content = this.nextElementSibling;
-
                     if (content.style.maxHeight) {
                         content.style.maxHeight = null;
                     } else {
                         content.style.maxHeight = content.scrollHeight + "px";
                     }
-
                 });
-
             });
-
         });
     </script>
 
     <script>
-
         window.addEventListener("scroll", function () {
-
             const navbar = document.querySelector(".navbar");
-
             if (window.scrollY > 50) {
                 navbar.classList.add("scrolled");
             } else {
                 navbar.classList.remove("scrolled");
             }
-
         });
-
     </script>
+</body>
+
+</html>
+
+<script>
+
+    window.addEventListener("scroll", function () {
+
+        const navbar = document.querySelector(".navbar");
+
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+
+    });
+
+</script>
 </body>
 
 </html>
