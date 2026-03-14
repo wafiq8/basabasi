@@ -69,146 +69,59 @@ section {
 }
 
 /* =========================================
-   2. NAVBAR & MENU
+   2. NAVBAR & MENU (VERSI FIXED)
 ========================================= */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(255, 255, 255, .85);
-    backdrop-filter: blur(12px);
-    transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
 .nav-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Pastikan Logo kiri, Nav kanan */
     align-items: center;
-    width: 100%;;
+    width: 100%;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
     gap: 30px;
-    margin-left: auto;
+    margin-left: auto; /* Mendorong semua konten di sini ke kanan */
 }
 
-.logo img {
-    height: 45px;
-    object-fit: contain;
-}
-
-.menu {
-    display: flex;
-    list-style: none;
-    gap: 20px; /* Jarak antar teks (Home, Destinasi, dll) */
-    margin: 0;
-    padding: 0;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    position: relative;
-    transition: .3s;
-}
-
-.menu a:hover {
-    color: #0a3d62;
-}
-
-.menu a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background: #0a3d62;
-    transition: .3s;
-}
-
-.menu a:hover::after {
-    width: 100%;
-}
-
-/* Styling tombol bahasa agar tidak berantakan */
-.lang-switch {
-    display: flex;
-    gap: 8px;
-    margin-left: 15px;
-}
-
-.lang-btn {
-    font-size: 13px;
-    padding: 4px 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #333;
-}
-
-.lang-btn.active {
-    background: #ffcc00;
-    border-color: #ffcc00;
-}
-
-/* --- MOBILE RESPONSIVE --- */
+/* --- PERBAIKAN MEDIA QUERY MOBILE --- */
 @media (max-width: 768px) {
-    /* 1. Sembunyikan menu desktop agar tidak menumpuk di atas logo */
-    .menu {
+    /* Sembunyikan Nav-Right di HP */
+    .nav-right {
         display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 70px; /* Sesuaikan dengan tinggi navbar kamu */
-        left: 0;
-        background: white;
-        width: 100%;
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        gap: 20px;
-        z-index: 1000;
     }
 
-    /* 2. Tampilkan menu saat hamburger diklik (JavaScript mode) */
+    /* Pastikan Hamburger tampil di pojok kanan */
+    .hamburger {
+        display: flex !important;
+        margin-left: auto;
+    }
+
+    /* Menu yang muncul saat diklik */
     .menu.active {
         display: flex;
-    }
-
-    /* 3. Pastikan lang-switch di mobile rapi di bawah menu */
-    .lang-switch {
-        justify-content: center;
-        margin-top: 10px;
-        padding-top: 15px;
-        border-top: 1px solid #eee;
-        width: 100%;
-    }
-
-    /* 4. Pastikan Hamburger muncul */
-    .hamburger {
-        display: flex !important; /* Pakai !important jika masih bandel sembunyi */
         flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
+        position: absolute;
+        top: 70px;
+        left: 0; /* Menu full selebar layar */
+        width: 100%;
+        background: white;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* Pindahkan Lang-Switch ke dalam menu saat mobile */
+    .menu.active .lang-switch {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
     }
 }
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #0a3d62;
-    border-radius: 2px;
-}
-
 /* =========================================
    3. HERO SECTION
 ========================================= */
