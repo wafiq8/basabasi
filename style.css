@@ -968,7 +968,9 @@ footer {
     /* Navbar */
     .menu,
     .lang-switch {
-        display: none;
+        display: flex
+        align-item: center
+        gap: 15px;
     }
 
     .hamburger {
