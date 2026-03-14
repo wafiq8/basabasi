@@ -91,13 +91,14 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    width: 100%;;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 30px;
+    margin-left: auto;
 }
 
 .logo img {
@@ -106,9 +107,11 @@ section {
 }
 
 .menu {
-    list-style: none;
     display: flex;
-    gap: 20px;
+    list-style: none;
+    gap: 20px; /* Jarak antar teks (Home, Destinasi, dll) */
+    margin: 0;
+    padding: 0;
 }
 
 .menu a {
