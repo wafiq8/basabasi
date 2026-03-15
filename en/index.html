@@ -576,62 +576,65 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // --- 1. LOGIKA NAVIGASI & HAMBURGER ---
             const hamburger = document.querySelector(".hamburger");
             const menu = document.querySelector(".menu");
             const menuLinks = document.querySelectorAll(".menu a");
 
-            // Pastikan elemen ditemukan agar tidak terjadi error
             if (hamburger && menu) {
-                // 1. Buka/tutup menu saat ikon hamburger diklik
                 hamburger.addEventListener("click", function () {
                     menu.classList.toggle("active");
+                    hamburger.classList.toggle("is-active"); // Menambah animasi silang
                 });
 
-                // 2. Tutup menu otomatis saat link (Destinasi, Paket, dll) diklik
                 menuLinks.forEach(function (link) {
                     link.addEventListener("click", function () {
                         menu.classList.remove("active");
+                        hamburger.classList.remove("is-active");
                     });
                 });
             }
-        });
-    </script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+            // --- 2. LOGIKA ACCORDION ---
             const headers = document.querySelectorAll(".accordion-header");
 
             headers.forEach(header => {
                 header.addEventListener("click", function () {
-                    // Tutup semua accordion yang lain terlebih dahulu
+                    // Tutup semua accordion yang lain
                     headers.forEach(otherHeader => {
                         if (otherHeader !== this) {
-                            otherHeader.nextElementSibling.style.maxHeight = null;
+                            const otherContent = otherHeader.nextElementSibling;
+                            if (otherContent) otherContent.style.maxHeight = null;
                         }
                     });
 
                     // Buka atau tutup accordion yang sedang diklik
                     const content = this.nextElementSibling;
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
+                    if (content) {
+                        if (content.style.maxHeight) {
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
                     }
                 });
             });
         });
-    </script>
 
-    <script>
+        // --- 3. LOGIKA SCROLL NAVBAR (Diluar DOMContentLoaded agar lebih responsif) ---
         window.addEventListener("scroll", function () {
             const navbar = document.querySelector(".navbar");
-            if (window.scrollY > 50) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
+            if (navbar) {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
             }
         });
     </script>
+</body>
+</html>
 </body>
 
 </html>
