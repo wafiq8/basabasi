@@ -6,31 +6,134 @@
     <link rel="stylesheet" href="style.css">
     <title>Labuan Bajo Green Season 2026 - Basabasitrip.id</title>
     <style>
-        .article-detail-container { max-width: 800px; margin: 100px auto; padding: 20px; background: #fff; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
-        .article-header img { width: 100%; border-radius: 15px; margin-bottom: 30px; }
-        .article-content { line-height: 1.8; color: #444; font-size: 1.1rem; }
-        .article-content h2 { color: #222; margin-top: 30px; }
-        .btn-back { display: inline-block; margin-bottom: 20px; color: #007bff; text-decoration: none; font-weight: bold; }
-    </style>
+    /* Styling khusus konten artikel agar tidak flat */
+    .article-detail-container { 
+        max-width: 900px; 
+        margin: 120px auto 60px; 
+        padding: 40px; 
+        background: #fff; 
+        border-radius: 30px; 
+        box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+    }
+
+    .btn-back { 
+        display: inline-block; 
+        margin-bottom: 25px; 
+        color: #666; 
+        text-decoration: none; 
+        font-size: 0.9rem;
+        transition: 0.3s;
+    }
+    .btn-back:hover { color: #f39c12; transform: translateX(-5px); }
+
+    .article-header h1 { 
+        font-size: 2.8rem; 
+        line-height: 1.2; 
+        color: #2c3e50; 
+        margin-bottom: 20px;
+    }
+
+    .meta-info { 
+        color: #999; 
+        font-size: 0.85rem; 
+        margin-bottom: 30px; 
+        border-bottom: 1px solid #eee; 
+        padding-bottom: 15px; 
+    }
+
+    .hero-image { 
+        width: 100%; 
+        border-radius: 20px; 
+        margin-bottom: 40px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Membuat teks lebih nyaman dibaca */
+    .article-content { 
+        line-height: 2; 
+        color: #444; 
+        font-size: 1.15rem; 
+        text-align: justify;
+    }
+
+    /* Efek Huruf Besar di Awal (Drop Cap) */
+    .article-content p:first-of-type::first-letter {
+        font-size: 4rem;
+        font-weight: bold;
+        float: left;
+        margin-right: 10px;
+        line-height: 1;
+        color: #f39c12; /* Warna kuning khas Basabasitrip */
+    }
+
+    /* Highlight Point */
+    .highlight-box {
+        background: #fdf2e9;
+        border-left: 5px solid #f39c12;
+        padding: 20px 30px;
+        margin: 40px 0;
+        font-style: italic;
+        border-radius: 0 15px 15px 0;
+    }
+
+    .article-footer {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 2px dashed #eee;
+        text-align: center;
+    }
+
+    .cta-button {
+        background: #f39c12;
+        color: #fff;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: 0.3s;
+    }
+    .cta-button:hover { background: #d35400; transform: scale(1.05); }
+
+    @media (max-width: 768px) {
+        .article-header h1 { font-size: 2rem; }
+        .article-detail-container { padding: 20px; margin-top: 100px; }
+    }
+</style>
 </head>
 <body>
     <nav class="navbar"> ... </nav>
 
     <div class="article-detail-container">
-        <a href="artikel.html" class="btn-back">← Kembali ke Daftar Artikel</a>
+        <a href="artikel.html" class="btn-back">← Kembali ke Cerita Perjalanan</a>
         
-        <div class="article-header">
-            <img src="images/padar-green.jpg" alt="Labuan Bajo Green Season">
+        <header class="article-header">
             <h1>Labuan Bajo Lagi "Green Season", Masa Kamu Masih Di Rumah Saja?</h1>
-        </div>
-
-        <div class="article-content">
-            <p>Pernah nggak sih kamu lihat foto Pulau Padar tapi bukannya cokelat gersang, malah penuh dengan hamparan hijau yang segar banget di mata? Nah, kalau kamu berangkat ke Labuan Bajo sekitar bulan Maret sampai Mei ini, itulah pemandangan "mahal" yang bakal kamu dapatkan. Kita menyebutnya Green Season, waktu di mana Labuan Bajo lagi cantik-cantiknya dan beda banget dari biasanya!
-            Banyak orang yang ragu berangkat sekarang karena takut masih musim hujan. Padahal, justru di momen transisi inilah keajaiban terjadi. Curah hujan sudah mulai berkurang, tapi sisa-sisa airnya bikin perbukitan di Taman Nasional Komodo tumbuh subur bak karpet beludru hijau zamrud. Bayangkan kontras warnanya: langit biru bersih, air laut yang toska bening, ketemu bukit hijau royo-royo. Asli, ini surga banget buat kamu yang hobi fotografi atau sekadar pengen update konten estetik di Instagram!
-            Kenapa sih harus sekarang banget? Karena momen hijau ini nggak lama, cuma sekitar tiga bulan saja sebelum matahari mulai menyengat dan mengubah semuanya jadi savana kuning gersang lagi. Selain visualnya yang juara, suhu udaranya juga lebih sejuk dan nggak terlalu bikin gerah saat kamu trekking ke puncak Pulau Padar atau Gili Laba. Plus, karena belum masuk peak season (libur tengah tahun), kamu bisa menikmati spot-spot ikonik ini dengan lebih tenang tanpa harus sikut-sikutan sama ribuan turis lain.
-            Buat kamu yang sudah gatal ingin berangkat, tipsnya simpel saja. Jangan lupa bawa sepatu atau sandal gunung yang grip-nya oke karena jalur pendakian mungkin sedikit lembap, dan selalu sedia dry bag buat jagain kamera atau HP kamu. Sisanya? Tinggal duduk manis di dek kapal sambil menikmati angin laut yang segar.
-            Jadi, mumpung Labuan Bajo lagi dalam versi terbaiknya, jangan sampai kamu cuma bisa gigit jari lihat postingan orang lain yang sudah sampai sana duluan. Momen Green Season 2026 ini nggak akan terulang sampai tahun depan, lho! Yuk, bungkus tiketmu dan cari tahu rute terbaik bareng Basabasitrip.id. Sampai ketemu di atas kapal, ya!</p>
+            <div class="meta-info">
+                <span>Ditulis oleh: Tim Basabasitrip</span> • <span>Maret 2026</span> • <span>5 Menit Membaca</span>
             </div>
+            <img src="images/padar.jpg" class="hero-image" alt="Padar Island Green Season">
+        </header>
+
+        <article class="article-content">
+            <p>Pernah nggak sih kamu lihat foto Pulau Padar tapi bukannya cokelat gersang, malah penuh dengan hamparan hijau yang segar banget di mata? Nah, kalau kamu berangkat ke Labuan Bajo sekitar bulan Maret sampai Mei ini, itulah pemandangan "mahal" yang bakal kamu dapatkan.</p>
+
+            <p>Banyak orang yang ragu berangkat sekarang karena takut masih musim hujan. Padahal, justru di momen transisi inilah keajaiban terjadi. Curah hujan sudah mulai berkurang, tapi sisa-sisanya membuat vegetasi tumbuh subur.</p>
+
+            <div class="highlight-box">
+                "Momen Green Season bukan cuma soal warna hijau, tapi soal suasana yang lebih sejuk dan ketenangan yang jarang didapat saat Peak Season."
+            </div>
+
+            <p>Kenapa sih harus sekarang banget? Karena momen hijau ini nggak lama, cuma sekitar tiga bulan saja sebelum matahari mulai menyengat dan mengubah semuanya jadi savana kuning gersang lagi. Selain visualnya yang juara, suhu udaranya juga lebih sejuk.</p>
+            
+            </article>
+
+        <footer class="article-footer">
+            <h3>Tertarik melihat sisi hijau Labuan Bajo secara langsung?</h3>
+            <p>Yuk, booking trip kamu sekarang sebelum musimnya berganti!</p>
+            <br>
+            <a href="index.html#paket" class="cta-button">Lihat Paket Wisata</a>
+        </footer>
     </div>
 </body>
 </html>
