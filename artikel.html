@@ -11,10 +11,9 @@
         body { 
             font-family: 'Segoe UI', sans-serif; 
             margin: 0; 
-            background-color: #f8f9fa; /* Abu-abu sangat muda agar card terlihat menonjol */
+            background-color: #f8f9fa; 
         }
         
-        /* Container utama agar konten tidak mepet layar */
         .content-container { 
             max-width: 1200px; 
             margin: 60px auto; 
@@ -24,14 +23,13 @@
         .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h1 { color: #333; font-size: 2.5rem; }
 
-        /* Grid System untuk Card */
         .article-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        /* Styling Card */
+        /* Update Styling Card agar Full Clickable */
         .article-card {
             background: #fff;
             border-radius: 15px;
@@ -39,6 +37,14 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             border: 1px solid #eee;
+            position: relative;
+        }
+
+        /* Menghilangkan dekorasi link standar */
+        .article-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block; /* Membuat link memenuhi seluruh card */
         }
 
         .article-card:hover {
@@ -76,18 +82,21 @@
             color: #777;
             font-size: 0.95rem;
             line-height: 1.7;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        .read-more {
-            color: #007bff;
-            text-decoration: none;
+        /* Indikator Klik (Pengganti Button) */
+        .read-more-link {
+            color: #f39c12; /* Kuning khas Basabasitrip */
             font-weight: 600;
+            font-size: 0.9rem;
             display: inline-block;
             transition: 0.2s;
         }
 
-        .read-more:hover { color: #0056b3; padding-left: 5px; }
+        .article-card:hover .read-more-link {
+            padding-left: 5px;
+        }
     </style>
 </head>
 
@@ -131,33 +140,39 @@
         <div class="article-grid">
             
             <article class="article-card">
-                <img src="images/padar.jpg" alt="Labuan Bajo Green Season" class="card-image">
-                <div class="card-content">
-                    <span class="card-tag">Tips & Musim</span>
-                    <h2 class="card-title">Labuan Bajo Lagi "Green Season", Masa Kamu Masih Di Rumah Saja?</h2>
-                    <p class="card-excerpt">Momen langka di mana seluruh bukit Labuan Bajo berubah jadi hijau zamrud. Cari tahu kenapa Maret-Mei adalah waktu terbaik...</p>
-                    <a href="detail-artikel-green-season.html" class="read-more">Baca Selengkapnya →</a>
-                </div>
+                <a href="detail-artikel-green-season.html">
+                    <img src="images/padar.jpg" alt="Labuan Bajo Green Season" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">Tips & Musim</span>
+                        <h2 class="card-title">Labuan Bajo Lagi "Green Season", Masa Kamu Masih Di Rumah Saja?</h2>
+                        <p class="card-excerpt">Momen langka di mana seluruh bukit Labuan Bajo berubah jadi hijau zamrud. Cari tahu kenapa Maret-Mei adalah waktu terbaik...</p>
+                        <span class="read-more-link">Baca Selengkapnya →</span>
+                    </div>
+                </a>
             </article>
 
             <article class="article-card">
-                <img src="images/seafood.jpg" alt="Kuliner Labuan Bajo" class="card-image">
-                <div class="card-content">
-                    <span class="card-tag">Kuliner</span>
-                    <h2 class="card-title">5 Seafood Terenak di Labuan Bajo yang Wajib Kamu Coba</h2>
-                    <p class="card-excerpt">Jangan cuma liat Komodo, perut juga harus dimanjakan! Ini rekomendasi tempat makan seafood paling segar...</p>
-                    <a href="#" class="read-more">Baca Selengkapnya →</a>
-                </div>
+                <a href="#">
+                    <img src="images/seafood.jpg" alt="Kuliner Labuan Bajo" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">Kuliner</span>
+                        <h2 class="card-title">5 Seafood Terenak di Labuan Bajo yang Wajib Kamu Coba</h2>
+                        <p class="card-excerpt">Jangan cuma liat Komodo, perut juga harus dimanjakan! Ini rekomendasi tempat makan seafood paling segar...</p>
+                        <span class="read-more-link">Baca Selengkapnya →</span>
+                    </div>
+                </a>
             </article>
 
             <article class="article-card">
-                <img src="images/packing.jpg" alt="Packing List" class="card-image">
-                <div class="card-content">
-                    <span class="card-tag">Persiapan</span>
-                    <h2 class="card-title">Checklist Wajib: Barang yang Harus Dibawa Saat Menginap di Kapal</h2>
-                    <p class="card-excerpt">Baru pertama kali ikut Open Trip LOB? Pastikan 10 barang ini ada di tasmu agar liburan tetap nyaman...</p>
-                    <a href="#" class="read-more">Baca Selengkapnya →</a>
-                </div>
+                <a href="#">
+                    <img src="images/packing.jpg" alt="Packing List" class="card-image">
+                    <div class="card-content">
+                        <span class="card-tag">Persiapan</span>
+                        <h2 class="card-title">Checklist Wajib: Barang yang Harus Dibawa Saat Menginap di Kapal</h2>
+                        <p class="card-excerpt">Baru pertama kali ikut Open Trip LOB? Pastikan 10 barang ini ada di tasmu agar liburan tetap nyaman...</p>
+                        <span class="read-more-link">Baca Selengkapnya →</span>
+                    </div>
+                </a>
             </article>
 
         </div>

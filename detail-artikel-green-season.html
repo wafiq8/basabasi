@@ -7,54 +7,113 @@
     <title>Labuan Bajo Green Season 2026 - Basabasitrip.id</title>
     
     <style>
-        /* Styling khusus agar konten artikel nyaman dibaca */
-        .article-detail-container { 
-            max-width: 800px; /* JANGAN TERLALU LEBAR! Ini kunci kenyamanan mata */
-            margin: 150px auto 80px; /* Beri jarak dari navbar fixed */
-            padding: 40px; 
-            background: #fff; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        html { scroll-behavior: smooth; }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Bersih & Luas */
+            color: #2d3436;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
         }
 
-        .btn-back { 
-            display: inline-block; 
-            margin-bottom: 30px; 
-            color: #666; 
-            text-decoration: none; 
+        /* Hero Section - Emosional & Immersive */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 70vh; /* Mengambil 70% tinggi layar */
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Judul di Atas Putih Bersih */
+        .article-header {
+            max-width: 800px;
+            margin: -100px auto 50px; /* Mengangkat judul ke atas gambar sedikit */
+            padding: 60px;
+            background: #fff;
+            position: relative;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+
+        .article-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin: 0;
+            color: #1e272e;
+        }
+
+        .meta-info {
+            margin-top: 20px;
+            color: #a4b0be;
             font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Konten Tanpa Card (Immersive) */
+        .article-content {
+            max-width: 750px; /* Lebar ideal untuk mata manusia */
+            margin: 0 auto 100px;
+            font-size: 1.25rem;
+            color: #2f3542;
+        }
+
+        /* Drop Cap (Emosional Trigger) */
+        .article-content p:first-of-type::first-letter {
+            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            float: left;
+            margin-right: 15px;
+            line-height: 1;
+            color: #f39c12; /* Warna Basabasitrip */
+        }
+
+        .article-content p {
+            margin-bottom: 35px;
+        }
+
+        /* Blockquote Emosional */
+        blockquote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 60px -100px; /* Lebih lebar dari teks utama */
+            color: #f39c12;
+            border: none;
+        }
+
+        .btn-back {
+            position: fixed;
+            top: 100px;
+            left: 40px;
+            z-index: 100;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            background: rgba(255,255,255,0.8);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: 0.3s;
         }
-        .btn-back:hover { color: #f39c12; transform: translateX(-5px); }
 
-        .article-header h1 { 
-            font-size: 3rem; /* Judul Besar & Tegas */
-            line-height: 1.2; 
-            color: #222; 
-            margin-bottom: 25px;
-        }
+        .btn-back:hover { background: #f39c12; color: #fff; }
 
-        .hero-image { 
-            width: 100%; 
-            border-radius: 15px; 
-            margin-bottom: 45px; 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        /* Kunci Kenyamanan Typography */
-        .article-content { 
-            line-height: 2.1; /* Jarak antar baris yang lega */
-            color: #333; /* Warna abu gelap, lebih nyaman dibanding hitam pekat */
-            font-size: 1.2rem; /* Ukuran font sedikit lebih besar */
-            text-align: justify; /* Rata kanan kiri agar rapi */
-            font-family: 'Georgia', serif; /* Opsional: Gunakan serif untuk vibes "membaca buku" */
-        }
-
-        /* Hilangkan Justify di Mobile agar tidak aneh jarak katanya */
         @media (max-width: 768px) {
-            .article-content { text-align: left; font-size: 1.1rem; }
             .article-header h1 { font-size: 2.2rem; }
-            .article-detail-container { padding: 20px; margin-top: 120px; }
+            blockquote { margin: 40px 0; font-size: 1.4rem; }
+            .btn-back { display: none; } /* Sembunyikan di mobile */
         }
     </style>
 </head>
@@ -62,22 +121,26 @@
     <nav class="navbar"> ... </nav>
 
     <div class="article-detail-container">
-        <a href="artikel.html" class="btn-back">← Kembali ke Daftar Artikel</a>
-        
+        <a href="artikel.html" class="btn-back">← Back</a>
+
+        <div class="hero-section">
+            <img src="images/padar.jpg" alt="Labuan Bajo Green Season" class="hero-image">
+        </div>
+
         <header class="article-header">
+            <div class="meta-info">Travel Diary • March 2026</div>
             <h1>Labuan Bajo Lagi "Green Season", Masa Kamu Masih Di Rumah Saja?</h1>
-            <img src="images/padar.jpg" class="hero-image" alt="Pemandangan Hijau Pulau Padar">
         </header>
 
-        <article class="article-content">
-            <p>Pernah nggak sih kamu lihat foto Pulau Padar tapi bukannya cokelat gersang, malah penuh dengan hamparan hijau yang segar banget di mata? Nah, kalau kamu berangkat ke Labuan Bajo sekitar bulan Maret sampai Mei ini, itulah pemandangan "mahal" yang bakal kamu dapatkan.</p>
+        <main class="article-content">
+        <p>Pernah nggak sih kamu lihat foto Pulau Padar tapi bukannya cokelat gersang, malah penuh dengan hamparan hijau yang segar banget di mata? Nah, kalau kamu berangkat ke Labuan Bajo sekarang, itulah pemandangan "mahal" yang bakal kamu dapatkan.</p>
 
-            <p>Kita menyebutnya Green Season, waktu di mana Labuan Bajo lagi cantik-cantiknya dan beda banget dari biasanya! Banyak orang yang ragu berangkat sekarang karena takut masih musim hujan. Padahal, justru di momen transisi inilah keajaiban terjadi.</p>
+        <blockquote>
+            "Ada ketenangan yang tidak bisa dijelaskan kata-kata saat memandang hamparan hijau yang bertemu birunya samudera..."
+        </blockquote>
 
-            <p>Curah hujan sudah mulai berkurang, tapi sisa-sisa airnya bikin perbukitan di Taman Nasional Komodo tumbuh subur bak karpet beludru hijau zamrud. Bayangkan kontras warnanya: langit biru bersih, air laut yang toska bening, ketemu bukit hijau royo-royo.</p>
-
-            <p>Asli, ini surga banget buat kamu yang hobi fotografi atau sekadar pengen update konten estetik di Instagram!</p>
-        </article>
+        <p>Kita menyebutnya Green Season. Momen di mana alam Labuan Bajo sedang dalam mode 'refresh'. Langit biru bersih bertemu bukit hijau royo-royo, surga banget buat kamu yang butuh pelarian dari hiruk pikuk kota.</p>
+        </main>
     </div>
 </body>
 </html>
