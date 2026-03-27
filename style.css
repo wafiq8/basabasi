@@ -1044,3 +1044,34 @@ footer {
         background-color: #f0f7ff; /* Warna biru sangat muda saat disentuh */
         color: #1c7ed6;
 }
+/* Navbar Responsive Logic */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Munculkan ikon garis tiga */
+        cursor: pointer;
+    }
+
+    .nav-right {
+        position: fixed;
+        right: -100%; /* Sembunyikan menu di awal */
+        top: 80px;
+        width: 70%;
+        height: 100vh;
+        background: #fff;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+        transition: 0.3s ease;
+    }
+
+    .nav-right.active {
+        right: 0; /* Munculkan menu saat diklik */
+    }
+
+    .menu {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .menu li {
+        margin-bottom: 25px;
+    }
+}

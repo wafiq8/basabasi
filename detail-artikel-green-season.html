@@ -161,15 +161,87 @@
         }
         .article-content ul { padding-left: 20px; margin-bottom: 30px; }
         .article-content li { margin-bottom: 15px; list-style-type: circle; }
+
+        /* Media Query untuk Layar Mobile (Detail Artikel) */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50vh; /* Gambar lebih pendek di HP agar teks cepat terlihat */
+    }
+
+    .article-header {
+        max-width: 90%; /* Judul mengambil lebih banyak ruang di layar sempit */
+        margin: -60px auto 30px; /* Margin negatif dikurangi agar tidak tumpang tindih berlebih */
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .article-header h1 {
+        font-size: 1.8rem; /* Ukuran font judul yang pas untuk HP */
+        line-height: 1.2;
+    }
+
+    .article-content {
+        max-width: 90%;
+        font-size: 1.1rem; /* Font sedikit lebih kecil agar nyaman dibaca di HP */
+        margin-bottom: 50px;
+    }
+
+    blockquote {
+        margin: 30px 0; /* Menghilangkan margin negatif di sisi samping pada mobile */
+        font-size: 1.3rem;
+        padding: 0 10px;
+    }
+
+    .share-section-social {
+        margin-bottom: 40px;
+    }
+}
     </style>
 </head>
 
 
 <body>
-    <nav class="navbar"> 
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
         <div class="container nav-wrapper">
+
+            <!-- LOGO -->
+            <div class="logo">
+                <a href="#home">
+                    <img src="images/logo.png" alt="Basa Basi Trip Labuan Bajo">
+                </a>
             </div>
+
+            <!-- NAV RIGHT -->
+            <div class="nav-right">
+
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#destinasi">Destinasi</a></li>
+                    <li><a href="#paket">Paket</a></li>
+                    <li><a href="#spesial-trip">Spesial Trip</a></li>
+                    <li><a href="artikel.html">Artikel</a></li>
+
+                    <div class="lang-switch">
+                        <a href="/" class="lang-btn active">ID</a>
+                        <a href="/en/" class="lang-btn">EN</a>
+                    </div>
+                </ul>
+
+        </div>
+
+            <!-- HAMBURGER (mobile only) -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
     </nav>
+
 
     <a href="artikel.html" class="btn-back">← Back</a>
 

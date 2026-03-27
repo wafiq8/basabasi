@@ -18,3 +18,10 @@ window.addEventListener("scroll", () => {
     });
 
 });
+const hamburger = document.querySelector(".hamburger");
+const navRight = document.querySelector(".nav-right");
+
+hamburger.addEventListener("click", () => {
+    navRight.classList.toggle("active");
+    hamburger.classList.toggle("active");
+});
