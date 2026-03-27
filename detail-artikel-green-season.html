@@ -115,32 +115,122 @@
             blockquote { margin: 40px 0; font-size: 1.4rem; }
             .btn-back { display: none; } /* Sembunyikan di mobile */
         }
+        /* Styling Ikon Media Sosial Minimalis */
+        /* Rampingkan Section Share */
+.share-section-social {
+    max-width: 600px; /* Dipersempit agar lebih fokus */
+    margin: 20px auto 60px; /* Jarak atas dipangkas drastis (dari 50px ke 20px) */
+    padding: 20px 0; /* Padding vertikal diperkecil */
+    text-align: center;
+    border-top: 1px solid #f2f2f2; /* Garis lebih tipis & samar */
+}
+
+.share-title-small {
+    font-size: 0.65rem; /* Sedikit lebih kecil agar lebih classy */
+    color: #ccc; 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px; /* Jarak ke ikon dirampingkan */
+}
+
+.social-icons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Jarak antar ikon tetap nyaman tapi rapat */
+}
+
+.social-icon {
+    width: 36px; /* Ukuran ikon diperkecil sedikit agar terlihat lebih 'luxury' */
+    height: 36px;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+        /* Responsif Mobile agar tidak terlalu mepet */
+        @media (max-width: 480px) {
+            .social-icons-wrapper { gap: 25px; }
+            .social-icon { width: 22px; height: 22px; }
+            .share-section-social { margin-bottom: 60px; }
+        }
+        .article-content ul { padding-left: 20px; margin-bottom: 30px; }
+        .article-content li { margin-bottom: 15px; list-style-type: circle; }
     </style>
 </head>
+
+
 <body>
-    <nav class="navbar"> ... </nav>
+    <nav class="navbar"> 
+        <div class="container nav-wrapper">
+            </div>
+    </nav>
 
-    <div class="article-detail-container">
-        <a href="artikel.html" class="btn-back">← Back</a>
+    <a href="artikel.html" class="btn-back">← Back</a>
 
-        <div class="hero-section">
-            <img src="images/padar.jpg" alt="Labuan Bajo Green Season" class="hero-image">
-        </div>
+    <div class="hero-section">
+        <img src="images/padar.jpg" alt="Labuan Bajo Green Season" class="hero-image">
+    </div>
 
-        <header class="article-header">
-            <div class="meta-info">Travel Diary • March 2026</div>
-            <h1>Labuan Bajo Lagi "Green Season", Masa Kamu Masih Di Rumah Saja?</h1>
-        </header>
+    <header class="article-header">
+        <div class="meta-info">Travel Diary • March 2026</div>
+        <h1>Labuan Bajo Lagi "Green Season", Masa Kamu Masih Di Rumah Saja?</h1>
+    </header>
 
-        <main class="article-content">
-        <p>Pernah nggak sih kamu lihat foto Pulau Padar tapi bukannya cokelat gersang, malah penuh dengan hamparan hijau yang segar banget di mata? Nah, kalau kamu berangkat ke Labuan Bajo sekarang, itulah pemandangan "mahal" yang bakal kamu dapatkan.</p>
+    <main class="article-content">
+        <p>Pernah nggak sih kamu lihat foto Pulau Padar tapi bukannya cokelat gersang, malah penuh dengan hamparan hijau yang segar banget di mata? Nah, kalau kamu berangkat ke Labuan Bajo sekitar bulan Maret sampai Mei ini, itulah pemandangan "mahal" yang bakal kamu dapatkan.</p>
+
+        <p>Kita menyebutnya <strong>Green Season</strong>. Momen langka di mana seluruh bukit di Taman Nasional Komodo berubah jadi hijau zamrud. Banyak orang ragu berangkat sekarang karena takut hujan, padahal justru di masa transisi inilah keajaiban terjadi. Curah hujan mulai berkurang, tapi sisa-sisa airnya bikin perbukitan tumbuh subur bak karpet beludru.</p>
 
         <blockquote>
             "Ada ketenangan yang tidak bisa dijelaskan kata-kata saat memandang hamparan hijau yang bertemu birunya samudera..."
         </blockquote>
 
-        <p>Kita menyebutnya Green Season. Momen di mana alam Labuan Bajo sedang dalam mode 'refresh'. Langit biru bersih bertemu bukit hijau royo-royo, surga banget buat kamu yang butuh pelarian dari hiruk pikuk kota.</p>
-        </main>
-    </div>
+        <h2>Kenapa Harus Green Season?</h2>
+        <p>Selain visualnya yang juara, ada beberapa alasan kenapa periode ini adalah waktu terbaik untuk <em>healing</em>:</p>
+        
+        <ul>
+            <li><strong>Udara Lebih Sejuk:</strong> Tidak terlalu menyengat seperti di musim kemarau (Juli-Agustus).</li>
+            <li><strong>Suasana Lebih Privat:</strong> Karena bukan <em>high season</em>, kamu bisa menikmati <em>spot</em> foto ikonik tanpa harus antre panjang.</li>
+            <li><strong>Air Laut Sangat Jernih:</strong> Sangat sempurna untuk snorkeling melihat Manta Ray atau kura-kura.</li>
+        </ul>
+
+        <p>Jadi, jangan biarkan momen ini lewat begitu saja. Bayangkan kontras warnanya: langit biru bersih, air laut toska bening, ketemu bukit hijau royo-royo. Asli, ini surga banget buat kamu yang butuh pelarian dari hiruk pikuk kota dan pengen punya stok konten Instagram yang estetik!</p>
+
+        <p>Sudah siap berlayar bersama Basabasitrip? Labuan Bajo lagi cantik-cantiknya, masa kamu masih di rumah saja?</p>
+    </main>
+    
+    <section class="share-section-social">
+        <p class="share-title-small">Bagikan Cerita Ini</p>
+        
+        <div class="social-icons-wrapper">
+            <a href="https://api.whatsapp.com/send?text=Eh, liat deh! Labuan Bajo lagi Green Season, cakep banget buat liburan bareng: https://wafiq8.github.io/basabasi/detail-artikel-green-season.html" target="_blank" title="Share ke WhatsApp">
+                <img src="images/wa.svg" alt="WhatsApp" class="social-icon">
+            </a>
+
+            <a href="https://instagram.com" target="_blank" title="Instagram">
+                <img src="images/insta.svg" alt="Instagram" class="social-icon">
+            </a>
+
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://wafiq8.github.io/basabasi/detail-artikel-green-season.html" target="_blank" title="Share ke Facebook">
+                <img src="images/fb.svg" alt="Facebook" class="social-icon">
+            </a>
+
+            <a href="https://x.com/intent/tweet?url=https://wafiq8.github.io/basabasi/detail-artikel-green-season.html&text=Labuan%20Bajo%20Lagi%20Green%20Season!" target="_blank" title="Share ke Twitter">
+                <img src="images/x.svg" alt="Twitter" class="social-icon">
+            </a>
+
+            <a href="https://t.me/share/url?url=https://wafiq8.github.io/basabasi/detail-artikel-green-season.html&text=Labuan%20Bajo%20Lagi%20Cantik!" target="_blank" title="Share ke Telegram">
+                <img src="images/tele.svg" alt="Telegram" class="social-icon">
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
