@@ -151,7 +151,7 @@ ul { list-style: none; }
 .hero-content {
   position: relative; z-index: 2;
   height: 100%;
-  display: flex; flex-direction: column; justify-content: flex-end;
+  display: flex; flex-direction: column; justify-content: center;
   padding: 0 6% 10%;
   max-width: 760px;
   animation: fadeUp 0.9s ease 0.2s both;
@@ -328,32 +328,37 @@ ul { list-style: none; }
   align-items: flex-end; margin-bottom: 44px;
   max-width: 1200px; margin-left: auto; margin-right: auto;
 }
+/* ── Grid utama: 3 kolom ── */
 .dest-grid {
   max-width: 1200px; margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 300px 220px 220px;
+  gap: 14px;
 }
 .dest-card {
-  position: relative; border-radius: 4px;
+  position: relative; border-radius: 6px;
   overflow: hidden; cursor: pointer;
 }
-.dest-card:nth-child(1),
-.dest-card:nth-child(5) { grid-column: span 2; }
-.dest-card-img {
-  aspect-ratio: 4/3; overflow: hidden;
+/* Baris 1: card 1 tinggi 2 baris (featured), card 2 & 3 normal */
+.dest-card:nth-child(1) { grid-row: span 2; }
+/* Baris 2-3: card 4 span 2 col (featured horizontal di baris 2-3), sisanya normal */
+.dest-card:nth-child(5) {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
 }
-.dest-card:nth-child(1) .dest-card-img,
-.dest-card:nth-child(5) .dest-card-img { aspect-ratio: 16/9; }
+.dest-card-img {
+  width: 100%; height: 100%; overflow: hidden;
+}
 .dest-card-img img {
-  height: 100%; object-fit: cover;
+  width: 100%; height: 100%;
+  object-fit: cover;
   transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
 }
 .dest-card:hover .dest-card-img img { transform: scale(1.06); }
 .dest-card-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
-  transition: opacity 0.3s;
+  background: linear-gradient(to top, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
 }
 .dest-card-label {
   position: absolute; bottom: 0; left: 0; right: 0;
@@ -362,15 +367,17 @@ ul { list-style: none; }
 .dest-card-label h3 {
   font-family: var(--serif);
   font-size: 16px; font-weight: 700; color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
+/* Label lebih besar untuk featured cards */
 .dest-card:nth-child(1) .dest-card-label h3,
-.dest-card:nth-child(5) .dest-card-label h3 { font-size: 20px; }
+.dest-card:nth-child(5) .dest-card-label h3 { font-size: 22px; }
 .dest-card-label p {
-  font-size: 12px; color: rgba(255,255,255,0.7);
-  margin-top: 3px; display: none;
+  font-size: 12.5px; color: rgba(255,255,255,0.75);
+  margin-top: 4px; line-height: 1.4;
 }
-.dest-card:nth-child(1) .dest-card-label p,
-.dest-card:nth-child(5) .dest-card-label p { display: block; }
+/* Hanya featured yang tampilkan deskripsi */
+.dest-card:not(:nth-child(1)):not(:nth-child(5)) .dest-card-label p { display: none; }
 
 /* ══════════════════════════════════════
    PAKET
@@ -824,9 +831,12 @@ footer {
    RESPONSIVE
 ══════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .dest-grid { grid-template-columns: repeat(2, 1fr); }
-  .dest-card:nth-child(1),
-  .dest-card:nth-child(5) { grid-column: span 2; }
+  .dest-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 260px 260px 260px 260px;
+  }
+  .dest-card:nth-child(1) { grid-row: span 2; grid-column: span 1; }
+  .dest-card:nth-child(5) { grid-column: span 2; grid-row: span 1; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
 }
 @media (max-width: 860px) {
@@ -853,11 +863,12 @@ footer {
   .hero-scroll { display: none; }
   .section { padding: 60px 5%; }
   .experience-section { padding: 60px 5%; }
-  .dest-grid { grid-template-columns: 1fr; }
-  .dest-card:nth-child(1),
-  .dest-card:nth-child(5) { grid-column: span 1; }
-  .dest-card-img, .dest-card:nth-child(1) .dest-card-img,
-  .dest-card:nth-child(5) .dest-card-img { aspect-ratio: 4/3; }
+  .dest-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 180px);
+  }
+  .dest-card:nth-child(1) { grid-row: span 1; grid-column: span 2; }
+  .dest-card:nth-child(5) { grid-column: span 2; grid-row: span 1; }
   .special-body { padding: 32px 24px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; text-align: center; }
@@ -1433,7 +1444,7 @@ footer {
       </div>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>info@basabasitrip.id</span>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f39a9d959cb3919280929192809a87819a83dd9a97">[email&#160;protected]</a></span>
       </div>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1458,7 +1469,7 @@ footer {
   </div>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // NAVBAR SCROLL
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
@@ -1514,13 +1525,15 @@ const navLinks = document.querySelectorAll('.menu a');
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 100) current = section.id;
+    if (window.scrollY >= section.offsetTop - 200) {
+      current = section.getAttribute('id');
+    }
   });
   navLinks.forEach(link => {
     link.classList.remove('active');
-    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    if (link.getAttribute('href').slice(1) === current) {
+      link.classList.add('active');
+    }
   });
 });
 </script>
-</body>
-</html>

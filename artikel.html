@@ -38,9 +38,8 @@ a { text-decoration: none; color: inherit; }
 /* ─── NAVBAR ─── */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 0 5%;
+  height: 68px; padding: 0 5%;
   display: flex; align-items: center; justify-content: space-between;
-  height: 68px;
   background: rgba(250,249,247,0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0,0,0,0.07);
@@ -48,29 +47,31 @@ a { text-decoration: none; color: inherit; }
 }
 .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 .logo img { height: 36px; width: auto; }
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a {
+.nav-right { display: flex; align-items: center; gap: 36px; }
+.menu { display: flex; gap: 28px; list-style: none; }
+.menu a {
   font-size: 13.5px; font-weight: 500; color: var(--mid);
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
+  letter-spacing: 0.02em; transition: color 0.2s;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--orange); }
+.menu a:hover, .menu a.active { color: var(--orange); }
 .lang-switch { display: flex; gap: 6px; }
 .lang-btn {
   font-size: 12px; font-weight: 600; padding: 4px 10px;
   border-radius: 20px; border: 1.5px solid #ddd;
-  color: var(--mid); transition: all 0.2s;
+  color: var(--mid); transition: all 0.2s; cursor: pointer;
 }
 .lang-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
-  cursor: pointer; padding: 6px;
+  cursor: pointer; padding: 6px; background: none; border: none;
 }
 .hamburger span {
   display: block; width: 24px; height: 2px;
-  background: var(--dark); border-radius: 2px;
-  transition: all 0.3s;
+  background: var(--dark); border-radius: 2px; transition: all 0.3s;
 }
+.hamburger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.is-active span:nth-child(2) { opacity: 0; }
+.hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ─── MOBILE SIDEBAR ─── */
 .sidebar-overlay {
@@ -220,6 +221,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--mid);
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -240,7 +242,10 @@ a { text-decoration: none; color: inherit; }
 }
 .article-card.featured .card-img { aspect-ratio: 16/9; }
 .article-card.featured .card-title { font-size: clamp(20px, 2.5vw, 26px); }
-.article-card.featured .card-excerpt { -webkit-line-clamp: 4; }
+.article-card.featured .card-excerpt { 
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
 
 /* ─── NEWSLETTER BAR ─── */
 .newsletter {
@@ -300,7 +305,7 @@ footer a { color: var(--orange); }
   .article-card.featured { grid-column: span 2; }
 }
 @media (max-width: 640px) {
-  .nav-links, .lang-switch { display: none; }
+  .menu, .lang-switch { display: none; }
   .hamburger { display: flex; }
   .articles-grid { grid-template-columns: 1fr; gap: 36px; }
   .article-card.featured { grid-column: span 1; }
@@ -317,19 +322,22 @@ footer a { color: var(--orange); }
   <div class="logo">
     <a href="index.html"><img src="images/logo.png" alt="Basa Basi Trip"></a>
   </div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#destinasi">Destinasi</a></li>
-    <li><a href="index.html#paket">Paket</a></li>
-    <li><a href="artikel.html" class="active">Artikel</a></li>
-  </ul>
-  <div class="lang-switch">
-    <a href="artikel.html" class="lang-btn active">ID</a>
-    <a href="/en/artikel.html" class="lang-btn">EN</a>
+  <div class="nav-right">
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#destinasi">Destinasi</a></li>
+      <li><a href="index.html#paket">Paket</a></li>
+      <li><a href="index.html#spesial-trip">Spesial Trip</a></li>
+      <li><a href="artikel.html" class="active">Artikel</a></li>
+    </ul>
+    <div class="lang-switch">
+      <a href="artikel.html" class="lang-btn active">ID</a>
+      <a href="/en/artikel.html" class="lang-btn">EN</a>
+    </div>
   </div>
-  <div class="hamburger" id="hamburger" aria-label="Menu">
+  <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <!-- MOBILE SIDEBAR -->
@@ -343,6 +351,10 @@ footer a { color: var(--orange); }
     <li><a href="index.html#spesial-trip">Spesial Trip</a></li>
     <li><a href="artikel.html">Artikel</a></li>
   </ul>
+  <div class="sidebar-lang" style="display:flex;gap:8px;padding:20px 0 0;">
+    <a href="artikel.html" class="lang-btn active">ID</a>
+    <a href="/en/artikel.html" class="lang-btn">EN</a>
+  </div>
 </div>
 
 <!-- PAGE HERO -->
@@ -521,20 +533,24 @@ const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('sidebarOverlay');
 const closeBtn = document.getElementById('sidebarClose');
+const menuLinks = document.querySelectorAll('.sidebar a');
 
 function openSidebar() {
   sidebar.classList.add('open');
   overlay.classList.add('open');
+  hamburger.classList.add('is-active');
   document.body.style.overflow = 'hidden';
 }
 function closeSidebar() {
   sidebar.classList.remove('open');
   overlay.classList.remove('open');
+  hamburger.classList.remove('is-active');
   document.body.style.overflow = '';
 }
 hamburger.addEventListener('click', openSidebar);
 closeBtn.addEventListener('click', closeSidebar);
 overlay.addEventListener('click', closeSidebar);
+menuLinks.forEach(link => link.addEventListener('click', closeSidebar));
 
 // FILTER
 function filterCards(btn, cat) {
