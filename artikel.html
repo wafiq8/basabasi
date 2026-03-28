@@ -1,196 +1,550 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Artikel Seru Seputar Travel - Basabasitrip.id</title>
-    
-    <style>
-        /* CSS Tambahan khusus untuk Card Artikel */
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; 
-            background-color: #f8f9fa; 
-        }
-        
-        .content-container { 
-            max-width: 1200px; 
-            margin: 60px auto; 
-            padding: 0 20px; 
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artikel & Tips Travel | Basa Basi Trip Labuan Bajo</title>
+<meta name="description" content="Baca artikel perjalanan, tips wisata, dan panduan destinasi Labuan Bajo, Komodo, dan Flores dari Basa Basi Trip.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #faf9f7;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+img { display: block; width: 100%; }
+a { text-decoration: none; color: inherit; }
 
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h1 { color: #333; font-size: 2.5rem; }
+/* ─── CSS VARIABLES ─── */
+:root {
+  --orange: #E8652A;
+  --orange-light: #f5a96b;
+  --dark: #1a1a1a;
+  --mid: #555;
+  --light: #888;
+  --bg: #faf9f7;
+  --white: #ffffff;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Poppins', sans-serif;
+}
 
-        .article-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+/* ─── NAVBAR ─── */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+  background: rgba(250,249,247,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  transition: box-shadow 0.3s;
+}
+.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.logo img { height: 36px; width: auto; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 13.5px; font-weight: 500; color: var(--mid);
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--orange); }
+.lang-switch { display: flex; gap: 6px; }
+.lang-btn {
+  font-size: 12px; font-weight: 600; padding: 4px 10px;
+  border-radius: 20px; border: 1.5px solid #ddd;
+  color: var(--mid); transition: all 0.2s;
+}
+.lang-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 6px;
+}
+.hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--dark); border-radius: 2px;
+  transition: all 0.3s;
+}
 
-        /* Update Styling Card agar Full Clickable */
-        .article-card {
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
-            position: relative;
-        }
+/* ─── MOBILE SIDEBAR ─── */
+.sidebar-overlay {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.4);
+  opacity: 0; transition: opacity 0.3s;
+}
+.sidebar-overlay.open { display: block; opacity: 1; }
+.sidebar {
+  position: fixed; top: 0; right: -280px; bottom: 0;
+  width: 260px; z-index: 201;
+  background: var(--white);
+  padding: 80px 28px 40px;
+  transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: -4px 0 30px rgba(0,0,0,0.12);
+}
+.sidebar.open { right: 0; }
+.sidebar ul { list-style: none; }
+.sidebar ul li { border-bottom: 1px solid #f0f0f0; }
+.sidebar ul a {
+  display: block; padding: 16px 0;
+  font-size: 15px; font-weight: 500; color: var(--dark);
+  transition: color 0.2s;
+}
+.sidebar ul a:hover { color: var(--orange); }
+.sidebar-close {
+  position: absolute; top: 20px; right: 20px;
+  width: 36px; height: 36px; border: none; background: #f4f4f4;
+  border-radius: 50%; cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.sidebar-close:hover { background: #eee; }
 
-        /* Menghilangkan dekorasi link standar */
-        .article-card a {
-            text-decoration: none;
-            color: inherit;
-            display: block; /* Membuat link memenuhi seluruh card */
-        }
+/* ─── PAGE HERO ─── */
+.page-hero {
+  margin-top: 68px;
+  padding: 80px 5% 60px;
+  border-bottom: 1px solid #eee;
+}
+.page-hero-inner { max-width: 720px; }
+.page-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 20px;
+}
+.page-hero-eyebrow::before {
+  content: ''; display: block;
+  width: 28px; height: 2px; background: var(--orange);
+}
+.page-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.1; font-weight: 700;
+  color: var(--dark); margin-bottom: 20px;
+}
+.page-hero p {
+  font-size: 16px; line-height: 1.7; color: var(--mid);
+  max-width: 520px;
+}
 
-        .article-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
+/* ─── FILTER BAR ─── */
+.filter-bar {
+  padding: 28px 5%;
+  display: flex; gap: 10px; flex-wrap: wrap;
+  border-bottom: 1px solid #eee;
+}
+.filter-btn {
+  padding: 8px 20px; border-radius: 40px;
+  border: 1.5px solid #ddd; background: transparent;
+  font-family: var(--sans); font-size: 13px; font-weight: 500;
+  color: var(--mid); cursor: pointer; transition: all 0.22s;
+}
+.filter-btn:hover { border-color: var(--orange); color: var(--orange); }
+.filter-btn.active {
+  background: var(--orange); border-color: var(--orange);
+  color: #fff;
+}
 
-        .card-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
+/* ─── ARTICLE GRID ─── */
+.articles-section { padding: 60px 5% 100px; }
+.articles-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 32px;
+}
 
-        .card-content { padding: 25px; }
+/* ─── ARTICLE CARD (Full Clickable) ─── */
+.article-card {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+.article-card:hover .card-img img {
+  transform: scale(1.04);
+}
+.article-card:hover .card-title {
+  color: var(--orange);
+}
+.card-img {
+  border-radius: 4px; overflow: hidden;
+  aspect-ratio: 16/10; margin-bottom: 0;
+  position: relative;
+}
+.card-img img {
+  height: 100%; object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.card-category {
+  position: absolute; top: 14px; left: 14px;
+  background: var(--orange); color: #fff;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px;
+}
+/* Overlapping title effect */
+.card-body {
+  position: relative;
+  margin-top: -28px;
+  margin-left: 16px; margin-right: 16px;
+  background: var(--white);
+  padding: 22px 22px 20px;
+  border-radius: 2px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: box-shadow 0.3s;
+}
+.article-card:hover .card-body {
+  box-shadow: 0 8px 36px rgba(0,0,0,0.12);
+}
+.card-meta {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 11.5px; color: var(--light);
+  margin-bottom: 10px;
+}
+.card-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: #ccc; }
+.card-title {
+  font-family: var(--serif);
+  font-size: clamp(16px, 2vw, 19px);
+  font-weight: 700; line-height: 1.35;
+  color: var(--dark); margin-bottom: 10px;
+  transition: color 0.2s;
+}
+.card-excerpt {
+  font-size: 13.5px; line-height: 1.65;
+  color: var(--mid);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-read-more {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 16px;
+  font-size: 12.5px; font-weight: 600;
+  color: var(--orange); letter-spacing: 0.02em;
+  transition: gap 0.2s;
+}
+.article-card:hover .card-read-more { gap: 10px; }
+.card-read-more svg { transition: transform 0.2s; }
+.article-card:hover .card-read-more svg { transform: translateX(3px); }
 
-        .card-tag {
-            background: #fff3e0;
-            color: #ef6c00;
-            font-size: 11px;
-            padding: 5px 12px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+/* ─── FEATURED CARD (first card, spans 2 cols) ─── */
+.article-card.featured {
+  grid-column: span 2;
+}
+.article-card.featured .card-img { aspect-ratio: 16/9; }
+.article-card.featured .card-title { font-size: clamp(20px, 2.5vw, 26px); }
+.article-card.featured .card-excerpt { -webkit-line-clamp: 4; }
 
-        .card-title {
-            margin: 15px 0 10px;
-            font-size: 1.3rem;
-            color: #222;
-            line-height: 1.4;
-        }
+/* ─── NEWSLETTER BAR ─── */
+.newsletter {
+  background: var(--dark); color: var(--white);
+  padding: 60px 5%; text-align: center;
+}
+.newsletter h2 {
+  font-family: var(--serif); font-size: 28px;
+  margin-bottom: 10px;
+}
+.newsletter p { color: #aaa; font-size: 14px; margin-bottom: 28px; }
+.newsletter-form {
+  display: flex; gap: 10px; max-width: 420px; margin: 0 auto;
+}
+.newsletter-form input {
+  flex: 1; padding: 13px 18px; border-radius: 3px;
+  border: none; background: rgba(255,255,255,0.1);
+  color: #fff; font-family: var(--sans); font-size: 14px;
+  outline: none;
+}
+.newsletter-form input::placeholder { color: #666; }
+.newsletter-form button {
+  padding: 13px 22px; background: var(--orange);
+  border: none; border-radius: 3px; color: #fff;
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: background 0.2s; white-space: nowrap;
+}
+.newsletter-form button:hover { background: #d4561e; }
 
-        .card-excerpt {
-            color: #777;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
+/* ─── FOOTER ─── */
+footer {
+  background: #111; color: #888;
+  padding: 40px 5%; text-align: center;
+  font-size: 13px;
+}
+footer a { color: var(--orange); }
 
-        /* Indikator Klik (Pengganti Button) */
-        .read-more-link {
-            color: #f39c12; /* Kuning khas Basabasitrip */
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-block;
-            transition: 0.2s;
-        }
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.article-card {
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+.article-card:nth-child(1) { animation-delay: 0.05s; }
+.article-card:nth-child(2) { animation-delay: 0.12s; }
+.article-card:nth-child(3) { animation-delay: 0.19s; }
+.article-card:nth-child(4) { animation-delay: 0.26s; }
+.article-card:nth-child(5) { animation-delay: 0.33s; }
+.article-card:nth-child(6) { animation-delay: 0.40s; }
 
-        .article-card:hover .read-more-link {
-            padding-left: 5px;
-        }
-    </style>
+/* ─── RESPONSIVE ─── */
+@media (max-width: 960px) {
+  .articles-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
+  .article-card.featured { grid-column: span 2; }
+}
+@media (max-width: 640px) {
+  .nav-links, .lang-switch { display: none; }
+  .hamburger { display: flex; }
+  .articles-grid { grid-template-columns: 1fr; gap: 36px; }
+  .article-card.featured { grid-column: span 1; }
+  .page-hero { padding: 48px 5% 36px; }
+  .newsletter-form { flex-direction: column; }
+  .card-body { margin-left: 10px; margin-right: 10px; }
+}
+</style>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <a href="index.html"><img src="images/logo.png" alt="Basa Basi Trip"></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#destinasi">Destinasi</a></li>
+    <li><a href="index.html#paket">Paket</a></li>
+    <li><a href="artikel.html" class="active">Artikel</a></li>
+  </ul>
+  <div class="lang-switch">
+    <a href="artikel.html" class="lang-btn active">ID</a>
+    <a href="/en/artikel.html" class="lang-btn">EN</a>
+  </div>
+  <div class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
-        <div class="container nav-wrapper">
+<!-- MOBILE SIDEBAR -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="sidebar" id="sidebar">
+  <button class="sidebar-close" id="sidebarClose">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#destinasi">Destinasi</a></li>
+    <li><a href="index.html#paket">Paket</a></li>
+    <li><a href="index.html#spesial-trip">Spesial Trip</a></li>
+    <li><a href="artikel.html">Artikel</a></li>
+  </ul>
+</div>
 
-            <!-- LOGO -->
-            <div class="logo">
-                <a href="#home">
-                    <img src="images/logo.png" alt="Basa Basi Trip Labuan Bajo">
-                </a>
-            </div>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">Jurnal Perjalanan</div>
+    <h1>Cerita dari<br><em>Ujung Indonesia</em></h1>
+    <p>Tips wisata, panduan destinasi, dan cerita dari perjalanan nyata bersama Basa Basi Trip ke Labuan Bajo, Komodo, dan Flores.</p>
+  </div>
+</section>
 
-            <!-- NAV RIGHT -->
-            <div class="nav-right">
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCards(this,'all')">Semua</button>
+  <button class="filter-btn" onclick="filterCards(this,'destinasi')">Destinasi</button>
+  <button class="filter-btn" onclick="filterCards(this,'tips')">Tips Wisata</button>
+  <button class="filter-btn" onclick="filterCards(this,'itinerary')">Itinerary</button>
+  <button class="filter-btn" onclick="filterCards(this,'budaya')">Budaya</button>
+</div>
 
-                <ul class="menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#destinasi">Destinasi</a></li>
-                    <li><a href="#paket">Paket</a></li>
-                    <li><a href="#spesial-trip">Spesial Trip</a></li>
-                    <li><a href="artikel.html">Artikel</a></li>
+<!-- ARTICLES GRID -->
+<section class="articles-section">
+  <div class="articles-grid" id="articlesGrid">
 
-                    <div class="lang-switch">
-                        <a href="/" class="lang-btn active">ID</a>
-                        <a href="/en/" class="lang-btn">EN</a>
-                    </div>
-                </ul>
-
+    <!-- FEATURED -->
+    <a class="article-card featured" href="detail-artikel-padar.html" data-cat="destinasi">
+      <div class="card-img">
+        <img src="images/padar.jpg" alt="Pulau Padar" loading="lazy">
+        <span class="card-category">Destinasi</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span>12 Juni 2025</span>
+          <span class="dot"></span>
+          <span>8 menit baca</span>
         </div>
+        <h2 class="card-title">Sunrise di Pulau Padar: Pendakian Singkat dengan Pemandangan Paling Ikonik di Indonesia</h2>
+        <p class="card-excerpt">Bayangkan berdiri di puncak bukit saat matahari perlahan muncul dari balik cakrawala — di bawahmu, tiga teluk berwarna biru-hijau memantulkan cahaya keemasan pagi. Inilah momen yang membuat Pulau Padar masuk bucket list jutaan traveler dari seluruh dunia.</p>
+        <span class="card-read-more">
+          Baca Selengkapnya
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
 
-            <!-- HAMBURGER (mobile only) -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
+    <!-- CARD 2 -->
+    <a class="article-card" href="detail-artikel-green-season.html" data-cat="tips">
+      <div class="card-img">
+        <img src="images/komodo.jpg" alt="Komodo" loading="lazy">
+        <span class="card-category">Tips Wisata</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span>28 Mei 2025</span>
+          <span class="dot"></span>
+          <span>5 menit baca</span>
         </div>
+        <h2 class="card-title">Green Season Labuan Bajo: Kenapa Musim Hujan Justru Waktu Terbaik untuk Datang</h2>
+        <p class="card-excerpt">Sebagian besar traveler menghindari musim hujan. Tapi di Labuan Bajo, justru inilah rahasia tersembunyi yang hanya diketahui oleh mereka yang berani datang di luar musim ramai.</p>
+        <span class="card-read-more">
+          Baca Selengkapnya
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
 
-    </nav>
-
-
-    <div class="content-container">
-        <div class="section-title">
-            <h1>Cerita Inspirasi Perjalanan</h1>
-            <p>Tips, info cuaca, dan panduan wisata terbaru untuk liburan impianmu.</p>
+    <!-- CARD 3 -->
+    <a class="article-card" href="detail-artikel-manta.html" data-cat="destinasi">
+      <div class="card-img">
+        <img src="images/manta.jpg" alt="Manta Ray" loading="lazy">
+        <span class="card-category">Destinasi</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span>15 Mei 2025</span>
+          <span class="dot"></span>
+          <span>6 menit baca</span>
         </div>
+        <h2 class="card-title">Snorkeling Bersama Manta Ray di Manta Point: Pengalaman yang Sulit Terlupakan</h2>
+        <p class="card-excerpt">Manta Ray — makhluk anggun berukuran hingga 7 meter dengan gerakan seperti menari di dalam air. Bertemu mereka langsung di laut terbuka adalah pengalaman yang sulit dijelaskan dengan kata-kata.</p>
+        <span class="card-read-more">
+          Baca Selengkapnya
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
 
-        <div class="article-grid">
-            
-            <article class="article-card">
-                <a href="detail-artikel-green-season.html">
-                    <img src="images/padar.jpg" alt="Labuan Bajo Green Season" class="card-image">
-                    <div class="card-content">
-                        <span class="card-tag">Tips & Musim</span>
-                        <h2 class="card-title">Labuan Bajo Lagi "Green Season", Masa Kamu Masih Di Rumah Saja?</h2>
-                        <p class="card-excerpt">Momen langka di mana seluruh bukit Labuan Bajo berubah jadi hijau zamrud. Cari tahu kenapa Maret-Mei adalah waktu terbaik...</p>
-                        <span class="read-more-link">Baca Selengkapnya →</span>
-                    </div>
-                </a>
-            </article>
-
-            <article class="article-card">
-                <a href="#">
-                    <img src="images/seafood.jpg" alt="Kuliner Labuan Bajo" class="card-image">
-                    <div class="card-content">
-                        <span class="card-tag">Kuliner</span>
-                        <h2 class="card-title">5 Seafood Terenak di Labuan Bajo yang Wajib Kamu Coba</h2>
-                        <p class="card-excerpt">Jangan cuma liat Komodo, perut juga harus dimanjakan! Ini rekomendasi tempat makan seafood paling segar...</p>
-                        <span class="read-more-link">Baca Selengkapnya →</span>
-                    </div>
-                </a>
-            </article>
-
-            <article class="article-card">
-                <a href="#">
-                    <img src="images/packing.jpg" alt="Packing List" class="card-image">
-                    <div class="card-content">
-                        <span class="card-tag">Persiapan</span>
-                        <h2 class="card-title">Checklist Wajib: Barang yang Harus Dibawa Saat Menginap di Kapal</h2>
-                        <p class="card-excerpt">Baru pertama kali ikut Open Trip LOB? Pastikan 10 barang ini ada di tasmu agar liburan tetap nyaman...</p>
-                        <span class="read-more-link">Baca Selengkapnya →</span>
-                    </div>
-                </a>
-            </article>
-
+    <!-- CARD 4 -->
+    <a class="article-card" href="detail-artikel-waerebo.html" data-cat="budaya">
+      <div class="card-img">
+        <img src="images/waerebo.jpg" alt="Waerebo" loading="lazy">
+        <span class="card-category">Budaya</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span>2 Mei 2025</span>
+          <span class="dot"></span>
+          <span>7 menit baca</span>
         </div>
-    </div>
+        <h2 class="card-title">Waerebo: Desa di Atas Awan yang Mengajarkan Arti Ketenangan</h2>
+        <p class="card-excerpt">Di ketinggian 1.200 meter di atas permukaan laut, tersembunyi sebuah desa tua yang seolah berhenti di abad ke-19. Tidak ada sinyal, tidak ada listrik — hanya alam, tradisi, dan keheningan.</p>
+        <span class="card-read-more">
+          Baca Selengkapnya
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
 
-    <script src="script.js"></script>
+    <!-- CARD 5 -->
+    <a class="article-card" href="detail-artikel-budget.html" data-cat="itinerary">
+      <div class="card-img">
+        <img src="images/pinkbeach.jpg" alt="Pink Beach" loading="lazy">
+        <span class="card-category">Itinerary</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span>20 Apr 2025</span>
+          <span class="dot"></span>
+          <span>9 menit baca</span>
+        </div>
+        <h2 class="card-title">Itinerary 3 Hari 2 Malam Labuan Bajo: Dari Bandara Sampai Check-Out</h2>
+        <p class="card-excerpt">Panduan lengkap jam per jam untuk kamu yang pertama kali ke Labuan Bajo. Mulai dari tips beli tiket kapal, pilihan penginapan, sampai spot foto terbaik yang jarang dikunjungi turis.</p>
+        <span class="card-read-more">
+          Baca Selengkapnya
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- CARD 6 -->
+    <a class="article-card" href="detail-artikel-packing.html" data-cat="tips">
+      <div class="card-img">
+        <img src="images/kelor.jpg" alt="Pulau Kelor" loading="lazy">
+        <span class="card-category">Tips Wisata</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span>10 Apr 2025</span>
+          <span class="dot"></span>
+          <span>4 menit baca</span>
+        </div>
+        <h2 class="card-title">Packing List Sailing Trip Labuan Bajo: 20 Item yang Wajib Kamu Bawa</h2>
+        <p class="card-excerpt">Salah packing bisa merusak seluruh pengalaman liburanmu. Kami merangkum checklist dari ribuan traveler yang sudah pernah sailing bersama kami — dari sunscreen hingga obat antimabuk.</p>
+        <span class="card-read-more">
+          Baca Selengkapnya
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <h2>Jangan Lewatkan Cerita Selanjutnya</h2>
+  <p>Dapatkan artikel terbaru, promo trip, dan tips wisata langsung ke WhatsApp kamu.</p>
+  <form class="newsletter-form" onsubmit="return false;">
+    <input type="text" placeholder="Nama kamu...">
+    <button type="button" onclick="window.open('https://wa.me/6285713541147?text=Halo%20kak%2C%20saya%20mau%20daftar%20info%20artikel%20dan%20promo%20trip%20Labuan%20Bajo','_blank')">Daftar via WA</button>
+  </form>
+</div>
+
+<footer>
+  <p>© 2026 <a href="index.html">Basa Basi Trip</a> · Trip Labuan Bajo · <a href="https://wa.me/6285713541147">+62 857-1354-1147</a></p>
+</footer>
+
+<script>
+// NAVBAR SCROLL
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// HAMBURGER / SIDEBAR
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebarOverlay');
+const closeBtn = document.getElementById('sidebarClose');
+
+function openSidebar() {
+  sidebar.classList.add('open');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeSidebar() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', openSidebar);
+closeBtn.addEventListener('click', closeSidebar);
+overlay.addEventListener('click', closeSidebar);
+
+// FILTER
+function filterCards(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.article-card').forEach(card => {
+    const match = cat === 'all' || card.dataset.cat === cat;
+    card.style.display = match ? 'block' : 'none';
+  });
+}
+</script>
 </body>
 </html>
