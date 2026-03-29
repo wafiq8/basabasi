@@ -766,17 +766,25 @@ footer {
 .footer-brand p {
   font-size: 13px; line-height: 1.7; color: #555; max-width: 240px; margin-bottom: 20px;
 }
-.footer-socials { display: flex; gap: 10px; }
-.footer-social { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 14px; transition: background 0.2s; cursor: pointer; }
-.footer-social:hover { background: var(--orange); border-color: var(--orange); }
-.footer-social.fs-wa:hover  { background: #25D366; box-shadow: 0 4px 16px rgba(37,211,102,0.35); }
-.footer-social.fs-ig:hover  { background: radial-gradient(circle at 30% 110%, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 4px 16px rgba(220,39,67,0.35); }
-.footer-social.fs-tt:hover  { background: #010101; box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
-.footer-social.fs-yt:hover  { background: #FF0000; box-shadow: 0 4px 16px rgba(255,0,0,0.35); }
-.footer-social:hover svg { filter: none brightness(1) opacity(1); }
-.footer-social:hover svg path,
-.footer-social:hover svg rect,
-.footer-social:hover svg polygon { fill: #fff !important; }
+.footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
+.footer-social {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.25s; text-decoration: none;
+}
+.footer-social svg { transition: filter 0.25s; }
+/* Default: warna brand masing-masing */
+.footer-social.fs-wa  { background: #25D366; }
+.footer-social.fs-ig  { background: radial-gradient(circle at 30% 110%, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.footer-social.fs-tt  { background: #010101; border-color: rgba(255,255,255,0.15); }
+.footer-social.fs-yt  { background: #FF0000; }
+/* Hover: naik sedikit + shadow */
+.footer-social:hover { transform: translateY(-3px); }
+.footer-social.fs-wa:hover  { box-shadow: 0 6px 20px rgba(37,211,102,0.45); }
+.footer-social.fs-ig:hover  { box-shadow: 0 6px 20px rgba(220,39,67,0.45); }
+.footer-social.fs-tt:hover  { box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
+.footer-social.fs-yt:hover  { box-shadow: 0 6px 20px rgba(255,0,0,0.45); }
 .footer-col h4 {
   font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: #aaa;
@@ -1464,7 +1472,7 @@ footer {
       </div>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>info@basabasitrip.id</span>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="caa3a4aca58aa8abb9aba8abb9a3beb8a3bae4a3ae">[email&#160;protected]</a></span>
       </div>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1499,7 +1507,7 @@ footer {
   <div class="footer-mobile-kontak">
     <h4 style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:14px;">Kontak</h4>
     <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.73 9.77 19.79 19.79 0 01.67 1.14 2 2 0 012.66 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.64a16 16 0 006.29 6.29l1-1c.59-.59 1.4-.83 2.11-.45.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="https://wa.me/6285713541147" target="_blank" style="color:#555">+62 857-1354-1147</a></div>
-    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@basabasitrip.id</span></div>
+    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcb5b2bab39cbebdafbdbebdafb5a8aeb5acf2b5b8">[email&#160;protected]</a></span></div>
     <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Labuan Bajo, Flores, NTT</span></div>
   </div>
 
@@ -1520,7 +1528,7 @@ footer {
   </div>
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // NAVBAR SCROLL
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
@@ -1569,21 +1577,4 @@ document.querySelectorAll('.accordion-header').forEach(header => {
     }
   });
 });
-
-// SMOOTH ACTIVE NAV
-const sections = document.querySelectorAll('section[id], header[id]');
-const navLinks = document.querySelectorAll('.menu a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 80) {
-      current = section.id;
-    }
-  });
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href').substring(1) === current) {
-      link.classList.add('active');
-    }
-  });
-});
+</script>
