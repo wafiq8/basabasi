@@ -766,32 +766,35 @@ footer {
 .footer-brand p {
   font-size: 13px; line-height: 1.7; color: #555; max-width: 240px; margin-bottom: 20px;
 }
-/* Container pembungkus biar sejajar horizontal */
+/* Container utama agar ikon berjejer ke samping */
 .footer-socials {
   display: flex;
   gap: 12px;
   margin-top: 24px;
+  align-items: center;
 }
 
+/* Lingkaran pembungkus ikon */
 .footer-social {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.15); /* Garis tipis kayak di detail-artikel */
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  background: transparent;
+  flex-shrink: 0;
 }
 
-/* INI KUNCINYA: Memaksa SVG Raksasa jadi Kecil */
+/* Memaksa gambar SVG raksasa menjadi kecil dan rapi */
 .footer-social img {
-  width: 18px !important;  /* Paksa ukuran ke 18px */
+  width: 18px !important;
   height: 18px !important;
   object-fit: contain;
-  /* Bikin warna icon jadi putih abu-abu elegan */
-  filter: brightness(0) invert(1) opacity(0.7); 
+  /* Filter agar ikon menjadi putih elegan */
+  filter: brightness(0) invert(1) opacity(0.7);
   transition: all 0.3s ease;
 }
 
@@ -802,7 +805,8 @@ footer {
 }
 
 .footer-social:hover img {
-  filter: brightness(0) invert(1) opacity(1); /* Terang 100% pas di-hover */
+  filter: brightness(0) invert(1) opacity(1);
+}
 }.footer-col h4 {
   font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: #aaa;
