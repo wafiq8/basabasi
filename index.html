@@ -766,29 +766,44 @@ footer {
 .footer-brand p {
   font-size: 13px; line-height: 1.7; color: #555; max-width: 240px; margin-bottom: 20px;
 }
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 .footer-social {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.08); /* Background tipis supaya warna logo menonjol */
-  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  /* Menggunakan border tipis transparan sesuai style share section */
+  border: 1px solid rgba(255, 255, 255, 0.15); 
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  overflow: hidden; /* Biar tetap bulat sempurna */
 }
 
 .footer-social img {
-  width: 100%; /* Karena SVG kamu sudah bulat, biarkan memenuhi lingkaran */
-  height: 100%;
-  object-fit: cover;
-  /* HAPUS baris filter: brightness(0) invert(1) yang kemarin */
+  /* Ukuran icon dibuat kecil (18px) agar elegan seperti di detail artikel */
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  /* Filter ini membuat icon SVG kamu menjadi abu-abu terang (setengah putih) */
+  filter: brightness(0) invert(1) opacity(0.6);
+  transition: all 0.3s ease;
 }
 
 .footer-social:hover {
-  transform: translateY(-3px) scale(1.1);
-  background: rgba(255,255,255,0.15);
+  border-color: var(--orange);
+  background: rgba(232, 101, 42, 0.1);
+  transform: translateY(-3px);
+}
+
+.footer-social:hover img {
+  /* Saat di-hover, icon menjadi putih terang 100% */
+  filter: brightness(0) invert(1) opacity(1);
 }
 .footer-col h4 {
   font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
