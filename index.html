@@ -766,32 +766,32 @@ footer {
 .footer-brand p {
   font-size: 13px; line-height: 1.7; color: #555; max-width: 240px; margin-bottom: 20px;
 }
+/* Container pembungkus biar sejajar horizontal */
 .footer-socials {
   display: flex;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .footer-social {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: transparent;
-  /* Menggunakan border tipis transparan sesuai style share section */
-  border: 1px solid rgba(255, 255, 255, 0.15); 
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Garis tipis kayak di detail-artikel */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  background: transparent;
 }
 
+/* INI KUNCINYA: Memaksa SVG Raksasa jadi Kecil */
 .footer-social img {
-  /* Ukuran icon dibuat kecil (18px) agar elegan seperti di detail artikel */
-  width: 18px;
-  height: 18px;
+  width: 18px !important;  /* Paksa ukuran ke 18px */
+  height: 18px !important;
   object-fit: contain;
-  /* Filter ini membuat icon SVG kamu menjadi abu-abu terang (setengah putih) */
-  filter: brightness(0) invert(1) opacity(0.6);
+  /* Bikin warna icon jadi putih abu-abu elegan */
+  filter: brightness(0) invert(1) opacity(0.7); 
   transition: all 0.3s ease;
 }
 
@@ -802,10 +802,8 @@ footer {
 }
 
 .footer-social:hover img {
-  /* Saat di-hover, icon menjadi putih terang 100% */
-  filter: brightness(0) invert(1) opacity(1);
-}
-.footer-col h4 {
+  filter: brightness(0) invert(1) opacity(1); /* Terang 100% pas di-hover */
+}.footer-col h4 {
   font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: #aaa;
   margin-bottom: 20px;
