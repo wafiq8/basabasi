@@ -63,14 +63,7 @@ ul { list-style: none; }
 .hero-bg { position: absolute; inset: 0; background-image: url('../images/padar.jpg'); background-size: cover; background-position: center; transform-origin: center; animation: heroZoom 10s ease-out forwards; }
 @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1.0); } }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%); }
-.hero-content {
-  position: relative; z-index: 2;
-  height: 100%;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 80px 6% 10%;
-  max-width: 760px;
-  animation: fadeUp 0.9s ease 0.2s both;
-}
+.hero-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 80px 6% 10%; max-width: 760px; animation: fadeUp 0.9s ease 0.2s both; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange-light); margin-bottom: 18px; }
 .hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--orange-light); }
@@ -238,8 +231,17 @@ footer { background: #111; color: #666; padding: 64px 5% 32px; }
 .footer-brand img { height: 32px; width: auto; filter: brightness(0) invert(1); margin-bottom: 16px; }
 .footer-brand p { font-size: 13px; line-height: 1.7; color: #555; max-width: 240px; margin-bottom: 20px; }
 .footer-socials { display: flex; gap: 10px; }
-.footer-social { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 14px; transition: background 0.2s; cursor: pointer; }
-.footer-social:hover { background: var(--orange); border-color: var(--orange); }
+.footer-social { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.25s; text-decoration: none; }
+.footer-social svg { transition: filter 0.25s; }
+.footer-social.fs-wa  { background: #25D366; }
+.footer-social.fs-ig  { background: radial-gradient(circle at 30% 110%, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.footer-social.fs-tt  { background: #010101; border-color: rgba(255,255,255,0.15); }
+.footer-social.fs-yt  { background: #FF0000; }
+.footer-social:hover { transform: translateY(-3px); }
+.footer-social.fs-wa:hover  { box-shadow: 0 6px 20px rgba(37,211,102,0.45); }
+.footer-social.fs-ig:hover  { box-shadow: 0 6px 20px rgba(220,39,67,0.45); }
+.footer-social.fs-tt:hover  { box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
+.footer-social.fs-yt:hover  { box-shadow: 0 6px 20px rgba(255,0,0,0.45); }
 .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 20px; }
 .footer-col ul li { margin-bottom: 10px; }
 .footer-col ul a { font-size: 13px; color: #555; transition: color 0.2s; }
@@ -342,7 +344,7 @@ footer { background: #111; color: #666; padding: 64px 5% 32px; }
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">Sailing Komodo · Labuan Bajo</div>
-    <h1>Discover the <em>Beauty</em><br>of Labuan Bajo</h1>
+    <h1>Discover the<br><em>Beauty</em><br>of Labuan Bajo</h1>
     <p>Experience an unforgettable sailing trip through Komodo National Park — trek Padar Island, snorkel in crystal-clear waters, and encounter Komodo dragons in their natural habitat.</p>
     <div class="hero-actions">
       <a href="https://wa.me/6285713541147?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Labuan%20Bajo%20trip.%20Could%20you%20please%20give%20me%20more%20details?" class="btn-primary" target="_blank">
@@ -634,7 +636,7 @@ footer { background: #111; color: #666; padding: 64px 5% 32px; }
     <div class="footer-col"><h4>Packages</h4><ul><li><a href="#paket">One Day Trip</a></li><li><a href="#paket">2 Days 1 Night</a></li><li><a href="#paket">3 Days 2 Nights</a></li><li><a href="#spesial-trip">Waerebo Trip</a></li><li><a href="#spesial-trip">Nuca Molas Trip</a></li></ul></div>
     <div class="footer-col"><h4>Contact</h4>
       <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.73 9.77 19.79 19.79 0 01.67 1.14 2 2 0 012.66 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.64a16 16 0 006.29 6.29l1-1c.59-.59 1.4-.83 2.11-.45.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="https://wa.me/6285713541147" target="_blank" style="color:#555">+62 857-1354-1147</a></div>
-      <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@basabasitrip.id</span></div>
+      <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e78e898188a7858694868586948e93958e97c98e83">[email&#160;protected]</a></span></div>
       <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Labuan Bajo, Flores, NTT</span></div>
     </div>
   </div>
@@ -646,7 +648,7 @@ footer { background: #111; color: #666; padding: 64px 5% 32px; }
   <div class="wa-btn"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></div>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40); });
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
@@ -663,10 +665,8 @@ document.querySelectorAll('.accordion-header').forEach(header => {
   header.addEventListener('click', function() {
     const content = this.nextElementSibling;
     const isOpen = this.classList.contains('open');
-    document.querySelectorAll('.accordion-header').forEach(h => { h.classList.remove('open'); if(h.nextElementSibling) h.nextElementSibling.style.maxHeight=null; });
-    if (!isOpen) { this.classList.add('open'); if(content) content.style.maxHeight=content.scrollHeight+'px'; }
+    document.querySelectorAll('.accordion-header').forEach(h => { h.classList.remove('open'); h.nextElementSibling.style.maxHeight = '0'; });
+    if (!isOpen) { this.classList.add('open'); content.style.maxHeight = content.scrollHeight + 'px'; }
   });
 });
 </script>
-</body>
-</html>
