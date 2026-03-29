@@ -63,7 +63,7 @@ ul { list-style: none; }
 .hero-bg { position: absolute; inset: 0; background-image: url('../images/padar.jpg'); background-size: cover; background-position: center; transform-origin: center; animation: heroZoom 10s ease-out forwards; }
 @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1.0); } }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%); }
-.hero-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 80 6% 10%; max-width: 760px; animation: fadeUp 0.9s ease 0.2s both; }
+.hero-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 80px 6% 10%; max-width: 760px; animation: fadeUp 0.9s ease 0.2s both; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange-light); margin-bottom: 18px; }
 .hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--orange-light); }
@@ -612,10 +612,15 @@ footer { background: #111; color: #666; padding: 64px 5% 32px; }
       <img src="../images/logo.png" alt="Basa Basi Trip">
       <p>A marine travel agency based in Labuan Bajo, Flores — delivering the best sailing trip experience in Komodo National Park since 2019.</p>
       <div class="footer-socials">
-        <a href="https://www.instagram.com/basabasitrip" target="_blank" class="footer-social">📸</a>
-        <a href="https://wa.me/6285713541147" target="_blank" class="footer-social">💬</a>
-        <a href="https://www.tiktok.com/@basabasitrip" target="_blank" class="footer-social">🎵</a>
-        <a href="https://www.youtube.com/@basabasitrip" target="_blank" class="footer-social">▶️</a>
+        <a href="https://wa.me/6285713541147" target="_blank" class="footer-social fs-wa" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.2 2.4 7.2L4 28l6-2.3C11.8 27 13.8 27.6 16 27.6 22.6 27.6 28 22.2 28 15.6 28 8.4 22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.6 1.4 1.3-3.4-.3-.5C7.5 19 7 17.1 7 15 7 9.5 11.5 5 16 5zm-3.3 5c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.1 2 3.1 4.9 4.2 2.4.9 2.8.7 3.3.7s1.6-.6 1.9-1.3c.2-.6.2-1.1.1-1.3-.1-.1-.3-.2-.6-.3s-1.9-.9-2.2-1-1.5-.2-1.8.4c-.3.6-.5.8-.8 1l-.4.2c-.3 0-1.1-.4-2.2-1.5-1.3-1.3-1.7-2.3-1.9-2.7 0-.2 0-.3.2-.4l.4-.5c.2-.2.3-.4.4-.7s0-.5-.1-.7-.9-2.2-1.2-3c-.3-.7-.7-.7-.9-.7z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/basabasitrip" target="_blank" class="footer-social fs-ig" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@basabasitrip" target="_blank" class="footer-social fs-tt" aria-label="TikTok">
+          <svg width="16" height="18" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.27 8.27 0 0 0 4.84 1.56V6.8a4.85 4.85 0 0 1-1.07-.11z"/></svg>
+        </a>
       </div>
     </div>
     <div class="footer-col"><h4>Menu</h4><ul><li><a href="#home">Home</a></li><li><a href="#destinasi">Destinations</a></li><li><a href="#paket">Packages</a></li><li><a href="#spesial-trip">Special Trips</a></li><li><a href="artikel.html">Blog</a></li></ul></div>
