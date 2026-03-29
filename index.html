@@ -151,7 +151,7 @@ ul { list-style: none; }
 .hero-content {
   position: relative; z-index: 2;
   height: 100%;
-  display: flex; flex-direction: column; justify-content: center;
+  display: flex; flex-direction: column; justify-content: flex-end;
   padding: 80px 6% 10%;
   max-width: 760px;
   animation: fadeUp 0.9s ease 0.2s both;
@@ -766,48 +766,28 @@ footer {
 .footer-brand p {
   font-size: 13px; line-height: 1.7; color: #555; max-width: 240px; margin-bottom: 20px;
 }
-/* Container utama agar ikon berjejer ke samping */
-.footer-socials {
-  display: flex;
-  gap: 12px;
-  margin-top: 24px;
-  align-items: center;
-}
-
-/* Lingkaran pembungkus ikon */
+.footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
 .footer-social {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.25s; text-decoration: none;
 }
-
-/* Memaksa gambar SVG raksasa menjadi kecil dan rapi */
-.footer-social img {
-  width: 18px !important;
-  height: 18px !important;
-  object-fit: contain;
-  /* Filter agar ikon menjadi putih elegan */
-  filter: brightness(0) invert(1) opacity(0.7);
-  transition: all 0.3s ease;
+.footer-social svg {
+  filter: grayscale(1) brightness(1.8) opacity(0.55);
+  transition: filter 0.25s;
 }
-
-.footer-social:hover {
-  border-color: var(--orange);
-  background: rgba(232, 101, 42, 0.1);
-  transform: translateY(-3px);
-}
-
-.footer-social:hover img {
-  filter: brightness(0) invert(1) opacity(1);
-}
-}.footer-col h4 {
+.footer-social:hover { border-color: transparent; transform: translateY(-2px); }
+.footer-social.fs-wa:hover  { background: #25D366; box-shadow: 0 4px 16px rgba(37,211,102,0.35); }
+.footer-social.fs-ig:hover  { background: radial-gradient(circle at 30% 110%, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 4px 16px rgba(220,39,67,0.35); }
+.footer-social.fs-tt:hover  { background: #010101; box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+.footer-social.fs-yt:hover  { background: #FF0000; box-shadow: 0 4px 16px rgba(255,0,0,0.35); }
+.footer-social:hover svg { filter: none brightness(1) opacity(1); }
+.footer-social:hover svg path,
+.footer-social:hover svg rect,
+.footer-social:hover svg polygon { fill: #fff !important; }
+.footer-col h4 {
   font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: #aaa;
   margin-bottom: 20px;
@@ -829,6 +809,10 @@ footer {
   font-size: 12px; color: #3a3a3a;
 }
 .footer-bottom a { color: var(--orange); }
+
+/* Mobile footer elements hidden on desktop */
+.footer-mobile-cols,
+.footer-mobile-kontak { display: none; }
 
 /* ══════════════════════════════════════
    WA FLOAT
@@ -902,7 +886,16 @@ footer {
   .dest-card:nth-child(1) { grid-row: span 1; grid-column: span 2; }
   .dest-card:nth-child(5) { grid-column: span 2; grid-row: span 1; }
   .special-body { padding: 32px 24px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 0; }
+  .footer-brand { padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 28px; }
+  .footer-col { display: none; }
+  .footer-mobile-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 24px; }
+  .footer-mobile-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 14px; }
+  .footer-mobile-col ul { list-style: none; }
+  .footer-mobile-col ul li { margin-bottom: 9px; }
+  .footer-mobile-col ul a { font-size: 13px; color: #555; text-decoration: none; }
+  .footer-mobile-kontak { display: block; }
+  .footer-mobile-kontak .footer-contact-item { display: flex; gap: 10px; margin-bottom: 10px; font-size: 13px; color: #555; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .destinasi-header { flex-direction: column; align-items: flex-start; gap: 8px; }
   .fasilitas-grid { grid-template-columns: 1fr; }
@@ -1439,14 +1432,14 @@ footer {
       <img src="images/logo.png" alt="Basa Basi Trip">
       <p>Agen perjalanan wisata bahari berbasis di Labuan Bajo, Flores. Menghadirkan pengalaman sailing trip terbaik di Taman Nasional Komodo sejak 2019.</p>
       <div class="footer-socials">
-        <a href="https://www.instagram.com/basabasitrip" target="_blank" class="footer-social">
-          <img src="images/insta.svg" alt="Instagram">
+        <a href="https://wa.me/6285713541147" target="_blank" class="footer-social fs-wa" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.2 2.4 7.2L4 28l6-2.3C11.8 27 13.8 27.6 16 27.6 22.6 27.6 28 22.2 28 15.6 28 8.4 22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.6 1.4 1.3-3.4-.3-.5C7.5 19 7 17.1 7 15 7 9.5 11.5 5 16 5zm-3.3 5c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.1 2 3.1 4.9 4.2 2.4.9 2.8.7 3.3.7s1.6-.6 1.9-1.3c.2-.6.2-1.1.1-1.3-.1-.1-.3-.2-.6-.3s-1.9-.9-2.2-1-1.5-.2-1.8.4c-.3.6-.5.8-.8 1l-.4.2c-.3 0-1.1-.4-2.2-1.5-1.3-1.3-1.7-2.3-1.9-2.7 0-.2 0-.3.2-.4l.4-.5c.2-.2.3-.4.4-.7s0-.5-.1-.7-.9-2.2-1.2-3c-.3-.7-.7-.7-.9-.7z"/></svg>
         </a>
-        <a href="https://wa.me/6285713541147" target="_blank" class="footer-social">
-          <img src="images/wa.svg" alt="WhatsApp">
+        <a href="https://www.instagram.com/basabasitrip" target="_blank" class="footer-social fs-ig" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
         </a>
-        <a href="https://www.tiktok.com/@basabasitrip" target="_blank" class="footer-social">
-          <img src="images/tiktok.svg" alt="TikTok">
+        <a href="https://www.tiktok.com/@basabasitrip" target="_blank" class="footer-social fs-tt" aria-label="TikTok">
+          <svg width="16" height="18" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.27 8.27 0 0 0 4.84 1.56V6.8a4.85 4.85 0 0 1-1.07-.11z"/></svg>
         </a>
       </div>
     </div>
@@ -1477,11 +1470,11 @@ footer {
       <h4>Kontak</h4>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.73 9.77 19.79 19.79 0 01.67 1.14 2 2 0 012.66 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.64a16 16 0 006.29 6.29l1-1c.59-.59 1.4-.83 2.11-.45.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <a href="https://wa.me/6285713541147" target="_blank" style="color:#555;transition:color 0.2s" onmouseover="this.style.color='#f5a96b'" onmouseout="this.style.color='#555'">+62 857-1354-1147</a>
+        <a href="https://wa.me/6285713541147" target="_blank" style="color:#555">+62 857-1354-1147</a>
       </div>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f39a9d959cb3919280929192809a87819a83dd9a97">[basabasitrip@gmail.com]</a></span>
+        <span>info@basabasitrip.id</span>
       </div>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1489,6 +1482,37 @@ footer {
       </div>
     </div>
   </div>
+
+  <!-- MOBILE COMPACT: 2 kolom + kontak -->
+  <div class="footer-mobile-cols">
+    <div class="footer-mobile-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinasi">Destinasi</a></li>
+        <li><a href="#paket">Paket Trip</a></li>
+        <li><a href="#spesial-trip">Special Trip</a></li>
+        <li><a href="artikel.html">Artikel</a></li>
+      </ul>
+    </div>
+    <div class="footer-mobile-col">
+      <h4>Paket</h4>
+      <ul>
+        <li><a href="#paket">One Day Trip</a></li>
+        <li><a href="#paket">2H 1 Malam</a></li>
+        <li><a href="#paket">3H 2 Malam</a></li>
+        <li><a href="#spesial-trip">Waerebo</a></li>
+        <li><a href="#spesial-trip">Nuca Molas</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-mobile-kontak">
+    <h4 style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:14px;">Kontak</h4>
+    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.73 9.77 19.79 19.79 0 01.67 1.14 2 2 0 012.66 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.64a16 16 0 006.29 6.29l1-1c.59-.59 1.4-.83 2.11-.45.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="https://wa.me/6285713541147" target="_blank" style="color:#555">+62 857-1354-1147</a></div>
+    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@basabasitrip.id</span></div>
+    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Labuan Bajo, Flores, NTT</span></div>
+  </div>
+
   <div class="footer-bottom">
     <span>© 2026 Basa Basi Trip · All Rights Reserved</span>
     <span>
@@ -1562,15 +1586,14 @@ const navLinks = document.querySelectorAll('.menu a');
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 200) {
-      current = section.getAttribute('id');
+    if (window.scrollY >= section.offsetTop - 80) {
+      current = section.id;
     }
   });
   navLinks.forEach(link => {
     link.classList.remove('active');
-    if (link.getAttribute('href').slice(1) === current) {
+    if (link.getAttribute('href').substring(1) === current) {
       link.classList.add('active');
     }
   });
 });
-</script>
