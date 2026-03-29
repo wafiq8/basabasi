@@ -63,7 +63,14 @@ ul { list-style: none; }
 .hero-bg { position: absolute; inset: 0; background-image: url('../images/padar.jpg'); background-size: cover; background-position: center; transform-origin: center; animation: heroZoom 10s ease-out forwards; }
 @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1.0); } }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%); }
-.hero-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 80px 6% 10%; max-width: 760px; animation: fadeUp 0.9s ease 0.2s both; }
+.hero-content {
+  position: relative; z-index: 2;
+  height: 100%;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 6% 10%;
+  max-width: 760px;
+  animation: fadeUp 0.9s ease 0.2s both;
+}
 @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange-light); margin-bottom: 18px; }
 .hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--orange-light); }
