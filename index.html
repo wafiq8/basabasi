@@ -768,23 +768,40 @@ footer {
 }
 .footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
 .footer-social {
-  width: 40px; height: 40px; border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,0.12);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: all 0.25s; text-decoration: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff; /* Background Putih Bersih */
+  border: 1px solid #e0e0e0; /* Garis tepi tipis abu-abu */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
-.footer-social svg { transition: filter 0.25s; }
+.footer-social svg {
+  fill: #666666;
+  transition: fill 0.3s ease;
+}
+.footer-social:hover svg {
+  fill: var(--orange);
+}
 /* Default: warna brand masing-masing */
 .footer-social.fs-wa  { background: #25D366; }
 .footer-social.fs-ig  { background: radial-gradient(circle at 30% 110%, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 .footer-social.fs-tt  { background: #010101; border-color: rgba(255,255,255,0.15); }
-.footer-social.fs-yt  { background: #FF0000; }
 /* Hover: naik sedikit + shadow */
-.footer-social:hover { transform: translateY(-3px); }
-.footer-social.fs-wa:hover  { box-shadow: 0 6px 20px rgba(37,211,102,0.45); }
-.footer-social.fs-ig:hover  { box-shadow: 0 6px 20px rgba(220,39,67,0.45); }
-.footer-social.fs-tt:hover  { box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
-.footer-social.fs-yt:hover  { box-shadow: 0 6px 20px rgba(255,0,0,0.45); }
+.footer-social:hover {
+  transform: translateY(-3px);
+  border-color: var(--orange); /* Berubah jadi orange saat dihover agar tetap interaktif */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.footer-social.fs-wa:hover, 
+.footer-social.fs-ig:hover, 
+.footer-social.fs-tt:hover { 
+  background: #ffffff; 
+}
 .footer-col h4 {
   font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: #aaa;
