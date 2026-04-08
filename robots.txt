@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Larang akses ke file yang tidak perlu diindex
+Disallow: /cdn-cgi/
+
+# Sitemap
+Sitemap: https://basabasitrip.id/sitemap.xml

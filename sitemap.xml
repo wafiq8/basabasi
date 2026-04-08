@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Halaman Utama (ID) -->
+  <url>
+    <loc>https://basabasitrip.id/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://basabasitrip.id/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://basabasitrip.id/en/"/>
+  </url>
+
+  <!-- Halaman Utama (EN) -->
+  <url>
+    <loc>https://basabasitrip.id/en/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://basabasitrip.id/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://basabasitrip.id/en/"/>
+  </url>
+
+  <!-- Halaman Artikel -->
+  <url>
+    <loc>https://basabasitrip.id/artikel.html</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://basabasitrip.id/artikel.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://basabasitrip.id/en/artikel.html"/>
+  </url>
+
+  <!-- Detail Artikel -->
+  <url>
+    <loc>https://basabasitrip.id/detail-artikel-padar-island-id.html</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://basabasitrip.id/detail-artikel-green-season.html</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://basabasitrip.id/detail-artikel-manta-point-id.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://basabasitrip.id/detail-artikel-waerebo-id.html</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://basabasitrip.id/detail-artikel-itinerary-3d2n-id.html</loc>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://basabasitrip.id/detail-artikel-packing-list-id.html</loc>
+    <lastmod>2025-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
