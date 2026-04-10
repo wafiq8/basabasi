@@ -1273,11 +1273,11 @@ footer { background: #111; color: #666; padding: 64px 5% 32px; }
       </div>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0b9beb6bf90b2b1a3b1b2b1a3b9a4a2b9a0feb9b4">basabasitrip@gmail.com</a></span>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0b9beb6bf90b2b1a3b1b2b1a3b9a4a2b9a0feb9b4">[email&#160;protected]</a></span>
       </div>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Semarang, Indonesia</span>
+        <span>Labuan Bajo, Flores, NTT</span>
       </div>
     </div>
   </div>
@@ -1353,3 +1353,16 @@ document.querySelectorAll('.accordion-header').forEach(header => {
   header.addEventListener('click', function() {
     const content = this.nextElementSibling;
     const isOpen = this.classList.contains('open');
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.classList.remove('open');
+      h.nextElementSibling.style.maxHeight = null;
+    });
+    if (!isOpen) {
+      this.classList.add('open');
+      content.style.maxHeight = content.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+</body>
+</html>
