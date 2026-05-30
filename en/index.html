@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Basa Basi Trip — Open Trip Labuan Bajo & Karimunjawa</title>
   <meta name="description" content="Indonesia's best open sea trips. Sailing Komodo in Labuan Bajo & island hopping in Karimunjawa. 1,200+ happy travelers. Book via WhatsApp!">
+  <link rel="canonical" href="https://basabasitrip.id/en/" />
+  <link rel="alternate" hreflang="id" href="https://basabasitrip.id/" />
+  <link rel="alternate" hreflang="en" href="https://basabasitrip.id/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://basabasitrip.id/" />
   <link rel="icon" type="image/png" href="../images/favicon.png?v=1">
   <meta property="og:title" content="Basa Basi Trip — Open Trip Labuan Bajo & Karimunjawa">
   <meta property="og:description" content="Indonesia's best open sea trips. Labuan Bajo & Karimunjawa. 1,200+ travelers joined. Book via WhatsApp!">
@@ -13,986 +17,737 @@
   <meta property="og:url" content="https://basabasitrip.id/en/">
   <meta name="robots" content="index, follow">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="../images/padar.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    /* ══════════════════════════════════════
-       RESET & BASE
-    ══════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #faf9f7;
-      color: #1a1a1a;
-      overflow-x: hidden;
-    }
-    img { display: block; width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    :root {
-      --orange: #E8652A;
-      --orange-light: #f5a96b;
-      --dark: #1a1a1a;
-      --mid: #555;
-      --light: #888;
-      --bg: #faf9f7;
-      --white: #ffffff;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'Poppins', sans-serif;
-    }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "@id": "https://basabasitrip.id/#organization",
+    "name": "Basa Basi Trip",
+    "url": "https://basabasitrip.id",
+    "description": "Marine travel agency. Open trips to Labuan Bajo & Karimunjawa.",
+    "foundingDate": "2019",
+    "address": { "@type": "PostalAddress", "addressLocality": "Labuan Bajo", "addressRegion": "NTT", "addressCountry": "ID" },
+    "contactPoint": { "@type": "ContactPoint", "telephone": "+62-857-1354-1147", "contactType": "customer service" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1200", "bestRating": "5" }
+  }
+  </script>
 
-    /* ══════════════════════════════════════
-       NAVBAR
-    ══════════════════════════════════════ */
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      height: 68px; padding: 0 5%;
-      display: flex; align-items: center; justify-content: space-between;
-      background: rgba(250,249,247,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.07);
-      transition: box-shadow 0.3s;
-    }
-    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
-    .logo img { height: 36px; width: auto; }
-    .nav-right { display: flex; align-items: center; gap: 36px; }
-    .menu { display: flex; gap: 28px; }
-    .menu a {
-      font-size: 13.5px; font-weight: 500; color: var(--mid);
-      letter-spacing: 0.02em; transition: color 0.2s;
-    }
-    .menu a:hover, .menu a.active { color: var(--orange); }
-    .lang-switch { display: flex; gap: 6px; }
-    .lang-btn {
-      font-size: 12px; font-weight: 600; padding: 4px 10px;
-      border-radius: 20px; border: 1.5px solid #ddd;
-      color: var(--mid); transition: all 0.2s; cursor: pointer;
-      text-decoration: none;
-    }
-    .lang-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 6px; background: none; border: none;
-    }
-    .hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--dark); border-radius: 2px; transition: all 0.3s;
-    }
-    .hamburger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.is-active span:nth-child(2) { opacity: 0; }
-    .hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; background: #faf9f7; color: #1a1a1a; overflow-x: hidden; }
+img { display: block; width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
 
-    /* ══════════════════════════════════════
-       MOBILE SIDEBAR
-    ══════════════════════════════════════ */
-    .sidebar-overlay {
-      display: none; position: fixed; inset: 0; z-index: 200;
-      background: rgba(0,0,0,0.45); opacity: 0; transition: opacity 0.3s;
-    }
-    .sidebar-overlay.open { display: block; opacity: 1; }
-    .sidebar {
-      position: fixed; top: 0; right: -280px; bottom: 0;
-      width: 260px; z-index: 201; background: var(--white);
-      padding: 88px 28px 40px;
-      transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
-      box-shadow: -4px 0 30px rgba(0,0,0,0.12);
-    }
-    .sidebar.open { right: 0; }
-    .sidebar ul li { border-bottom: 1px solid #f0f0f0; }
-    .sidebar ul a {
-      display: block; padding: 16px 0;
-      font-size: 15px; font-weight: 500; color: var(--dark); transition: color 0.2s;
-    }
-    .sidebar ul a:hover { color: var(--orange); }
-    .sidebar-lang { display: flex; gap: 8px; padding: 20px 0 0; }
-    .sidebar-close {
-      position: absolute; top: 20px; right: 20px;
-      width: 36px; height: 36px; border: none; background: #f4f4f4;
-      border-radius: 50%; cursor: pointer; font-size: 18px;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-    .sidebar-close:hover { background: #eee; }
+:root {
+  --orange: #E8652A;
+  --orange-light: #f5a96b;
+  --dark: #1a1a1a;
+  --mid: #555;
+  --light: #888;
+  --bg: #faf9f7;
+  --white: #ffffff;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Poppins', sans-serif;
+}
 
-    /* ══════════════════════════════════════
-       HERO
-    ══════════════════════════════════════ */
-    .hero {
-      position: relative;
-      margin-top: 68px;
-      height: calc(100vh - 68px);
-      min-height: 520px;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('../images/padar.jpg');
-      background-size: cover; background-position: center;
-      transform-origin: center;
-      animation: heroZoom 10s ease-out forwards;
-    }
-    @keyframes heroZoom {
-      from { transform: scale(1.06); }
-      to   { transform: scale(1.0); }
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(0,0,0,0.62) 0%,
-        rgba(0,0,0,0.3) 50%,
-        rgba(0,0,0,0.1) 100%
-      );
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      height: 100%;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 80px 6% 10%;
-      max-width: 760px;
-      animation: fadeUp 0.9s ease 0.2s both;
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--orange-light);
-      margin-bottom: 18px;
-    }
-    .hero-eyebrow::before {
-      content: ''; width: 28px; height: 2px; background: var(--orange-light);
-    }
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(38px, 6vw, 72px);
-      font-weight: 900; line-height: 1.08;
-      color: #fff; margin-bottom: 22px;
-      letter-spacing: -0.01em;
-    }
-    .hero h1 em { font-style: italic; color: var(--orange-light); }
-    .hero p {
-      font-size: clamp(14px, 1.6vw, 16px);
-      line-height: 1.75; color: rgba(255,255,255,0.78);
-      max-width: 480px; margin-bottom: 36px;
-    }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--orange); color: #fff;
-      padding: 15px 28px; border-radius: 3px;
-      font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn-primary:hover { background: #d4561e; transform: translateY(-1px); }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: rgba(255,255,255,0.12); color: #fff;
-      padding: 15px 28px; border-radius: 3px;
-      font-size: 14px; font-weight: 500;
-      border: 1.5px solid rgba(255,255,255,0.35);
-      backdrop-filter: blur(6px);
-      transition: background 0.2s;
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
-    .hero-scroll {
-      position: absolute; bottom: 36px; right: 6%;
-      color: rgba(255,255,255,0.5);
-      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
-      text-transform: uppercase;
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      animation: fadeUp 1s ease 0.8s both;
-    }
-    .hero-scroll::after {
-      content: ''; width: 1px; height: 40px;
-      background: rgba(255,255,255,0.3);
-      animation: scrollLine 2s ease-in-out infinite;
-    }
-    @keyframes scrollLine {
-      0%, 100% { transform: scaleY(1); opacity: 0.5; }
-      50%       { transform: scaleY(0.5); opacity: 1; }
-    }
+/* ══ NAVBAR ══ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 68px; padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(250,249,247,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  transition: box-shadow 0.3s;
+}
+.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.logo img { height: 36px; width: auto; }
+.nav-right { display: flex; align-items: center; gap: 36px; }
+.menu { display: flex; gap: 28px; }
+.menu a { font-size: 13.5px; font-weight: 500; color: var(--mid); letter-spacing: 0.02em; transition: color 0.2s; }
+.menu a:hover, .menu a.active { color: var(--orange); }
+.lang-switch { display: flex; gap: 6px; }
+.lang-btn { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; border: 1.5px solid #ddd; color: var(--mid); transition: all 0.2s; cursor: pointer; text-decoration: none; }
+.lang-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: all 0.3s; }
+.hamburger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.is-active span:nth-child(2) { opacity: 0; }
+.hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* ══════════════════════════════════════
-       TRUST SECTION
-    ══════════════════════════════════════ */
-    .trust-section {
-      background: var(--white);
-      border-bottom: 1px solid #eee;
-      padding: 44px 5%;
-    }
-    .trust-inner {
-      max-width: 860px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-    }
-    .trust-item {
-      display: flex; align-items: center; gap: 18px;
-      padding: 0 32px;
-      border-right: 1px solid #eee;
-    }
-    .trust-item:first-child { padding-left: 0; }
-    .trust-item:last-child  { border-right: none; }
-    .trust-icon-wrap {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: #fff4ee; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-    }
-    .trust-item h3 {
-      font-family: var(--serif);
-      font-size: 24px; font-weight: 700; color: var(--dark);
-      line-height: 1.1;
-    }
-    .trust-item p { font-size: 12.5px; color: var(--light); margin-top: 2px; }
+/* ══ SIDEBAR ══ */
+.sidebar-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.45); opacity: 0; transition: opacity 0.3s; }
+.sidebar-overlay.open { display: block; opacity: 1; }
+.sidebar { position: fixed; top: 0; right: -280px; bottom: 0; width: 260px; z-index: 201; background: var(--white); padding: 88px 28px 40px; transition: right 0.35s cubic-bezier(0.4,0,0.2,1); box-shadow: -4px 0 30px rgba(0,0,0,0.12); }
+.sidebar.open { right: 0; }
+.sidebar ul li { border-bottom: 1px solid #f0f0f0; }
+.sidebar ul a { display: block; padding: 16px 0; font-size: 15px; font-weight: 500; color: var(--dark); transition: color 0.2s; }
+.sidebar ul a:hover { color: var(--orange); }
+.sidebar-lang { display: flex; gap: 8px; padding: 20px 0 0; }
+.sidebar-close { position: absolute; top: 20px; right: 20px; width: 36px; height: 36px; border: none; background: #f4f4f4; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; }
 
-    /* ══════════════════════════════════════
-       SECTION UTILITIES
-    ══════════════════════════════════════ */
-    .section { padding: 88px 5%; }
-    .section.bg-light { background: var(--white); }
-    .section-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--orange);
-      margin-bottom: 14px;
-    }
-    .section-eyebrow::before {
-      content: ''; width: 24px; height: 2px; background: var(--orange);
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 700; line-height: 1.18; color: var(--dark);
-      margin-bottom: 12px;
-    }
-    .section-subtitle {
-      font-size: 15px; color: var(--mid); line-height: 1.7;
-      max-width: 520px; margin-bottom: 52px;
-    }
+/* ══ HERO SLIDESHOW ══ */
+.hero {
+  position: relative;
+  margin-top: 68px;
+  height: calc(100vh - 68px);
+  min-height: 520px;
+  overflow: hidden;
+}
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out; }
+.hero-slide.active { opacity: 1; }
+.hero-slide-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transform: scale(1.06);
+  transition: transform 8s ease-out;
+}
+.hero-slide.active .hero-slide-bg { transform: scale(1.0); }
+.hero-slide:nth-child(1) .hero-slide-bg { background-image: url('../images/padar.jpg'); }
+.hero-slide:nth-child(2) .hero-slide-bg { background-image: url('../images/karimunjawa.jpg'); }
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  height: 100%;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 6% 10%;
+  max-width: 760px;
+  animation: fadeUp 0.9s ease 0.2s both;
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--orange-light); margin-bottom: 18px;
+}
+.hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--orange-light); }
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(38px, 6vw, 72px);
+  font-weight: 900; line-height: 1.08; color: #fff; margin-bottom: 22px;
+}
+.hero h1 em { font-style: italic; color: var(--orange-light); }
+.hero p {
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.75; color: rgba(255,255,255,0.78);
+  max-width: 480px; margin-bottom: 36px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--orange); color: #fff;
+  padding: 15px 28px; border-radius: 3px;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: #d4561e; transform: translateY(-1px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.12); color: #fff;
+  padding: 15px 28px; border-radius: 3px;
+  font-size: 14px; font-weight: 500;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(6px); transition: background 0.2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
 
-    /* ══════════════════════════════════════
-       ABOUT
-    ══════════════════════════════════════ */
-    .about-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 72px;
-      align-items: center;
-    }
-    .about-text .section-title { margin-bottom: 20px; }
-    .about-text p {
-      font-size: 15.5px; line-height: 1.82; color: var(--mid);
-      margin-bottom: 16px;
-    }
-    .about-stats {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-      margin: 32px 0 36px;
-    }
-    .about-stat {
-      padding: 20px; border: 1px solid #eee; border-radius: 4px;
-      background: var(--bg);
-    }
-    .about-stat strong {
-      display: block; font-family: var(--serif);
-      font-size: 28px; font-weight: 700; color: var(--orange);
-      line-height: 1;
-    }
-    .about-stat span { font-size: 12.5px; color: var(--light); margin-top: 4px; display: block; }
-    .about-img-wrap { position: relative; }
-    .about-img-wrap img { border-radius: 4px; height: 500px; object-fit: cover; }
-    .about-img-badge {
-      position: absolute; bottom: -20px; left: -20px;
-      background: var(--orange); color: #fff;
-      padding: 18px 22px; border-radius: 4px;
-      box-shadow: 0 8px 32px rgba(232,101,42,0.35);
-    }
-    .about-img-badge strong {
-      display: block; font-family: var(--serif);
-      font-size: 30px; font-weight: 900; line-height: 1;
-    }
-    .about-img-badge span { font-size: 12px; opacity: 0.85; }
+/* Slide dots */
+.hero-dots { position: absolute; bottom: 32px; left: 6%; z-index: 3; display: flex; gap: 8px; }
+.hero-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.35); border: none; cursor: pointer; padding: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+.hero-dot.active { background: var(--orange); transform: scale(1.3); }
+.hero-label { position: absolute; bottom: 28px; right: 6%; z-index: 3; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
 
-    /* ══════════════════════════════════════
-       DESTINASI
-    ══════════════════════════════════════ */
-    .destinasi-header {
-      display: flex; justify-content: space-between;
-      align-items: flex-end; margin-bottom: 44px;
-      max-width: 1200px; margin-left: auto; margin-right: auto;
-    }
+/* ══ TRUST ══ */
+.trust-section { background: var(--white); border-bottom: 1px solid #eee; padding: 44px 5%; }
+.trust-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); }
+.trust-item { display: flex; align-items: center; gap: 18px; padding: 0 32px; border-right: 1px solid #eee; }
+.trust-item:first-child { padding-left: 0; }
+.trust-item:last-child { border-right: none; }
+.trust-icon-wrap { width: 48px; height: 48px; border-radius: 50%; background: #fff4ee; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.trust-item h3 { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--dark); line-height: 1.1; }
+.trust-item p { font-size: 12.5px; color: var(--light); margin-top: 2px; }
 
-    .dest-grid {
-      max-width: 1200px; margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+/* ══ SECTIONS ══ */
+.section { padding: 88px 5%; }
+.section.bg-light { background: var(--white); }
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
+}
+.section-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--orange); }
+.section-title { font-family: var(--serif); font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.18; color: var(--dark); margin-bottom: 12px; }
+.section-subtitle { font-size: 15px; color: var(--mid); line-height: 1.7; max-width: 520px; margin-bottom: 52px; }
 
-    .dest-card {
-      position: relative; border-radius: 6px;
-      overflow: hidden; cursor: pointer;
-      min-height: 400px;
-    }
-    .dest-card-img {
-      width: 100%; height: 100%; overflow: hidden;
-      position: absolute; inset: 0;
-    }
-    .dest-card-img img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
-    }
-    .dest-card:hover .dest-card-img img { transform: scale(1.06); }
-    .dest-card-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
-    }
-    .dest-card-label {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 32px 28px 28px;
-    }
-    .dest-card-tag {
-      display: inline-block; font-size: 10px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--orange-light); background: rgba(232,101,42,0.2);
-      border: 1px solid rgba(245,169,107,0.4);
-      padding: 3px 10px; border-radius: 2px; margin-bottom: 10px;
-    }
-    .dest-card-label h3 {
-      font-family: var(--serif);
-      font-size: 26px; font-weight: 700; color: #fff;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-      margin-bottom: 8px;
-    }
-    .dest-card-label p {
-      font-size: 13.5px; color: rgba(255,255,255,0.75);
-      margin-bottom: 16px; line-height: 1.5;
-    }
-    .dest-card-cta {
-      display: inline-flex; align-items: center; gap: 7px;
-      font-size: 12.5px; font-weight: 600; color: #fff;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 8px 16px; border-radius: 2px;
-      backdrop-filter: blur(4px);
-      transition: background 0.2s;
-    }
-    .dest-card-cta:hover { background: var(--orange); border-color: var(--orange); }
+/* ══ ABOUT ══ */
+.about-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.about-text p { font-size: 15.5px; line-height: 1.82; color: var(--mid); margin-bottom: 16px; }
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0 36px; }
+.about-stat { padding: 20px; border: 1px solid #eee; border-radius: 4px; background: var(--bg); }
+.about-stat strong { display: block; font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--orange); line-height: 1; }
+.about-stat span { font-size: 12.5px; color: var(--light); margin-top: 4px; display: block; }
+.about-img-wrap { position: relative; }
+.about-img-wrap img { border-radius: 4px; height: 500px; object-fit: cover; }
+.about-img-badge { position: absolute; bottom: -20px; left: -20px; background: var(--orange); color: #fff; padding: 18px 22px; border-radius: 4px; box-shadow: 0 8px 32px rgba(232,101,42,0.35); }
+.about-img-badge strong { display: block; font-family: var(--serif); font-size: 26px; font-weight: 900; line-height: 1; }
+.about-img-badge span { font-size: 12px; opacity: 0.85; }
 
-    /* ══════════════════════════════════════
-       ARTIKEL
-    ══════════════════════════════════════ */
-    .artikel-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .artikel-card {
-      background: var(--white);
-      border: 1px solid #eee; border-radius: 4px;
-      overflow: hidden;
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .artikel-card:hover {
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-      transform: translateY(-4px);
-    }
-    .artikel-img { height: 200px; overflow: hidden; }
-    .artikel-img img { height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-    .artikel-card:hover .artikel-img img { transform: scale(1.05); }
-    .artikel-body { padding: 24px 22px 26px; }
-    .artikel-date { font-size: 11.5px; color: var(--light); margin-bottom: 10px; letter-spacing: 0.03em; }
-    .artikel-body h3 {
-      font-family: var(--serif);
-      font-size: 17px; font-weight: 700; color: var(--dark);
-      line-height: 1.35; margin-bottom: 10px;
-    }
-    .artikel-body p { font-size: 13px; color: var(--mid); line-height: 1.65; margin-bottom: 18px; }
-    .artikel-link {
-      font-size: 12.5px; font-weight: 600; color: var(--orange);
-      display: inline-flex; align-items: center; gap: 6px;
-      transition: gap 0.2s;
-    }
-    .artikel-card:hover .artikel-link { gap: 10px; }
-    .artikel-footer {
-      max-width: 1100px; margin: 40px auto 0;
-      text-align: center;
-    }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 28px; border-radius: 3px;
-      border: 2px solid var(--dark); color: var(--dark);
-      font-size: 13.5px; font-weight: 600;
-      transition: all 0.22s;
-    }
-    .btn-outline:hover { background: var(--dark); color: #fff; }
+/* ══════════════════════════════════════
+   DESTINASI CAROUSEL — IDENTIK DENGAN VERSI ID
+══════════════════════════════════════ */
+.destinasi-section { background: var(--bg); }
+.destinasi-header { max-width: 1100px; margin: 0 auto 44px; }
 
-    /* ══════════════════════════════════════
-       CTA SECTION
-    ══════════════════════════════════════ */
-    .cta-section {
-      background: var(--dark);
-      padding: 100px 5%;
-      text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: url('../images/padar.jpg');
-      background-size: cover; background-position: center;
-      opacity: 0.08;
-    }
-    .cta-inner { position: relative; z-index: 1; }
-    .cta-section .section-eyebrow { justify-content: center; color: var(--orange-light); }
-    .cta-section .section-eyebrow::before { background: var(--orange-light); }
-    .cta-section h2 {
-      font-family: var(--serif);
-      font-size: clamp(32px, 5vw, 56px);
-      font-weight: 900; color: #fff;
-      line-height: 1.1; margin-bottom: 16px;
-    }
-    .cta-section h2 em { color: var(--orange-light); font-style: italic; }
-    .cta-section p {
-      font-size: 15px; color: rgba(255,255,255,0.55);
-      margin-bottom: 40px; max-width: 440px; margin-left: auto; margin-right: auto;
-      line-height: 1.7;
-    }
-    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+/* Kartu portrait identik versi ID */
+.dest-carousel {
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.dest-card-link {
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s;
+}
+.dest-card-link:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(0,0,0,0.18); }
+.dest-card-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+}
+.dest-card-link:hover .dest-card-bg { transform: scale(1.04); }
+.dest-card-link:nth-child(1) .dest-card-bg { background-image: url('../images/padar.jpg'); }
+.dest-card-link:nth-child(2) .dest-card-bg { background-image: url('../images/karimunjawa1.jpg'); }
+.dest-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 45%, transparent 100%);
+  transition: background 0.3s;
+}
+.dest-card-link:hover .dest-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+}
+.dest-card-body {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 22px 22px;
+}
+.dest-card-tag {
+  display: inline-block;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--orange-light);
+  margin-bottom: 8px;
+}
+.dest-card-body h3 {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 900; color: #fff;
+  line-height: 1.1; margin-bottom: 8px;
+}
+.dest-card-body p {
+  font-size: 13px; color: rgba(255,255,255,0.7);
+  line-height: 1.5; margin-bottom: 16px;
+  max-width: 260px;
+}
+.dest-card-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: #fff;
+  border-bottom: 1.5px solid rgba(255,255,255,0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, gap 0.2s;
+}
+.dest-card-link:hover .dest-card-cta { border-color: var(--orange-light); gap: 12px; color: var(--orange-light); }
+.dest-card-cta svg { transition: transform 0.2s; }
+.dest-card-link:hover .dest-card-cta svg { transform: translateX(4px); }
 
-    /* ══════════════════════════════════════
-       FOOTER
-    ══════════════════════════════════════ */
-    footer {
-      background: #111; color: #666;
-      padding: 64px 5% 32px;
-    }
-    .footer-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px; padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .footer-brand img { height: 32px; width: auto; filter: brightness(0) invert(1); margin-bottom: 16px; }
-    .footer-brand p {
-      font-size: 13px; line-height: 1.7; color: #555; max-width: 240px; margin-bottom: 20px;
-    }
-    .footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
-    .footer-social {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: #ffffff;
-      border: 1px solid #e0e0e0;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: all 0.3s ease;
-      text-decoration: none;
-    }
-    .footer-social svg { fill: #666666; transition: fill 0.3s ease; }
-    .footer-social:hover svg { fill: var(--orange); }
-    .footer-social:hover {
-      transform: translateY(-3px);
-      border-color: var(--orange);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .footer-col h4 {
-      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: #aaa;
-      margin-bottom: 20px;
-    }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul a { font-size: 13px; color: #555; transition: color 0.2s; }
-    .footer-col ul a:hover { color: var(--orange-light); }
-    .footer-contact-item {
-      display: flex; gap: 10px; margin-bottom: 12px;
-      font-size: 13px; color: #555;
-    }
-    .footer-contact-item svg { flex-shrink: 0; margin-top: 1px; }
-    .footer-bottom {
-      max-width: 1100px; margin: 28px auto 0;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 10px;
-      font-size: 12px; color: #3a3a3a;
-    }
-    .footer-bottom a { color: var(--orange); }
-    .footer-mobile-cols,
-    .footer-mobile-kontak { display: none; }
+/* ══ ARTIKEL PREVIEW ══ */
+.artikel-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.artikel-card { background: var(--white); border: 1px solid #eee; border-radius: 4px; overflow: hidden; transition: box-shadow 0.3s, transform 0.3s; }
+.artikel-card:hover { box-shadow: 0 8px 36px rgba(0,0,0,0.08); transform: translateY(-4px); }
+.artikel-card-img { height: 200px; overflow: hidden; }
+.artikel-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s; }
+.artikel-card:hover .artikel-card-img img { transform: scale(1.06); }
+.artikel-card-body { padding: 20px; }
+.artikel-card-date { font-size: 11.5px; color: var(--light); margin-bottom: 8px; }
+.artikel-card-body h3 { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 10px; }
+.artikel-card-body p { font-size: 13px; color: var(--mid); line-height: 1.65; margin-bottom: 14px; }
+.artikel-card-link { font-size: 13px; font-weight: 600; color: var(--orange); display: inline-flex; align-items: center; gap: 6px; }
+.artikel-more { text-align: center; margin-top: 40px; }
 
-    /* ══════════════════════════════════════
-       WA FLOAT
-    ══════════════════════════════════════ */
-    .wa-float {
-      position: fixed; bottom: 28px; right: 28px; z-index: 99;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .wa-tooltip {
-      background: var(--white); color: var(--dark);
-      font-size: 13px; font-weight: 500; padding: 10px 16px;
-      border-radius: 3px; white-space: nowrap;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-      opacity: 0; transform: translateX(8px);
-      transition: all 0.25s; pointer-events: none;
-    }
-    .wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
-    .wa-btn {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: #25D366;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 24px rgba(37,211,102,0.4);
-      transition: transform 0.2s, box-shadow 0.2s; flex-shrink: 0;
-    }
-    .wa-float:hover .wa-btn {
-      transform: scale(1.08);
-      box-shadow: 0 6px 32px rgba(37,211,102,0.5);
-    }
-    .wa-btn img { width: 28px; height: 28px; }
+/* ══ CTA ══ */
+.cta-section { background: var(--dark); padding: 100px 5%; text-align: center; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; inset: 0; background-image: url('../images/padar.jpg'); background-size: cover; background-position: center; opacity: 0.08; }
+.cta-inner { position: relative; z-index: 1; }
+.cta-section .section-eyebrow { justify-content: center; color: var(--orange-light); }
+.cta-section .section-eyebrow::before { background: var(--orange-light); }
+.cta-section h2 { font-family: var(--serif); font-size: clamp(32px, 5vw, 56px); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 16px; }
+.cta-section h2 em { color: var(--orange-light); font-style: italic; }
+.cta-section p { font-size: 15px; color: rgba(255,255,255,0.55); margin-bottom: 40px; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-    /* ══════════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════════ */
-    @media (max-width: 860px) {
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .about-img-wrap img { height: 340px; }
-      .about-img-badge { bottom: -16px; left: -10px; }
-      .artikel-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-      .trust-inner { grid-template-columns: 1fr; gap: 20px; }
-      .trust-item { border-right: none; border-bottom: 1px solid #eee; padding: 16px 0; }
-      .trust-item:last-child { border-bottom: none; }
-    }
-    @media (max-width: 640px) {
-      .menu, .lang-switch { display: none; }
-      .hamburger { display: flex; }
-      .hero { min-height: 100svh; }
-      .hero-content { padding: 0 5% 12%; }
-      .hero-scroll { display: none; }
-      .section { padding: 60px 5%; }
-      .dest-grid { grid-template-columns: 1fr; }
-      .dest-card { min-height: 320px; }
-      .artikel-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 0; }
-      .footer-brand { padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 28px; }
-      .footer-col { display: none; }
-      .footer-mobile-cols {
-        display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px;
-        padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 24px;
-      }
-      .footer-mobile-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 14px; }
-      .footer-mobile-col ul { list-style: none; }
-      .footer-mobile-col ul li { margin-bottom: 9px; }
-      .footer-mobile-col ul a { font-size: 13px; color: #555; text-decoration: none; }
-      .footer-mobile-kontak { display: block; }
-      .footer-mobile-kontak .footer-contact-item { display: flex; gap: 10px; margin-bottom: 10px; font-size: 13px; color: #555; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .destinasi-header { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .wa-float { bottom: 20px; right: 20px; }
-      .cta-section { padding: 72px 5%; }
-    }
-  </style>
+/* ══ FOOTER ══ */
+footer { background: #111; color: #666; padding: 64px 5% 32px; }
+.footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.footer-brand img { height: 32px; width: auto; filter: brightness(0) invert(1); margin-bottom: 16px; }
+.footer-brand p { font-size: 13px; line-height: 1.7; color: #555; max-width: 240px; margin-bottom: 20px; }
+.footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
+.footer-social { width: 44px; height: 44px; border-radius: 50%; background: #ffffff; border: 1px solid #e0e0e0; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+.footer-social svg { fill: #666666; transition: fill 0.3s ease; }
+.footer-social:hover svg { fill: var(--orange); }
+.footer-social:hover { transform: translateY(-3px); border-color: var(--orange); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 20px; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a { font-size: 13px; color: #555; transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--orange-light); }
+.footer-contact-item { display: flex; gap: 10px; margin-bottom: 12px; font-size: 13px; color: #555; }
+.footer-contact-item svg { flex-shrink: 0; margin-top: 1px; }
+.footer-bottom { max-width: 1100px; margin: 28px auto 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: #3a3a3a; }
+.footer-bottom a { color: var(--orange); }
+.footer-mobile-cols, .footer-mobile-kontak { display: none; }
+
+/* ══ WA FLOAT ══ */
+.wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 99; display: flex; align-items: center; gap: 12px; }
+.wa-tooltip { background: var(--white); color: var(--dark); font-size: 13px; font-weight: 500; padding: 10px 16px; border-radius: 3px; white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.12); opacity: 0; transform: translateX(8px); transition: all 0.25s; pointer-events: none; }
+.wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+.wa-btn { width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.4); transition: transform 0.2s; flex-shrink: 0; }
+.wa-float:hover .wa-btn { transform: scale(1.08); }
+.wa-btn svg { width: 28px; height: 28px; fill: #fff; }
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .artikel-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-img-wrap img { height: 340px; }
+  .about-img-badge { bottom: -16px; left: -10px; }
+}
+@media (max-width: 640px) {
+  .menu, .lang-switch { display: none; }
+  .hamburger { display: flex; }
+  .hero { min-height: 100svh; }
+  .hero-content { padding: 0 5% 14%; }
+  .section { padding: 60px 5%; }
+  /* Destination cards — portrait side by side on mobile, same as ID */
+  .dest-carousel { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .dest-card-body h3 { font-size: 18px; }
+  .dest-card-body p { display: none; }
+  .dest-card-cta { display: none; }
+  .dest-card-tag { font-size: 9.5px; }
+  .artikel-grid { grid-template-columns: 1fr; }
+  .trust-inner { grid-template-columns: 1fr; }
+  .trust-item { border-right: none; border-bottom: 1px solid #eee; padding: 16px 0; }
+  .trust-item:last-child { border-bottom: none; }
+  .footer-grid { grid-template-columns: 1fr; gap: 0; }
+  .footer-brand { padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 28px; }
+  .footer-col { display: none; }
+  .footer-mobile-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 24px; }
+  .footer-mobile-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 14px; }
+  .footer-mobile-col ul { list-style: none; }
+  .footer-mobile-col ul li { margin-bottom: 9px; }
+  .footer-mobile-col ul a { font-size: 13px; color: #555; }
+  .footer-mobile-kontak { display: block; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .wa-float { bottom: 20px; right: 20px; }
+  .cta-section { padding: 72px 5%; }
+  .hero-dots { bottom: 24px; }
+  .hero-label { display: none; }
+}
+@media (max-width: 380px) {
+  .dest-carousel { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .dest-card-body h3 { font-size: 16px; }
+}
+</style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="logo">
-      <a href="#home"><img src="../images/logo.png" alt="Basa Basi Trip"></a>
-    </div>
-    <div class="nav-right">
-      <ul class="menu">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#destinasi">Destinations</a></li>
-        <li><a href="../artikel.html">Articles</a></li>
-      </ul>
-      <div class="lang-switch">
-        <a href="/" class="lang-btn">ID</a>
-        <a href="/en/" class="lang-btn active">EN</a>
-      </div>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+<!-- WA FLOAT -->
+<a href="https://wa.me/62895634157789?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20a%20trip%20with%20Basa%20Basi%20Trip%20%F0%9F%98%8A" class="wa-float" target="_blank">
+  <span class="wa-tooltip">Hey 👋 How can we help?</span>
+  <div class="wa-btn">
+    <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.2 2.4 7.2L4 28l6-2.3C11.8 27 13.8 27.6 16 27.6 22.6 27.6 28 22.2 28 15.6 28 8.4 22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.6 1.4 1.3-3.4-.3-.5C7.5 19 7 17.1 7 15 7 9.5 11.5 5 16 5zm-3.3 5c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.1 2 3.1 4.9 4.2 2.4.9 2.8.7 3.3.7s1.6-.6 1.9-1.3c.2-.6.2-1.1.1-1.3-.1-.1-.3-.2-.6-.3s-1.9-.9-2.2-1-1.5-.2-1.8.4c-.3.6-.5.8-.8 1l-.4.2c-.3 0-1.1-.4-2.2-1.5-1.3-1.3-1.7-2.3-1.9-2.7 0-.2 0-.3.2-.4l.4-.5c.2-.2.3-.4.4-.7s0-.5-.1-.7-.9-2.2-1.2-3c-.3-.7-.7-.7-.9-.7z"/></svg>
+  </div>
+</a>
 
-  <!-- MOBILE SIDEBAR -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-  <div class="sidebar" id="sidebar">
-    <button class="sidebar-close" id="sidebarClose">✕</button>
-    <ul>
-      <li><a href="#home">Home</a></li>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <a href="/en/"><img src="../images/logo.png" alt="Basa Basi Trip" width="120" height="36"></a>
+  </div>
+  <div class="nav-right">
+    <ul class="menu">
+      <li><a href="#home" class="active">Home</a></li>
       <li><a href="#destinasi">Destinations</a></li>
-      <li><a href="../artikel.html">Articles</a></li>
+      <li><a href="../artikel.html">Blog</a></li>
     </ul>
-    <div class="sidebar-lang">
+    <div class="lang-switch">
       <a href="/" class="lang-btn">ID</a>
       <a href="/en/" class="lang-btn active">EN</a>
     </div>
   </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <!-- ═══ HERO ═══ -->
-  <header id="home" class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">Open Trip Indonesia · Sea & Islands</div>
-      <h1>A Trip With Friends<br>You'll <em>Never Forget</em></h1>
-      <p>Sailing Komodo in Labuan Bajo. Island hopping in Karimunjawa. Two destinations, one mission — make you never want to go home.</p>
-      <div class="hero-actions">
-        <a href="#destinasi" class="btn-primary">
-          Pick a Destination
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="https://wa.me/6285713541147?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20a%20trip%20with%20Basa%20Basi%20Trip%20%F0%9F%98%8A" class="btn-secondary" target="_blank">Ask Us First</a>
-      </div>
-    </div>
-    <div class="hero-scroll">Scroll</div>
-  </header>
+<!-- MOBILE SIDEBAR -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="sidebar" id="sidebar">
+  <button class="sidebar-close" id="sidebarClose">✕</button>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#destinasi">Destinations</a></li>
+    <li><a href="../artikel.html">Blog</a></li>
+  </ul>
+  <div class="sidebar-lang">
+    <a href="/" class="lang-btn">ID</a>
+    <a href="/en/" class="lang-btn active">EN</a>
+  </div>
+</div>
 
-  <!-- ═══ TRUST ═══ -->
-  <section class="trust-section">
-    <div class="trust-inner">
-      <div class="trust-item">
-        <div class="trust-icon-wrap">🌍</div>
-        <div>
-          <h3>1,200+</h3>
-          <p>Travelers Joined</p>
-        </div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon-wrap">⛵</div>
-        <div>
-          <h3>300+</h3>
-          <p>Trips Departed</p>
-        </div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon-wrap">⭐</div>
-        <div>
-          <h3>4.9 / 5.0</h3>
-          <p>Satisfaction Rating</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ ABOUT ═══ -->
-  <section class="section bg-light" id="tentang">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-eyebrow">About Us</div>
-        <h2 class="section-title">Not Your Average Tour.<br>This Is <em style="font-style:italic; color:var(--orange)">Real Adventure.</em></h2>
-        <p>Basa Basi Trip was born from a simple belief: the best trips aren't about rigid schedules or large crowds — they're about moments you'll be talking about for years.</p>
-        <p>Since 2019, we've been running open sea trips to Indonesia's most stunning destinations. From the deep blue waters of Komodo to the glass-clear islands of Karimunjawa — we handle everything, you just show up.</p>
-
-        <div class="about-stats">
-          <div class="about-stat">
-            <strong>2019</strong>
-            <span>Founded</span>
-          </div>
-          <div class="about-stat">
-            <strong>52</strong>
-            <span>Professional crew</span>
-          </div>
-          <div class="about-stat">
-            <strong>5★</strong>
-            <span>Phinisi liveaboard</span>
-          </div>
-          <div class="about-stat">
-            <strong>2</strong>
-            <span>Top destinations</span>
-          </div>
-        </div>
-
-        <a href="https://wa.me/6285713541147?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20Basa%20Basi%20Trip." class="btn-primary" target="_blank">
-          Ask About the Trip
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="about-img-wrap">
-        <img src="../images/komodo.jpg" alt="Basa Basi Trip — Labuan Bajo Sailing">
-        <div class="about-img-badge">
-          <strong>Flores</strong>
-          <span>Labuan Bajo, NTT</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ DESTINASI ═══ -->
-  <section class="section" id="destinasi">
-    <div class="destinasi-header">
-      <div>
-        <div class="section-eyebrow">Pick Your Journey</div>
-        <h2 class="section-title">Where Do You Want to Go?</h2>
-        <p class="section-subtitle" style="margin-bottom:0">Two of Indonesia's best sea destinations. Click to explore packages, itinerary, and everything you need to know.</p>
-      </div>
-    </div>
-
-    <div class="dest-grid">
-      <!-- Labuan Bajo -->
-      <a href="https://basabasitrip.id/labuan-bajo/" class="dest-card">
-        <div class="dest-card-img">
-          <img src="../images/padar.jpg" alt="Labuan Bajo — Sailing Komodo">
-        </div>
-        <div class="dest-card-overlay"></div>
-        <div class="dest-card-label">
-          <div class="dest-card-tag">Sailing · Komodo National Park</div>
-          <h3>Labuan Bajo</h3>
-          <p>Sunrise on Padar, Komodo dragons, swimming with manta rays, Pink Beach. The bucket list that finally gets checked off.</p>
-          <span class="dest-card-cta">
-            See Packages
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-        </div>
+<!-- ═══ HERO SLIDESHOW ═══ -->
+<header id="home" class="hero">
+  <div class="hero-slide active" id="slide-0">
+    <div class="hero-slide-bg"></div>
+  </div>
+  <div class="hero-slide" id="slide-1">
+    <div class="hero-slide-bg"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Open Trip Indonesia · Sea & Islands</div>
+    <h1>A Trip With Friends<br>You'll <em>Never Forget</em></h1>
+    <p>Sailing Komodo in Labuan Bajo. Island hopping in Karimunjawa. Two destinations, one mission — make you never want to go home.</p>
+    <div class="hero-actions">
+      <a href="#destinasi" class="btn-primary">
+        Pick a Destination
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
+      <a href="https://wa.me/62895634157789?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20a%20trip%20with%20Basa%20Basi%20Trip%20%F0%9F%98%8A" class="btn-secondary" target="_blank">Ask Us First</a>
+    </div>
+  </div>
+  <div class="hero-dots">
+    <button class="hero-dot active" data-index="0"></button>
+    <button class="hero-dot" data-index="1"></button>
+  </div>
+  <div class="hero-label" id="hero-label">Labuan Bajo, NTT</div>
+</header>
 
-      <!-- Karimunjawa -->
-      <a href="https://basabasitrip.id/karimunjawa/" class="dest-card">
-        <div class="dest-card-img">
-          <img src="../images/artikel-karimun1.jpg" alt="Karimunjawa — Island Hopping">
-        </div>
-        <div class="dest-card-overlay"></div>
-        <div class="dest-card-label">
-          <div class="dest-card-tag">Island Hopping · Jepara</div>
-          <h3>Karimunjawa</h3>
-          <p>27 islands, water so clear it barely looks real, swimming with gentle sharks, and sunsets that leave you speechless.</p>
-          <span class="dest-card-cta">
-            See Packages
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-        </div>
+<!-- ═══ TRUST ═══ -->
+<section class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon-wrap">🌍</div>
+      <div><h3>1,200+</h3><p>Travelers Joined</p></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap">⛵</div>
+      <div><h3>300+</h3><p>Trips Departed</p></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap">⭐</div>
+      <div><h3>4.9 / 5.0</h3><p>Satisfaction Rating</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="section bg-light">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-eyebrow">About Us</div>
+      <h2 class="section-title">Not Your Average Tour.<br>This Is <em style="font-style:italic;color:var(--orange)">Real Adventure.</em></h2>
+      <p>Basa Basi Trip was born from a simple belief: the best trips aren't about rigid schedules or large crowds — they're about moments you'll be talking about for years.</p>
+      <p>Since 2019, we've been running open sea trips to Indonesia's most stunning destinations. From the deep blue waters of Komodo to the glass-clear islands of Karimunjawa — we handle everything, you just show up.</p>
+      <div class="about-stats">
+        <div class="about-stat"><strong>2019</strong><span>Founded</span></div>
+        <div class="about-stat"><strong>52</strong><span>Professional crew</span></div>
+        <div class="about-stat"><strong>5★</strong><span>Phinisi liveaboard</span></div>
+        <div class="about-stat"><strong>2</strong><span>Top destinations</span></div>
+      </div>
+      <a href="https://wa.me/62895634157789?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20Basa%20Basi%20Trip." class="btn-primary" target="_blank">
+        Ask About the Trip
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
-  </section>
-
-  <!-- ═══ ARTIKEL ═══ -->
-  <section class="section bg-light" id="artikel">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="section-eyebrow">Tips & Stories</div>
-      <h2 class="section-title">Latest Articles</h2>
-      <p class="section-subtitle">Trip guides, travel stories, and tips for exploring Indonesia's best sea destinations.</p>
-    </div>
-
-    <div class="artikel-grid">
-      <div class="artikel-card">
-        <div class="artikel-img">
-          <img src="../images/padar.jpg" alt="Labuan Bajo tips for first-timers">
-        </div>
-        <div class="artikel-body">
-          <p class="artikel-date">January 12, 2025</p>
-          <h3>How to Prepare for Your First Open Trip to Labuan Bajo</h3>
-          <p>What to pack, how to get there, and everything you should know before you go.</p>
-          <a href="../artikel.html" class="artikel-link">
-            Read More
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="artikel-card">
-        <div class="artikel-img">
-          <img src="../images/artikel-karimun1.jpg" alt="Karimunjawa hidden paradise">
-        </div>
-        <div class="artikel-body">
-          <p class="artikel-date">February 5, 2025</p>
-          <h3>Karimunjawa: The Hidden Paradise That's Getting Harder to Keep Secret</h3>
-          <p>Why Karimunjawa is gaining more visitors — and why now might be the best time to go before it gets crowded.</p>
-          <a href="../artikel.html" class="artikel-link">
-            Read More
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="artikel-card">
-        <div class="artikel-img">
-          <img src="../images/manta.jpg" alt="Swimming with manta rays Manta Point">
-        </div>
-        <div class="artikel-body">
-          <p class="artikel-date">March 20, 2025</p>
-          <h3>Swimming With Manta Rays: An Experience You'll Carry Forever</h3>
-          <p>A story from a traveler who snorkeled at Manta Point for the first time — and how that moment changed the way they see the world.</p>
-          <a href="../artikel.html" class="artikel-link">
-            Read More
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
+    <div class="about-img-wrap">
+      <img src="../images/komodo.jpg" alt="Basa Basi Trip — Labuan Bajo Sailing" loading="lazy" width="600" height="500">
+      <div class="about-img-badge">
+        <strong>Flores</strong>
+        <span>Labuan Bajo, NTT</span>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="artikel-footer">
-      <a href="../artikel.html" class="btn-outline">
-        View All Articles
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </section>
+<!-- ═══ DESTINASI CAROUSEL ═══ -->
+<section id="destinasi" class="section destinasi-section">
+  <div class="destinasi-header">
+    <div class="section-eyebrow">Pick Your Journey</div>
+    <h2 class="section-title">Where Do You Want to Go?</h2>
+    <p class="section-subtitle">Two of Indonesia's best sea destinations. Click to explore packages, itinerary, and everything you need to know.</p>
+  </div>
+  <div class="dest-carousel">
 
-  <!-- ═══ CTA ═══ -->
-  <section class="cta-section">
-    <div class="cta-inner">
-      <div class="section-eyebrow">Start Now</div>
-      <h2>Ready for Your<br><em>Next Adventure?</em></h2>
-      <p>No pressure at all — just say hi. Our team is happy to help you find the right destination and the right package for you.</p>
-      <div class="cta-actions">
-        <a href="https://wa.me/6285713541147?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20a%20trip%20with%20Basa%20Basi%20Trip%20%F0%9F%98%8A" class="btn-primary" target="_blank">
-          Chat on WhatsApp
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <!-- LABUAN BAJO -->
+    <a href="/en/labuan-bajo/" class="dest-card-link">
+      <div class="dest-card-bg"></div>
+      <div class="dest-card-overlay"></div>
+      <div class="dest-card-body">
+        <div class="dest-card-tag">Sailing · Komodo National Park</div>
+        <h3>Labuan Bajo</h3>
+        <p>Sunrise on Padar, Komodo dragons, manta rays, Pink Beach. The bucket list that finally gets checked off.</p>
+        <div class="dest-card-cta">
+          See Packages
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- KARIMUNJAWA -->
+    <a href="/en/karimunjawa/" class="dest-card-link">
+      <div class="dest-card-bg"></div>
+      <div class="dest-card-overlay"></div>
+      <div class="dest-card-body">
+        <div class="dest-card-tag">Island Hopping · Jepara</div>
+        <h3>Karimunjawa</h3>
+        <p>27 islands, water so clear it barely looks real, swimming with gentle sharks, and sunsets that leave you speechless.</p>
+        <div class="dest-card-cta">
+          See Packages
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ═══ ARTIKEL PREVIEW ═══ -->
+<section class="section bg-light">
+  <div style="max-width:1100px;margin:0 auto 44px;">
+    <div class="section-eyebrow">Tips & Stories</div>
+    <h2 class="section-title">Latest Articles</h2>
+    <p class="section-subtitle">Trip guides, travel stories, and tips for exploring Indonesia's best sea destinations.</p>
+  </div>
+  <div class="artikel-grid">
+    <div class="artikel-card">
+      <div class="artikel-card-img">
+        <img src="../images/padar.jpg" alt="Labuan Bajo tips for first-timers" loading="lazy" width="400" height="200">
+      </div>
+      <div class="artikel-card-body">
+        <div class="artikel-card-date">January 12, 2025</div>
+        <h3>How to Prepare for Your First Open Trip to Labuan Bajo</h3>
+        <p>What to pack, how to get there, and everything you should know before you go.</p>
+        <a href="../artikel.html" class="artikel-card-link">
+          Read More
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#destinasi" class="btn-secondary">See Destinations</a>
       </div>
     </div>
-  </section>
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="../images/logo.png" alt="Basa Basi Trip">
-        <p>A sea travel agency based in Labuan Bajo, Flores. Open trips to Labuan Bajo & Karimunjawa since 2019.</p>
-        <div class="footer-socials">
-          <!-- WhatsApp -->
-          <a href="https://wa.me/6285713541147" class="footer-social fs-wa" target="_blank" aria-label="WhatsApp">
-            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-          </a>
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/basabasitrip" class="footer-social fs-ig" target="_blank" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
-          <!-- TikTok -->
-          <a href="https://www.tiktok.com/@basabasitrip" class="footer-social fs-tt" target="_blank" aria-label="TikTok">
-            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/>
-            </svg>
-          </a>
-        </div>
+    <div class="artikel-card">
+      <div class="artikel-card-img">
+        <img src="../images/artikel-karimun1.jpg" alt="Karimunjawa hidden paradise" loading="lazy" width="400" height="200">
       </div>
-
-      <div class="footer-col">
-        <h4>Menu</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#destinasi">Destinations</a></li>
-          <li><a href="../artikel.html">Articles</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Destinations</h4>
-        <ul>
-          <li><a href="https://basabasitrip.id/labuan-bajo/">Labuan Bajo</a></li>
-          <li><a href="https://basabasitrip.id/karimunjawa/">Karimunjawa</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.0 .18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-          <a href="https://wa.me/6285713541147" style="color:#555">+62 857-1354-1147</a>
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>basabasitrip@gmail.com</span>
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Semarang, Indonesia</span>
-        </div>
+      <div class="artikel-card-body">
+        <div class="artikel-card-date">February 5, 2025</div>
+        <h3>Karimunjawa: The Hidden Paradise That's Getting Harder to Keep Secret</h3>
+        <p>Why Karimunjawa is gaining more visitors — and why now might be the best time to go before it gets crowded.</p>
+        <a href="../artikel.html" class="artikel-card-link">
+          Read More
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
-
-    <!-- Mobile footer columns -->
-    <div class="footer-mobile-cols">
-      <div class="footer-mobile-col">
-        <h4>Menu</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#destinasi">Destinations</a></li>
-          <li><a href="../artikel.html">Articles</a></li>
-        </ul>
+    <div class="artikel-card">
+      <div class="artikel-card-img">
+        <img src="../images/manta.jpg" alt="Swimming with manta rays Manta Point" loading="lazy" width="400" height="200">
       </div>
-      <div class="footer-mobile-col">
-        <h4>Destinations</h4>
-        <ul>
-          <li><a href="https://basabasitrip.id/labuan-bajo/">Labuan Bajo</a></li>
-          <li><a href="https://basabasitrip.id/karimunjawa/">Karimunjawa</a></li>
-        </ul>
+      <div class="artikel-card-body">
+        <div class="artikel-card-date">March 20, 2025</div>
+        <h3>Swimming With Manta Rays: An Experience You'll Carry Forever</h3>
+        <p>A story from a traveler who snorkeled at Manta Point for the first time — and how that moment changed the way they see the world.</p>
+        <a href="../artikel.html" class="artikel-card-link">
+          Read More
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
+  </div>
+  <div class="artikel-more">
+    <a href="../artikel.html" class="btn-primary">
+      View All Articles
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
 
-    <div class="footer-mobile-kontak">
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-eyebrow">Start Now</div>
+    <h2>Ready for Your<br><em>Next Adventure?</em></h2>
+    <p>No pressure at all — just say hi. Our team is happy to help you find the right destination and the right package.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/62895634157789?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20a%20trip%20with%20Basa%20Basi%20Trip%20%F0%9F%98%8A" class="btn-primary" target="_blank">
+        Chat on WhatsApp
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#destinasi" class="btn-secondary">See Destinations</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="../images/logo.png" alt="Basa Basi Trip" loading="lazy" width="120" height="32">
+      <p>A marine travel agency based in Labuan Bajo, Flores. Open trips to Labuan Bajo & Karimunjawa since 2019.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/62895634157789" target="_blank" class="footer-social fs-wa" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.2 2.4 7.2L4 28l6-2.3C11.8 27 13.8 27.6 16 27.6 22.6 27.6 28 22.2 28 15.6 28 8.4 22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.6 1.4 1.3-3.4-.3-.5C7.5 19 7 17.1 7 15 7 9.5 11.5 5 16 5zm-3.3 5c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.1 2 3.1 4.9 4.2 2.4.9 2.8.7 3.3.7s1.6-.6 1.9-1.3c.2-.6.2-1.1.1-1.3-.1-.1-.3-.2-.6-.3s-1.9-.9-2.2-1-1.5-.2-1.8.4c-.3.6-.5.8-.8 1l-.4.2c-.3 0-1.1-.4-2.2-1.5-1.3-1.3-1.7-2.3-1.9-2.7 0-.2 0-.3.2-.4l.4-.5c.2-.2.3-.4.4-.7s0-.5-.1-.7-.9-2.2-1.2-3c-.3-.7-.7-.7-.9-.7z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/basabasitrip" target="_blank" class="footer-social fs-ig" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#666666" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@basabasitrip" target="_blank" class="footer-social fs-tt" aria-label="TikTok">
+          <svg width="16" height="18" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.27 8.27 0 0 0 4.84 1.56V6.8a4.85 4.85 0 0 1-1.07-.11z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/basabasitrip" target="_blank" class="footer-social fs-fb" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#666666"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.threads.com/@basabasitrip" target="_blank" class="footer-social fs-th" aria-label="Threads">
+          <svg width="18" height="18" viewBox="0 0 192 192" fill="#666666"><path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.23c8.249.053 14.474 2.452 18.502 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.372-39.134 15.265-38.105 34.569.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.452-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.741C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.206 17.11 97.015 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.105 0h-.26C68.777.195 47.219 9.65 32.204 28.121 18.874 44.568 11.986 67.862 11.768 96.006l-.002.232.002.232c.218 28.144 7.106 51.438 20.436 67.884 15.015 18.471 36.573 27.926 64.089 28.121h.26c24.472-.168 41.744-6.59 55.822-20.655 18.646-18.616 18.016-42.062 11.861-56.442-4.425-10.316-12.982-18.672-23.701-23.38z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinasi">Destinations</a></li>
+        <li><a href="../artikel.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Destinations</h4>
+      <ul>
+        <li><a href="/en/labuan-bajo/">Labuan Bajo</a></li>
+        <li><a href="/en/karimunjawa/">Karimunjawa</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
       <div class="footer-contact-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.0 .18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-        <a href="https://wa.me/6285713541147" style="color:#555">+62 857-1354-1147</a>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.73 9.77 19.79 19.79 0 01.67 1.14 2 2 0 012.66 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.64a16 16 0 006.29 6.29l1-1c.59-.59 1.4-.83 2.11-.45.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="https://wa.me/62895634157789" target="_blank" style="color:#555">+62 857-1354-1147</a>
       </div>
       <div class="footer-contact-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>basabasitrip@gmail.com</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:hello@basabasitrip.id" style="color:#555">hello@basabasitrip.id</a>
       </div>
       <div class="footer-contact-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Semarang, Indonesia</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Labuan Bajo, Flores, NTT</span>
       </div>
     </div>
+  </div>
 
-    <div class="footer-bottom">
-      <span>© 2026 Basa Basi Trip · All Rights Reserved</span>
-      <span><a href="#">Terms & Conditions</a> · <a href="#">Privacy Policy</a></span>
+  <!-- MOBILE FOOTER -->
+  <div class="footer-mobile-cols">
+    <div class="footer-mobile-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinasi">Destinations</a></li>
+        <li><a href="../artikel.html">Blog</a></li>
+      </ul>
     </div>
-  </footer>
-
-  <!-- ═══ WA FLOAT ═══ -->
-  <a class="wa-float" href="https://wa.me/6285713541147?text=Hey%20👋%20I%27d%20love%20to%20know%20more%20about%20a%20trip%20with%20Basa%20Basi%20Trip%20😊" target="_blank">
-    <div class="wa-tooltip">Hey 👋 Want to know the trip schedule?</div>
-    <div class="wa-btn">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    <div class="footer-mobile-col">
+      <h4>Destinations</h4>
+      <ul>
+        <li><a href="/en/labuan-bajo/">Labuan Bajo</a></li>
+        <li><a href="/en/karimunjawa/">Karimunjawa</a></li>
+      </ul>
     </div>
-  </a>
+  </div>
+  <div class="footer-mobile-kontak">
+    <h4 style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:14px;">Contact</h4>
+    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.73 9.77 19.79 19.79 0 01.67 1.14 2 2 0 012.66 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.64a16 16 0 006.29 6.29l1-1c.59-.59 1.4-.83 2.11-.45.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="https://wa.me/62895634157789" target="_blank" style="color:#555">+62 857-1354-1147</a></div>
+    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:hello@basabasitrip.id" style="color:#555">hello@basabasitrip.id</a></div>
+    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Labuan Bajo, Flores, NTT</span></div>
+  </div>
 
-  <script>
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
+  <div class="footer-bottom">
+    <span>© 2026 Basa Basi Trip · All Rights Reserved</span>
+    <span>
+      <a href="/syarat-ketentuan.html">Terms &amp; Conditions</a>
+      &nbsp;·&nbsp;
+      <a href="/kebijakan-privasi.html">Privacy Policy</a>
+    </span>
+  </div>
+</footer>
 
-    // Hamburger / sidebar
-    const hamburger       = document.getElementById('hamburger');
-    const sidebar         = document.getElementById('sidebar');
-    const sidebarOverlay  = document.getElementById('sidebarOverlay');
-    const sidebarClose    = document.getElementById('sidebarClose');
+<script>
+// Navbar scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
 
-    function openSidebar() {
-      sidebar.classList.add('open');
-      sidebarOverlay.classList.add('open');
-      hamburger.classList.add('is-active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeSidebar() {
-      sidebar.classList.remove('open');
-      sidebarOverlay.classList.remove('open');
-      hamburger.classList.remove('is-active');
-      document.body.style.overflow = '';
-    }
+// Sidebar
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebarOverlay');
+const closeBtn = document.getElementById('sidebarClose');
+function openSidebar() { sidebar.classList.add('open'); overlay.classList.add('open'); hamburger.classList.add('is-active'); document.body.style.overflow='hidden'; }
+function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('open'); hamburger.classList.remove('is-active'); document.body.style.overflow=''; }
+hamburger.addEventListener('click', openSidebar);
+closeBtn.addEventListener('click', closeSidebar);
+overlay.addEventListener('click', closeSidebar);
+document.querySelectorAll('.sidebar a').forEach(a => a.addEventListener('click', closeSidebar));
 
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
-    });
-    sidebarClose.addEventListener('click', closeSidebar);
-    sidebarOverlay.addEventListener('click', closeSidebar);
+// Hero Slideshow
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.hero-dot');
+const labels = ['Labuan Bajo, NTT', 'Karimunjawa, Jepara'];
+const heroLabel = document.getElementById('hero-label');
+let current = 0, timer;
 
-    // Close sidebar on nav link click
-    sidebar.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeSidebar);
-    });
-  </script>
+function goTo(n) {
+  slides[current].classList.remove('active');
+  dots[current].classList.remove('active');
+  current = n;
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
+  heroLabel.textContent = labels[current];
+}
+function next() { goTo((current + 1) % slides.length); }
+function startTimer() { timer = setInterval(next, 5000); }
+function resetTimer() { clearInterval(timer); startTimer(); }
 
+dots.forEach(dot => {
+  dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.index)); resetTimer(); });
+});
+startTimer();
+</script>
 </body>
 </html>
