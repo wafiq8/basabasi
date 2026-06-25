@@ -74,6 +74,7 @@ var BBT = {
   function act(href){ return norm(href) === here ? " active" : ""; }
 
   var waIcon = '<svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.2 2.4 7.2L4 28l6-2.3C11.8 27 13.8 27.6 16 27.6 22.6 27.6 28 22.2 28 15.6 28 8.4 22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.6 1.4 1.3-3.4-.3-.5C7.5 19 7 17.1 7 15 7 9.5 11.5 5 16 5zm-3.3 5c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.1 2 3.1 4.9 4.2 2.4.9 2.8.7 3.3.7s1.6-.6 1.9-1.3c.2-.6.2-1.1.1-1.3-.1-.1-.3-.2-.6-.3s-1.9-.9-2.2-1-1.5-.2-1.8.4c-.3.6-.5.8-.8 1l-.4.2c-.3 0-1.1-.4-2.2-1.5-1.3-1.3-1.7-2.3-1.9-2.7 0-.2 0-.3.2-.4l.4-.5c.2-.2.3-.4.4-.7s0-.5-.1-.7-.9-2.2-1.2-3c-.3-.7-.7-.7-.9-.7z"/></svg>';
+  var waSocialIcon = '<svg width="18" height="18" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.582 0 11.943-5.359 11.945-11.893a11.821 11.821 0 00-3.418-8.452z"/></svg>';
   var phoneIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.73 9.77 19.79 19.79 0 01.67 1.14 2 2 0 012.66 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.64a16 16 0 006.29 6.29l1-1c.59-.59 1.4-.83 2.11-.45.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>';
   var mailIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>';
   var pinIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>';
@@ -118,14 +119,15 @@ var BBT = {
     '</div>';
 
   /* ---------- FOOTER ---------- */
-  function contact(label, num, text) {
-    return '<div class="footer-contact-item">' + phoneIcon +
-      '<div><span class="footer-contact-label">' + label + '</span>' +
-      '<a href="https://wa.me/' + num + '" target="_blank" rel="noopener">' + text + '</a></div></div>';
+  function waBtn(label, num, text) {
+    return '<a class="footer-wa-btn" href="https://wa.me/' + num + '" target="_blank" rel="noopener">' +
+      '<span class="ic">' + waIcon + '</span>' +
+      '<span class="txt"><span class="lbl">' + label + '</span><span class="num">' + text + '</span></span>' +
+    '</a>';
   }
   var kontakBlok =
-    contact("Admin Labuan Bajo", BBT.waBajo, BBT.waBajoText) +
-    contact("Admin Karimunjawa", BBT.waKarimun, BBT.waKarimunText) +
+    waBtn("Admin Labuan Bajo", BBT.waBajo, BBT.waBajoText) +
+    waBtn("Admin Karimunjawa", BBT.waKarimun, BBT.waKarimunText) +
     '<div class="footer-contact-item">' + mailIcon + '<a href="mailto:' + BBT.email + '">' + BBT.email + '</a></div>' +
     '<div class="footer-contact-item">' + pinIcon + '<span>' + BBT.lokasi + '</span></div>';
 
@@ -135,7 +137,7 @@ var BBT = {
         '<img src="/images/logo.png" alt="Basa Basi Trip" loading="lazy" width="120" height="32">' +
         '<p>' + L.brand + '</p>' +
         '<div class="footer-socials">' +
-          '<a href="' + BBT.floatLink + '" target="_blank" rel="noopener" class="footer-social" aria-label="WhatsApp">' + waIcon.replace('viewBox="0 0 32 32"','width="18" height="18" viewBox="0 0 32 32"') + '</a>' +
+          '<a href="' + BBT.floatLink + '" target="_blank" rel="noopener" class="footer-social" aria-label="WhatsApp">' + waSocialIcon + '</a>' +
           '<a href="' + BBT.social.instagram + '" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">' + igIcon + '</a>' +
           '<a href="' + BBT.social.tiktok + '" target="_blank" rel="noopener" class="footer-social" aria-label="TikTok">' + ttIcon + '</a>' +
           '<a href="' + BBT.social.facebook + '" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook">' + fbIcon + '</a>' +
@@ -175,7 +177,7 @@ var BBT = {
     var h = document.getElementById("site-header");
     var f = document.getElementById("site-footer");
     if (h) h.innerHTML = headerHTML;
-    if (f) f.innerHTML = footerHTML;
+    if (f) f.innerHTML = "<footer>" + footerHTML + "</footer>";
     wire();
   }
 
