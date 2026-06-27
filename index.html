@@ -160,6 +160,39 @@
   .dest-carousel { grid-template-columns: 1fr 1fr; gap: 10px; }
   .dest-card-body h3 { font-size: 16px; }
 }
+
+/* ═══ GALERI: SOROTAN PERJALANAN (Bab Cerita) ═══ */
+.galeri-section{background:var(--white)}
+.galeri-bubbles{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;max-width:760px;margin:0 auto}
+.galeri-bubble{background:none;border:none;cursor:pointer;text-align:center;font-family:var(--sans);width:104px}
+.galeri-ring{width:92px;height:92px;border-radius:50%;padding:3px;background:conic-gradient(from 135deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);margin:0 auto;transition:transform .25s}
+.galeri-bubble:hover .galeri-ring{transform:scale(1.06)}
+.galeri-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--white)}
+.galeri-bubble .galeri-lab{font-size:12.5px;font-weight:500;margin-top:10px;color:var(--dark);line-height:1.25}
+.galeri-bubble .galeri-cnt{font-size:10.5px;color:var(--light);margin-top:2px}
+.gl-player{position:fixed;inset:0;z-index:3000;background:rgba(8,8,8,.97);display:none;align-items:center;justify-content:center}
+.gl-player.open{display:flex}
+.gl-stage{position:relative;width:min(420px,92vw);height:min(86vh,760px);border-radius:16px;overflow:hidden;background:#000;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+.gl-stage img.gl-s{width:100%;height:100%;object-fit:cover}
+.gl-ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(150deg,#2a7d8c,#16454f);color:rgba(255,255,255,.92);text-align:center;padding:30px}
+.gl-ph.show{display:flex}
+.gl-ph svg{width:52px;height:52px;stroke:rgba(255,255,255,.85);fill:none;stroke-width:1.4}
+.gl-ph .gl-pt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.gl-bars{position:absolute;top:12px;left:12px;right:12px;z-index:5;display:flex;gap:4px}
+.gl-barwrap{flex:1;height:3px;background:rgba(255,255,255,.35);border-radius:3px;overflow:hidden}
+.gl-barwrap i{display:block;height:100%;width:0;background:#fff;border-radius:3px}
+.gl-shead{position:absolute;top:26px;left:16px;right:16px;z-index:5;display:flex;align-items:center;gap:10px;color:#fff}
+.gl-shead .gl-av{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+.gl-shead .gl-nm{font-size:13px;font-weight:600;flex:1}
+.gl-shead .gl-cl{background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer}
+.gl-scap{position:absolute;left:0;right:0;bottom:0;z-index:5;padding:60px 22px 26px;color:#fff;background:linear-gradient(to top,rgba(0,0,0,.85),transparent)}
+.gl-scap .gl-t{font-family:var(--serif);font-size:21px;font-weight:700;line-height:1.2}
+.gl-scap .gl-l{font-size:12px;opacity:.85;margin-top:5px}
+.gl-tap{position:absolute;top:0;bottom:0;width:35%;z-index:4;cursor:pointer}
+.gl-tap.l{left:0}.gl-tap.r{right:0}
+.gl-cta{position:absolute;left:22px;right:22px;bottom:20px;z-index:6;display:flex;justify-content:center}
+.gl-cta a{background:var(--orange);color:#fff;font-size:13px;font-weight:600;padding:11px 22px;border-radius:30px;box-shadow:0 6px 20px rgba(0,0,0,.4);text-decoration:none}
+@media(prefers-reduced-motion:reduce){.galeri-ring,.gl-stage *{transition:none!important}}
 </style>
 </head>
 <body>
@@ -261,6 +294,29 @@
   </div>
 </section>
 
+<!-- ═══ GALERI: SOROTAN PERJALANAN ═══ -->
+<section class="section galeri-section" id="galeri">
+  <div style="max-width:1100px;margin:0 auto 38px;">
+    <div class="section-eyebrow">Galeri</div>
+    <h2 class="section-title">Sorotan Perjalanan</h2>
+    <p class="section-subtitle">Enam bab cerita, masing-masing berisi banyak momen. Ketuk untuk memutar — tap kiri/kanan untuk pindah foto.</p>
+  </div>
+  <div class="galeri-bubbles" id="galeriBubbles"></div>
+</section>
+
+<!-- player galeri (overlay) -->
+<div class="gl-player" id="glPlayer">
+  <div class="gl-stage" id="glStage">
+    <div class="gl-bars" id="glBars"></div>
+    <div class="gl-shead"><img class="gl-av" id="glAv" src="" alt=""><span class="gl-nm" id="glNm"></span><button class="gl-cl" id="glCl" aria-label="Tutup">&times;</button></div>
+    <img class="gl-s" id="glImg" src="" alt="">
+    <div class="gl-ph" id="glPh"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg><div class="gl-pt">Foto menyusul</div></div>
+    <div class="gl-tap l" id="glTapL"></div><div class="gl-tap r" id="glTapR"></div>
+    <div class="gl-scap"><div class="gl-t" id="glSt"></div><div class="gl-l" id="glSl"></div></div>
+    <div class="gl-cta"><a id="glCta" href="#" target="_blank" rel="noopener">Lihat trip ini →</a></div>
+  </div>
+</div>
+
 <!-- ═══ ARTIKEL PREVIEW ═══ -->
 <section class="section bg-light">
   <div style="max-width:1100px;margin:0 auto 44px;">
@@ -352,5 +408,112 @@
 
 <!-- PONDASI BERSAMA -->
 <script src="/script.js" defer></script>
+<!-- ═══ GALERI: data & logika (inline, homepage-only) ═══ -->
+<script>
+(function(){
+  var IMG='/images/';
+  var WA_BAJO='62895634157789', WA_KAR='6285713541147', LINKTREE='https://linktr.ee/basabasitrip';
+  function wa(no,pesan){return 'https://wa.me/'+no+'?text='+encodeURIComponent(pesan);}
+
+  /* ══════════════════════════════════════════════════════════════
+     DATA GALERI — silakan edit di sini.
+
+     CARA NAMBAH FOTO (langsung dari GitHub):
+       1) Upload file foto ke folder /images/ di repo.
+       2) Tambah / ubah satu baris di "slides" bab yang sesuai:
+              { img:"namafile.jpg", judul:"Judul Foto", lokasi:"Lokasi" }
+       3) Slot tanpa "img" otomatis tampil sebagai "Foto menyusul".
+
+     Tidak ada batas jumlah foto per bab. "cover" = foto di lingkaran.
+     ══════════════════════════════════════════════════════════════ */
+  var BAB = [
+    { nama:'Labuan Bajo', cover:'padar.jpg', cta:wa(WA_BAJO,'Halo kak, mau tanya Open Trip Labuan Bajo!'), slides:[
+      { img:'padar.jpg',     judul:'Sunrise di Padar', lokasi:'Trek 30 menit, panorama tiga teluk' },
+      { img:'komodo.jpg',    judul:'Sang Naga Purba',  lokasi:'Bertemu Komodo ditemani ranger' },
+      { img:'pinkbeach.jpg', judul:'Pink Beach',       lokasi:'Pasir merah muda langka' },
+      { img:'kelor.jpg',     judul:'Bukit Kelor',      lokasi:'Panorama dari ketinggian' },
+      { judul:'Gili Lawa',     lokasi:'Sunrise & bukit sabana' },
+      { judul:'Pulau Kanawa',  lokasi:'Laguna jernih' },
+      { judul:'Taka Makassar', lokasi:'Gosong pasir di tengah laut' }
+    ]},
+    { nama:'Karimunjawa', cover:'karimunjawa.jpg', cta:wa(WA_KAR,'Halo kak, mau tanya Open Trip Karimunjawa!'), slides:[
+      { img:'karimunjawa.jpg',      judul:'Air Sebening Kaca', lokasi:'Island hopping Karimunjawa' },
+      { img:'karimunjawa1.jpg',     judul:'Gradasi Biru',      lokasi:'Laut Karimunjawa' },
+      { img:'taka.jpg',             judul:'Spot Snorkeling',   lokasi:'Terumbu sehat' },
+      { img:'molas.jpg',            judul:'Senja di Dermaga',  lokasi:'Karimunjawa' },
+      { img:'artikel-karimun1.jpg', judul:'Island Hopping',    lokasi:'Antar pulau' },
+      { judul:'Pulau Gosong',  lokasi:'Gundukan pasir di tengah laut' },
+      { judul:'Cemara Besar',  lokasi:'Pantai pasir putih' }
+    ]},
+    { nama:'Waerebo & Nuca Molas', cover:'waerebo.jpg', cta:wa(WA_BAJO,'Halo kak, mau tanya Special Trip Waerebo / Nuca Molas!'), slides:[
+      { img:'waerebo.jpg', judul:'Desa di Atas Awan', lokasi:'Waerebo, Flores' },
+      { judul:'Mbaru Niang',         lokasi:'Rumah adat kerucut dari dekat' },
+      { judul:'Kabut Pagi Waerebo',  lokasi:'Fajar di pegunungan' },
+      { judul:'Trekking dari Denge', lokasi:'2-3 jam menembus hutan' },
+      { judul:'Nuca Molas',          lokasi:'Pantai tersembunyi nan sepi' },
+      { judul:'Snorkeling Nuca Molas', lokasi:'Air jernih, terumbu sehat' },
+      { judul:'Budaya Manggarai',    lokasi:'Upacara penyambutan adat' }
+    ]},
+    { nama:'Underwater', cover:'manta.jpg', cta:LINKTREE, slides:[
+      { img:'manta.jpg', judul:'Berenang bareng Manta', lokasi:'Manta Point' },
+      { img:'taka.jpg',  judul:'Taman Karang',          lokasi:'Terumbu warna-warni' },
+      { judul:'Penyu Laut',     lokasi:'Berenang santai di sampingmu' },
+      { judul:'Nemo & Anemon',  lokasi:'Si oranye penghuni karang' },
+      { judul:'Schooling Fish', lokasi:'Gerombolan ikan memutarimu' },
+      { judul:'Hiu Bambu',      lokasi:'Berenang bareng di Karimunjawa' },
+      { judul:'Coral Garden',   lokasi:'Taman karang dangkal' }
+    ]},
+    { nama:'Golden Hour', cover:'molas.jpg', cta:LINKTREE, slides:[
+      { img:'molas.jpg', judul:'Senja di Dermaga', lokasi:'Karimunjawa' },
+      { judul:'Sunset dari Kapal',   lokasi:'Langit jingga di tengah laut' },
+      { judul:'Siluet Phinisi',      lokasi:'Kapal melawan cahaya senja' },
+      { judul:'Sunrise Padar',       lokasi:'Cahaya pertama di puncak' },
+      { judul:'Langit Jingga Komodo',lokasi:'Sore di taman nasional' },
+      { judul:'Bintang & Milky Way', lokasi:'Malam tanpa polusi cahaya' },
+      { judul:'Golden Hour Karimun', lokasi:'Pantai keemasan' }
+    ]},
+    { nama:'Keseruan Trip', cover:'pinkbeach.jpg', cta:LINKTREE, slides:[
+      { judul:'Peserta di Deck',   lokasi:'Santai di atas kapal' },
+      { judul:'Makan Bareng',      lokasi:'Hangatnya kebersamaan di kapal' },
+      { judul:'Nyebur Bareng',     lokasi:'Lompat dari kapal' },
+      { judul:'Foto Grup di Padar',lokasi:'Kenangan satu trip' },
+      { judul:'Hammock & Santai',  lokasi:'Leyeh-leyeh di antara perjalanan' },
+      { judul:'Live Music di Kapal',lokasi:'Malam penuh tawa' },
+      { judul:'Toast Sunset',      lokasi:'Rayakan momen bareng' }
+    ]}
+  ];
+
+  var bubbles=document.getElementById('galeriBubbles');
+  if(!bubbles) return;
+  bubbles.innerHTML=BAB.map(function(c,i){
+    return '<button class="galeri-bubble" data-i="'+i+'">'+
+      '<span class="galeri-ring"><img src="'+IMG+c.cover+'" alt="'+c.nama+'"></span>'+
+      '<div class="galeri-lab">'+c.nama+'</div><div class="galeri-cnt">'+c.slides.length+' momen</div></button>';
+  }).join('');
+
+  var player=document.getElementById('glPlayer'),bars=document.getElementById('glBars'),simg=document.getElementById('glImg'),ph=document.getElementById('glPh'),
+    st=document.getElementById('glSt'),sl=document.getElementById('glSl'),nm=document.getElementById('glNm'),av=document.getElementById('glAv'),cta=document.getElementById('glCta');
+  var H=null,si=0,timer=null,DUR=3800;
+  function openH(i){H=BAB[i];si=0;player.classList.add('open');document.body.style.overflow='hidden';
+    bars.innerHTML=H.slides.map(function(){return '<div class="gl-barwrap"><i></i></div>';}).join('');
+    nm.textContent='Basa Basi Trip · '+H.nama;av.src=IMG+H.cover;cta.href=H.cta;playS();}
+  function playS(){var s=H.slides[si];
+    if(s.img){ph.classList.remove('show');simg.style.visibility='visible';simg.src=IMG+s.img;simg.alt=s.judul;}
+    else{ph.classList.add('show');simg.style.visibility='hidden';}
+    st.textContent=s.judul;sl.textContent='📍 '+s.lokasi;
+    var kids=bars.children;for(var k=0;k<kids.length;k++){var bar=kids[k].firstElementChild;bar.style.transition='none';bar.style.width=(k<si?'100%':'0');}
+    void bars.offsetWidth;
+    var cur=bars.children[si].firstElementChild;cur.style.transition='width '+DUR+'ms linear';cur.style.width='100%';
+    clearTimeout(timer);timer=setTimeout(nextS,DUR);}
+  function nextS(){if(si<H.slides.length-1){si++;playS();}else closeS();}
+  function prevS(){if(si>0){si--;playS();}else playS();}
+  function closeS(){clearTimeout(timer);player.classList.remove('open');document.body.style.overflow='';}
+  bubbles.addEventListener('click',function(e){var b=e.target.closest('.galeri-bubble');if(b)openH(+b.dataset.i);});
+  document.getElementById('glTapR').onclick=nextS;document.getElementById('glTapL').onclick=prevS;
+  document.getElementById('glCl').onclick=closeS;
+  document.addEventListener('keydown',function(e){if(!player.classList.contains('open'))return;
+    if(e.key==='Escape')closeS();if(e.key==='ArrowRight')nextS();if(e.key==='ArrowLeft')prevS();});
+})();
+</script>
 </body>
 </html>
