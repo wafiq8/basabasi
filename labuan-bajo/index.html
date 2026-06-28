@@ -596,6 +596,51 @@
   .dest-card:nth-child(2), .dest-card:nth-child(3),
   .dest-card:nth-child(6), .dest-card:nth-child(7) { height: 135px; }
 }
+
+/* ═══ PILL PROMO (floating, kiri-bawah / HP tengah-bawah) ═══ */
+.promo-pill{position:fixed;left:24px;bottom:24px;z-index:1200;display:flex;align-items:center;gap:10px;background:var(--dark);color:#fff;border:none;cursor:pointer;padding:11px 16px 11px 14px;border-radius:40px;box-shadow:0 8px 26px rgba(0,0,0,.32);font-family:var(--sans);transform:translateY(140%);opacity:0;transition:transform .5s cubic-bezier(.2,.9,.3,1),opacity .5s,box-shadow .2s}
+.promo-pill.show{transform:translateY(0);opacity:1}
+.promo-pill:hover{box-shadow:0 12px 32px rgba(0,0,0,.45)}
+.promo-pill .ppfire{font-size:15px}
+.promo-pill .ppt{text-align:left;line-height:1.2}
+.promo-pill .ppt b{font-size:12.5px;font-weight:600;display:block}
+.promo-pill .ppt .ppcd{font-size:11px;color:var(--orange-light);font-variant-numeric:tabular-nums}
+.promo-pill .ppdot{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pppulse 1.6s infinite}
+@keyframes pppulse{0%{box-shadow:0 0 0 0 rgba(232,101,42,.55)}70%{box-shadow:0 0 0 9px rgba(232,101,42,0)}100%{box-shadow:0 0 0 0 rgba(232,101,42,0)}}
+.promo-pill.gone{display:none}
+.promo-card{position:fixed;left:24px;bottom:24px;z-index:1201;width:330px;max-width:calc(100vw - 32px);background:var(--dark);color:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);display:none;transform-origin:bottom left}
+.promo-card.open{display:block;animation:ppcardin .28s cubic-bezier(.2,.9,.3,1)}
+@keyframes ppcardin{from{opacity:0;transform:scale(.9) translateY(10px)}to{opacity:1;transform:none}}
+.pc-top{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 0}
+.pc-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-light);display:flex;align-items:center;gap:7px}
+.pc-x{background:rgba(255,255,255,.12);border:none;color:#fff;width:28px;height:28px;border-radius:50%;font-size:17px;cursor:pointer;transition:.2s;line-height:1}
+.pc-x:hover{background:var(--orange)}
+.pc-body{padding:12px 18px 18px}
+.pc-title{font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.2;margin-bottom:12px}
+.pc-price{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:16px}
+.pc-old{font-size:13px;color:#8a8278;text-decoration:line-through}
+.pc-now{font-family:var(--serif);font-size:30px;font-weight:900;color:var(--orange-light);line-height:1}
+.pc-unit{font-size:12px;color:#b8b2a8}
+.pc-timer{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px}
+.pc-cell{background:rgba(255,255,255,.07);border-radius:9px;padding:9px 4px;text-align:center}
+.pc-cell .n{font-family:var(--serif);font-size:21px;font-weight:900;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.pc-cell .u{font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:#9a948a;margin-top:5px}
+.pc-seats{font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:7px;margin-bottom:5px}
+.pc-seats .d{width:7px;height:7px;border-radius:50%;background:var(--orange);animation:pppulse 1.6s infinite}
+.pc-note{font-size:10.5px;color:#8f897f;margin-bottom:14px;line-height:1.4}
+.pc-bonus{list-style:none;border-top:1px solid rgba(255,255,255,.1);padding-top:12px;margin-bottom:16px}
+.pc-bonus li{position:relative;padding:5px 0 5px 24px;font-size:12.5px;color:#e6e1d9;line-height:1.4}
+.pc-bonus li::before{content:'';position:absolute;left:0;top:7px;width:15px;height:15px;border-radius:50%;background:rgba(232,101,42,.18) url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13l4 4L19 7' stroke='%23f5a96b' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center no-repeat}
+.pc-cta{display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#fff;font-size:14px;font-weight:600;padding:14px;border-radius:10px;text-decoration:none;transition:.2s}
+.pc-cta:hover{background:#1eb959}
+.pc-cta svg{width:18px;height:18px;fill:#fff}
+@media(max-width:560px){
+  .promo-pill{left:50%;bottom:16px;transform:translateX(-50%) translateY(140%)}
+  .promo-pill.show{transform:translateX(-50%) translateY(0)}
+  .promo-card{left:50%;right:auto;bottom:16px;width:calc(100vw - 24px);transform:translateX(-50%);transform-origin:bottom center}
+  .promo-card.open{animation:none}
+}
+@media(prefers-reduced-motion:reduce){.promo-pill,.promo-card.open,.ppdot,.pc-seats .d{animation:none!important;transition:opacity .3s!important}}
 </style>
 </head>
 <body>
@@ -1033,5 +1078,81 @@ if ('IntersectionObserver' in window) {
 
 <!-- PONDASI BERSAMA -->
 <script src="/script.js" defer></script>
+<!-- ═══ PILL PROMO (floating) ═══ -->
+<button class="promo-pill" id="promoPill" aria-label="Lihat promo">
+  <span class="ppdot"></span><span class="ppfire">🔥</span>
+  <span class="ppt"><b>Promo Hari Ini</b><span class="ppcd" id="ppCd">--</span></span>
+</button>
+<div class="promo-card" id="promoCard" role="dialog" aria-label="Promo">
+  <div class="pc-top">
+    <span class="pc-eyebrow"><span class="ppdot" style="animation:none"></span> Penawaran Terbatas</span>
+    <button class="pc-x" id="pcClose" aria-label="Tutup">&times;</button>
+  </div>
+  <div class="pc-body">
+    <div class="pc-title" id="pcTitle">Promo Open Trip Labuan Bajo</div>
+    <div class="pc-price"><span class="pc-old" id="pcOld"></span><span class="pc-now" id="pcNow"></span><span class="pc-unit">/orang</span></div>
+    <div class="pc-timer">
+      <div class="pc-cell"><div class="n" id="ppD">0</div><div class="u">Hari</div></div>
+      <div class="pc-cell"><div class="n" id="ppH">00</div><div class="u">Jam</div></div>
+      <div class="pc-cell"><div class="n" id="ppM">00</div><div class="u">Menit</div></div>
+      <div class="pc-cell"><div class="n" id="ppS">00</div><div class="u">Detik</div></div>
+    </div>
+    <div class="pc-seats"><span class="d"></span><span id="pcSeats"></span></div>
+    <div class="pc-note">Harga bisa naik sewaktu-waktu tergantung kuota &amp; musim.</div>
+    <ul class="pc-bonus" id="pcBonus"></ul>
+    <a class="pc-cta" id="pcCta" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.2 2.4 7.2L4 28l6-2.3C11.8 27 13.8 27.6 16 27.6 22.6 27.6 28 22.2 28 15.6 28 8.4 22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.6 1.4 1.3-3.4-.3-.5C7.5 19 7 17.1 7 15 7 9.5 11.5 5 16 5z"/></svg>
+      Chat WA — Konsultasi Gratis
+    </a>
+  </div>
+</div>
+<!-- ═══ PILL PROMO: data & logika (inline) ═══ -->
+<script>
+(function(){
+  /* ═══════════ DATA PROMO — EDIT DI SINI (lewat GitHub) ═══════════
+     Harga bisa berubah, tinggal ganti angkanya. Sisa kursi & bonus juga. */
+  var PROMO = {
+    judul:        'Promo Open Trip Labuan Bajo',
+    hargaNormal:  1500000,   // <-- ganti harga normal
+    hargaPromo:   1275000,   // <-- ganti harga promo
+    sisaKursi:    6,         // <-- ganti sisa kursi
+    bonus: ['Dokumentasi GoPro','Snorkeling set lengkap','Guide lokal berpengalaman'],
+    waNo:   '62895634157789',
+    waPesan:'Halo kak, saya lihat promo di web. Boleh konsultasi gratis soal jadwal & harga Open Trip Labuan Bajo?'
+  };
+  /* siklus timer (jam). 18 = reset tiap 18 jam, jadwal tetap (sama utk semua pengunjung) */
+  var CYCLE_HOURS = 18;
+  var RESET_HOUR  = 0;
+  /* ════════════════════════════════════════════════════════════════ */
+
+  var rp=function(n){return 'Rp'+n.toLocaleString('id-ID');};
+  var $=function(id){return document.getElementById(id);};
+  $('pcTitle').textContent=PROMO.judul;
+  $('pcOld').textContent=rp(PROMO.hargaNormal);
+  $('pcNow').textContent=rp(PROMO.hargaPromo);
+  $('pcSeats').textContent='Sisa '+PROMO.sisaKursi+' kursi';
+  $('pcBonus').innerHTML=PROMO.bonus.map(function(b){return '<li>'+b+'</li>';}).join('');
+  $('pcCta').href='https://wa.me/'+PROMO.waNo+'?text='+encodeURIComponent(PROMO.waPesan);
+
+  /* countdown — Model A (jadwal tetap, deterministik) */
+  function deadline(){var ms=CYCLE_HOURS*36e5;var base=new Date();base.setHours(RESET_HOUR,0,0,0);base=base.getTime();
+    var now=Date.now();var k=Math.floor((now-base)/ms)+1;return base+k*ms;}
+  var p2=function(n){return String(n).padStart(2,'0');};
+  var showDays=CYCLE_HOURS>24, hari=$('ppD').closest('.pc-cell');
+  if(hari) hari.style.display=showDays?'':'none';
+  function tick(){var diff=deadline()-Date.now();if(diff<0)diff=0;
+    var d,h; if(showDays){d=Math.floor(diff/864e5);h=Math.floor(diff%864e5/36e5);}else{d=0;h=Math.floor(diff/36e5);}
+    var m=Math.floor(diff%36e5/6e4),s=Math.floor(diff%6e4/1e3);
+    $('ppD').textContent=d;$('ppH').textContent=p2(h);$('ppM').textContent=p2(m);$('ppS').textContent=p2(s);
+    $('ppCd').textContent='berakhir '+(showDays?d+'h ':'')+p2(h)+':'+p2(m)+':'+p2(s);}
+  tick();setInterval(tick,1000);
+
+  /* buka/tutup + slide-in delay */
+  var pill=$('promoPill'),card=$('promoCard');
+  setTimeout(function(){pill.classList.add('show');},2000);
+  pill.addEventListener('click',function(){card.classList.add('open');pill.classList.add('gone');});
+  $('pcClose').addEventListener('click',function(){card.classList.remove('open');pill.classList.remove('gone');});
+})();
+</script>
 </body>
 </html>
