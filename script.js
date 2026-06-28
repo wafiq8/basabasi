@@ -186,7 +186,7 @@ var BBT = {
       '</ul></div>' +
     '</div>' +
     '<div class="footer-mobile-kontak"><h4 style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:14px;">' + L.kontak + '</h4>' + kontakBlok + '</div>' +
-    '<div class="footer-bottom" style="padding-bottom:68px">' +
+    '<div class="footer-bottom" style="padding-bottom:52px">' +
       '<span>© ' + BBT.tahun + ' Basa Basi Trip · All Rights Reserved</span>' +
       '<span><a href="' + nav.terms + '">' + L.terms + '</a> &nbsp;·&nbsp; <a href="' + nav.privacy + '">' + L.privacy + '</a></span>' +
     '</div>';
