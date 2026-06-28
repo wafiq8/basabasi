@@ -4,498 +4,151 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Syarat & Ketentuan — Basa Basi Trip</title>
-<meta name="description" content="Syarat dan ketentuan penggunaan layanan open trip Basa Basi Trip. Baca sebelum melakukan pemesanan.">
+<meta name="description" content="Syarat & ketentuan booking Basa Basi Trip: deposit, pelunasan, reschedule, pembatalan, dan ketentuan trip.">
 <link rel="canonical" href="https://basabasitrip.id/syarat-ketentuan.html">
-<link rel="icon" type="image/png" href="images/favicon.png?v=1">
+<link rel="alternate" hreflang="id" href="https://basabasitrip.id/syarat-ketentuan.html">
+<link rel="alternate" hreflang="en" href="https://basabasitrip.id/en/syarat-ketentuan.html">
+<link rel="alternate" hreflang="x-default" href="https://basabasitrip.id/syarat-ketentuan.html">
+<link rel="icon" type="image/png" href="/images/favicon.png?v=1">
 <meta property="og:title" content="Syarat & Ketentuan — Basa Basi Trip">
 <meta property="og:type" content="website">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:#faf9f7;color:#1a1a1a;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-ul{list-style:none}
-:root{
-  --orange:#E8652A;--orange-light:#f5a96b;
-  --dark:#1a1a1a;--mid:#555;--light:#888;
-  --bg:#faf9f7;--white:#ffffff;
-  --serif:'Playfair Display',Georgia,serif;
-}
-
-/* NAVBAR */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(250,249,247,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);transition:box-shadow 0.3s}
-.navbar.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.08)}
-.logo img{height:36px;width:auto}
-.nav-right{display:flex;align-items:center;gap:36px}
-.menu{display:flex;gap:28px}
-.menu a{font-size:13.5px;font-weight:500;color:var(--mid);letter-spacing:0.02em;transition:color 0.2s}
-.menu a:hover{color:var(--orange)}
-.lang-switch{display:flex;gap:6px}
-.lang-btn{font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;border:1.5px solid #ddd;color:var(--mid);cursor:pointer;transition:all 0.2s}
-.lang-btn.active{background:var(--orange);border-color:var(--orange);color:#fff}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
-.hamburger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.3s}
-.hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.is-active span:nth-child(2){opacity:0}
-.hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-/* SIDEBAR */
-.sidebar-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.45);opacity:0;transition:opacity 0.3s}
-.sidebar-overlay.open{display:block;opacity:1}
-.sidebar{position:fixed;top:0;right:-280px;bottom:0;width:260px;z-index:201;background:var(--white);padding:88px 28px 40px;transition:right 0.35s cubic-bezier(0.4,0,0.2,1);box-shadow:-4px 0 30px rgba(0,0,0,0.12)}
-.sidebar.open{right:0}
-.sidebar ul li{border-bottom:1px solid #f0f0f0}
-.sidebar ul a{display:block;padding:16px 0;font-size:15px;font-weight:500;color:var(--dark);transition:color 0.2s}
-.sidebar ul a:hover{color:var(--orange)}
-.sidebar-lang{display:flex;gap:8px;padding:20px 0 0}
-.sidebar-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border:none;background:#f4f4f4;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
-
-/* PAGE HERO */
-.page-hero{margin-top:68px;background:var(--dark);padding:64px 5% 56px;position:relative;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background-image:url('images/padar.jpg');background-size:cover;background-position:center;opacity:0.06}
+.page-hero{margin-top:var(--nav-h);background:var(--dark);padding:64px 5% 56px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:url('/images/karimunjawa.jpg');background-size:cover;background-position:center;opacity:.06}
 .page-hero-inner{position:relative;z-index:1;max-width:800px}
-.page-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange-light);margin-bottom:14px}
+.page-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-light);margin-bottom:14px}
 .page-hero-eyebrow::before{content:'';width:24px;height:2px;background:var(--orange-light)}
 .page-hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,44px);font-weight:900;color:#fff;line-height:1.12;margin-bottom:12px}
-.page-hero-meta{font-size:13px;color:rgba(255,255,255,0.4);margin-top:16px}
-
-/* BREADCRUMB */
+.page-hero-intro{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;max-width:560px;margin-top:12px}
+.page-hero-meta{font-size:13px;color:rgba(255,255,255,.4);margin-top:16px}
 .breadcrumb{background:var(--white);border-bottom:1px solid #eee;padding:14px 5%}
 .breadcrumb-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--light)}
-.breadcrumb a{color:var(--orange);transition:color 0.2s}
-.breadcrumb a:hover{color:#d4561e}
+.breadcrumb a{color:var(--orange)}
 .breadcrumb-sep{font-size:10px;color:#ccc}
-
-/* CONTENT */
 .content-wrap{max-width:800px;margin:0 auto;padding:56px 5% 80px}
 .toc{background:var(--white);border:1px solid #eee;border-radius:6px;padding:24px 28px;margin-bottom:48px}
-.toc h2{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--light);margin-bottom:16px}
-.toc ol{list-style:none;counter-reset:toc-counter}
-.toc ol li{counter-increment:toc-counter;margin-bottom:8px;display:flex;align-items:baseline;gap:10px}
-.toc ol li::before{content:counter(toc-counter,decimal-leading-zero);font-size:11px;font-weight:600;color:var(--orange);flex-shrink:0}
-.toc ol a{font-size:13.5px;color:var(--mid);transition:color 0.2s}
+.toc h2{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:16px}
+.toc ol{list-style:none;counter-reset:toc}
+.toc ol li{counter-increment:toc;margin-bottom:8px;display:flex;align-items:baseline;gap:10px}
+.toc ol li::before{content:counter(toc,decimal-leading-zero);font-size:11px;font-weight:600;color:var(--orange);flex-shrink:0}
+.toc ol a{font-size:13.5px;color:var(--mid)}
 .toc ol a:hover{color:var(--orange)}
-
-/* SECTIONS */
 .legal-section{margin-bottom:52px;scroll-margin-top:92px}
 .legal-section h2{font-family:var(--serif);font-size:clamp(20px,3vw,26px);font-weight:700;color:var(--dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #f0f0f0;line-height:1.25}
-.legal-section h2 span{display:inline-block;font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);background:#fff4ee;padding:3px 10px;border-radius:20px;margin-right:10px;vertical-align:middle;position:relative;top:-2px}
+.legal-section h2 span{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);background:#fff4ee;padding:3px 10px;border-radius:20px;margin-right:10px;vertical-align:middle;position:relative;top:-2px}
 .legal-section p{font-size:14.5px;line-height:1.85;color:var(--mid);margin-bottom:16px}
 .legal-section p:last-child{margin-bottom:0}
-.legal-section ul,
-.legal-section ol{padding-left:0;margin-bottom:16px}
-.legal-section ul li,
-.legal-section ol li{font-size:14.5px;line-height:1.75;color:var(--mid);padding:8px 0 8px 28px;border-bottom:1px solid #f7f7f7;position:relative}
-.legal-section ul li:last-child,
-.legal-section ol li:last-child{border-bottom:none}
+.legal-section ul,.legal-section ol{padding-left:0;margin-bottom:16px;list-style:none}
+.legal-section ul li,.legal-section ol li{font-size:14.5px;line-height:1.75;color:var(--mid);padding:8px 0 8px 28px;border-bottom:1px solid #f7f7f7;position:relative}
+.legal-section ul li:last-child,.legal-section ol li:last-child{border-bottom:none}
 .legal-section ul li::before{content:'';position:absolute;left:0;top:16px;width:6px;height:6px;border-radius:50%;background:var(--orange-light)}
-.legal-section ol{counter-reset:ol-counter}
-.legal-section ol li{counter-increment:ol-counter}
-.legal-section ol li::before{content:counter(ol-counter)'.';position:absolute;left:0;top:8px;font-size:12px;font-weight:600;color:var(--orange)}
-
+.legal-section ol{counter-reset:ol}
+.legal-section ol li{counter-increment:ol}
+.legal-section ol li::before{content:counter(ol)'.';position:absolute;left:0;top:8px;font-size:12px;font-weight:600;color:var(--orange)}
 .highlight-box{background:#fff8f4;border-left:3px solid var(--orange-light);border-radius:0 6px 6px 0;padding:16px 20px;margin:20px 0;font-size:14px;line-height:1.7;color:var(--mid)}
 .highlight-box strong{color:var(--dark)}
-.warning-box{background:#fffbf0;border-left:3px solid #f4a623;border-radius:0 6px 6px 0;padding:16px 20px;margin:20px 0;font-size:14px;line-height:1.7;color:#5a4000}
-.warning-box strong{color:#3d2c00}
 .info-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}
-.info-table th{background:#f7f5f2;font-weight:600;color:var(--dark);text-align:left;padding:10px 14px;border:1px solid #eee;font-size:12.5px;letter-spacing:0.02em}
+.info-table th{background:#f7f5f2;font-weight:600;color:var(--dark);text-align:left;padding:10px 14px;border:1px solid #eee;font-size:12.5px}
 .info-table td{padding:10px 14px;border:1px solid #eee;color:var(--mid);vertical-align:top;line-height:1.6}
 .info-table tr:nth-child(even) td{background:#fdfcfa}
-.badge-green{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;background:#e9f7ef;color:#1e7e44}
-.badge-red{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;background:#fde8e8;color:#a32d2d}
-.badge-orange{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;background:#fff4ee;color:var(--orange)}
-
-/* CONTACT CTA */
+.rights-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0}
+.right-card{background:var(--white);border:1px solid #eee;border-radius:6px;padding:18px 20px}
+.right-card-icon{font-size:22px;margin-bottom:8px}
+.right-card h3{font-size:13.5px;font-weight:600;color:var(--dark);margin-bottom:6px}
+.right-card p{font-size:12.5px;color:var(--light);line-height:1.6}
 .contact-cta{background:var(--dark);border-radius:8px;padding:36px 40px;margin-top:48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
 .contact-cta h3{font-family:var(--serif);font-size:22px;font-weight:700;color:#fff;margin-bottom:6px}
-.contact-cta p{font-size:13.5px;color:rgba(255,255,255,0.5);max-width:380px;line-height:1.6}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;padding:13px 24px;border-radius:3px;font-size:13.5px;font-weight:600;transition:background 0.2s;white-space:nowrap}
+.contact-cta p{font-size:13.5px;color:rgba(255,255,255,.5);max-width:380px;line-height:1.6}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;padding:13px 24px;border-radius:3px;font-size:13.5px;font-weight:600;white-space:nowrap}
 .btn-wa:hover{background:#d4561e}
+@media(max-width:640px){.content-wrap{padding:40px 5% 60px}.rights-grid{grid-template-columns:1fr}.contact-cta{padding:28px 24px}.toc{padding:20px}.page-hero{padding:48px 5% 40px}}
 
-/* FOOTER */
-footer{background:#111;color:#666;padding:40px 5% 28px}
-.footer-bottom-simple{max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#3a3a3a}
-.footer-bottom-simple a{color:var(--orange)}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap}
-.footer-links a{font-size:12px;color:#555;transition:color 0.2s}
-.footer-links a:hover{color:var(--orange-light)}
-
-/* WA FLOAT */
-.wa-float{position:fixed;bottom:28px;right:28px;z-index:99;display:flex;align-items:center;gap:12px}
-.wa-tooltip{background:var(--white);color:var(--dark);font-size:13px;font-weight:500;padding:10px 16px;border-radius:3px;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.12);opacity:0;transform:translateX(8px);transition:all 0.25s;pointer-events:none}
-.wa-float:hover .wa-tooltip{opacity:1;transform:translateX(0)}
-.wa-btn{width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.4);transition:transform 0.2s;flex-shrink:0}
-.wa-float:hover .wa-btn{transform:scale(1.08)}
-
-/* RESPONSIVE */
-@media(max-width:640px){
-  .menu,.lang-switch{display:none}
-  .hamburger{display:flex}
-  .content-wrap{padding:40px 5% 60px}
-  .contact-cta{padding:28px 24px}
-  .toc{padding:20px}
-  .page-hero{padding:48px 5% 40px}
-}
 </style>
 </head>
 <body>
-
-<!-- WA FLOAT -->
-<a href="https://wa.me/6285713541147?text=Halo%20kak%2C%20saya%20mau%20tanya%20info%20trip%20Basa%20Basi%20Trip%20dong%20%F0%9F%98%8A" class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
-  <span class="wa-tooltip">Ada yang bisa kami bantu? &#x1F44B;</span>
-  <div class="wa-btn">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.2 2.4 7.2L4 28l6-2.3C11.8 27 13.8 27.6 16 27.6 22.6 27.6 28 22.2 28 15.6 28 8.4 22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.6 1.4 1.3-3.4-.3-.5C7.5 19 7 17.1 7 15 7 9.5 11.5 5 16 5zm-3.3 5c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.1 2 3.1 4.9 4.2 2.4.9 2.8.7 3.3.7s1.6-.6 1.9-1.3c.2-.6.2-1.1.1-1.3-.1-.1-.3-.2-.6-.3s-1.9-.9-2.2-1-1.5-.2-1.8.4c-.3.6-.5.8-.8 1l-.4.2c-.3 0-1.1-.4-2.2-1.5-1.3-1.3-1.7-2.3-1.9-2.7 0-.2 0-.3.2-.4l.4-.5c.2-.2.3-.4.4-.7s0-.5-.1-.7-.9-2.2-1.2-3c-.3-.7-.7-.7-.9-.7z"/></svg>
-  </div>
-</a>
-
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="logo">
-    <a href="/"><img src="images/logo.png" alt="Basa Basi Trip" width="120" height="36"></a>
-  </div>
-  <div class="nav-right">
-    <ul class="menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="/#destinasi">Destinasi</a></li>
-      <li><a href="/artikel.html">Artikel</a></li>
-    </ul>
-    <div class="lang-switch">
-      <a href="/syarat-ketentuan.html" class="lang-btn active">ID</a>
-      <a href="/en/" class="lang-btn">EN</a>
-    </div>
-  </div>
-  <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- MOBILE SIDEBAR -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
-<div class="sidebar" id="sidebar">
-  <button class="sidebar-close" id="sidebarClose" aria-label="Tutup menu">&#x2715;</button>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/#destinasi">Destinasi</a></li>
-    <li><a href="/artikel.html">Artikel</a></li>
-  </ul>
-  <div class="sidebar-lang">
-    <a href="/syarat-ketentuan.html" class="lang-btn active">ID</a>
-    <a href="/en/" class="lang-btn">EN</a>
-  </div>
-</div>
-
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-hero-eyebrow">Legal</div>
-    <h1>Syarat &amp; Ketentuan</h1>
-    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:560px;margin-top:12px">Harap baca ketentuan ini sebelum melakukan pemesanan. Dengan melakukan booking, kamu dianggap telah membaca dan menyetujui semua ketentuan di bawah ini.</p>
-    <div class="page-hero-meta">Terakhir diperbarui: Juni 2025 &nbsp;&middot;&nbsp; Berlaku untuk semua layanan Basa Basi Trip</div>
-  </div>
-</div>
-
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="/">Home</a>
-    <span class="breadcrumb-sep">&#x203A;</span>
-    <span>Syarat &amp; Ketentuan</span>
-  </div>
-</div>
-
-<!-- CONTENT -->
+<div id="site-header"></div>
+<div class="page-hero"><div class="page-hero-inner">
+<div class="page-hero-eyebrow">Legal</div>
+<h1>Syarat &amp; Ketentuan</h1>
+<p class="page-hero-intro">Ketentuan pemesanan trip Basa Basi Trip. Mohon dibaca sebelum melakukan booking &mdash; dengan membayar DP, Anda dianggap menyetujui ketentuan ini.</p>
+<div class="page-hero-meta">Terakhir diperbarui: Juni 2026 &nbsp;&middot;&nbsp; Berlaku untuk seluruh pemesanan trip Basa Basi Trip</div>
+</div></div>
+<div class="breadcrumb"><div class="breadcrumb-inner"><a href="/">Home</a><span class="breadcrumb-sep">&#x203A;</span><span>Syarat & Ketentuan</span></div></div>
 <div class="content-wrap">
+  <div class="toc"><h2>Daftar Isi</h2><ol>
+    <li><a href="#s1">Pemesanan &amp; Booking Slot</a></li>
+    <li><a href="#s2">Pelunasan</a></li>
+    <li><a href="#s3">Reschedule (Penjadwalan Ulang)</a></li>
+    <li><a href="#s4">Pembatalan (Cancel)</a></li>
+    <li><a href="#s5">Pergantian Kapal</a></li>
+    <li><a href="#s6">Destinasi Tentatif</a></li>
+    <li><a href="#s7">Persetujuan</a></li>
+    <li><a href="#s8">Hubungi Kami</a></li>
+  </ol></div>
 
-  <!-- TABLE OF CONTENTS -->
-  <div class="toc">
-    <h2>Daftar Isi</h2>
-    <ol>
-      <li><a href="#s1">Definisi dan Ruang Lingkup</a></li>
-      <li><a href="#s2">Prosedur Pemesanan dan Konfirmasi</a></li>
-      <li><a href="#s3">Pembayaran</a></li>
-      <li><a href="#s4">Kebijakan Pembatalan oleh Peserta</a></li>
-      <li><a href="#s5">Pembatalan oleh Basa Basi Trip</a></li>
-      <li><a href="#s6">Ketentuan Keberangkatan</a></li>
-      <li><a href="#s7">Tanggung Jawab dan Batasan Kewajiban</a></li>
-      <li><a href="#s8">Kesehatan, Keselamatan, dan Kondisi Fisik</a></li>
-      <li><a href="#s9">Asuransi Perjalanan</a></li>
-      <li><a href="#s10">Hak Kekayaan Intelektual</a></li>
-      <li><a href="#s11">Penyelesaian Sengketa</a></li>
-      <li><a href="#s12">Perubahan Ketentuan</a></li>
-    </ol>
-  </div>
-
-  <!-- SECTION 1 -->
-  <div class="legal-section" id="s1">
-    <h2><span>01</span>Definisi dan Ruang Lingkup</h2>
-    <p>Syarat dan Ketentuan ini mengatur hubungan antara <strong>Basa Basi Trip</strong> (selanjutnya disebut &ldquo;Kami&rdquo; atau &ldquo;Penyelenggara&rdquo;) dengan setiap individu (selanjutnya disebut &ldquo;Peserta&rdquo; atau &ldquo;Kamu&rdquo;) yang melakukan pemesanan atau menggunakan layanan perjalanan yang kami sediakan.</p>
-    <p>Layanan yang tercakup dalam ketentuan ini meliputi:</p>
+  <div class="legal-section" id="s1"><h2><span>01</span>Pemesanan &amp; Booking Slot</h2>
+    <p>Pemesanan slot trip dilakukan dengan ketentuan berikut:</p>
     <ul>
-      <li>Open Trip Labuan Bajo (Sailing Komodo National Park)</li>
-      <li>Open Trip Karimunjawa (Island Hopping)</li>
-      <li>Paket Special Trip Flores (Waerebo, Nuca Molas, dan destinasi lainnya)</li>
-      <li>Private Charter dan paket perjalanan custom lainnya</li>
-    </ul>
-    <p>Dengan melakukan pemesanan melalui WhatsApp, media sosial, atau saluran komunikasi lainnya, Peserta dianggap telah membaca, memahami, dan menyetujui seluruh isi Syarat &amp; Ketentuan ini.</p>
-  </div>
-
-  <!-- SECTION 2 -->
-  <div class="legal-section" id="s2">
-    <h2><span>02</span>Prosedur Pemesanan dan Konfirmasi</h2>
-    <p>Pemesanan dilakukan melalui WhatsApp ke nomor <strong>+62 857-1354-1147</strong> atau melalui saluran resmi Basa Basi Trip lainnya. Pemesanan dianggap sah setelah memenuhi tahapan berikut:</p>
-    <ol>
-      <li>Peserta menghubungi kami dan menyatakan minat untuk bergabung pada tanggal trip tertentu</li>
-      <li>Kami mengkonfirmasi ketersediaan slot pada tanggal yang diminta</li>
-      <li>Peserta mengirimkan data diri lengkap (nama sesuai KTP/paspor, nomor WA aktif, kota asal)</li>
-      <li>Peserta melakukan pembayaran uang muka (DP) sesuai ketentuan</li>
-      <li>Kami mengirimkan bukti konfirmasi booking via WhatsApp</li>
-    </ol>
-    <div class="highlight-box">
-      <strong>Penting:</strong> Slot trip hanya dianggap terkonfirmasi setelah DP diterima dan bukti konfirmasi dikirimkan oleh tim kami. Minat yang disampaikan tanpa disertai pembayaran DP tidak menjamin ketersediaan slot.
-    </div>
-  </div>
-
-  <!-- SECTION 3 -->
-  <div class="legal-section" id="s3">
-    <h2><span>03</span>Pembayaran</h2>
-    <p>Ketentuan pembayaran berlaku sebagai berikut:</p>
-    <table class="info-table">
-      <thead>
-        <tr>
-          <th>Jenis Pembayaran</th>
-          <th>Besaran</th>
-          <th>Batas Waktu</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Uang Muka (DP)</td>
-          <td>50% dari total harga paket</td>
-          <td>Maks. 1&times;24 jam setelah konfirmasi slot</td>
-        </tr>
-        <tr>
-          <td>Pelunasan</td>
-          <td>50% sisa pembayaran</td>
-          <td>Maks. 7 hari sebelum tanggal keberangkatan</td>
-        </tr>
-        <tr>
-          <td>Booking mendekati tanggal</td>
-          <td>100% (lunas di muka)</td>
-          <td>Untuk booking yang dilakukan kurang dari 7 hari sebelum keberangkatan</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Pembayaran dilakukan melalui transfer bank atau metode pembayaran lain yang dikonfirmasi oleh tim kami. Bukti transfer wajib dikirimkan via WhatsApp setelah melakukan pembayaran.</p>
-    <div class="warning-box">
-      <strong>Perhatian:</strong> Slot yang sudah dikonfirmasi tetapi DP tidak diterima dalam 1&times;24 jam akan otomatis dibatalkan dan slot akan ditawarkan ke peserta lain.
-    </div>
-  </div>
-
-  <!-- SECTION 4 -->
-  <div class="legal-section" id="s4">
-    <h2><span>04</span>Kebijakan Pembatalan oleh Peserta</h2>
-    <p>Jika Peserta membatalkan keikutsertaan, kebijakan pengembalian dana (refund) berlaku berdasarkan waktu pembatalan sebelum tanggal keberangkatan:</p>
-    <table class="info-table">
-      <thead>
-        <tr>
-          <th>Waktu Pembatalan</th>
-          <th>Pengembalian Dana</th>
-          <th>Keterangan</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>30 hari atau lebih</td>
-          <td><span class="badge-green">100% DP dikembalikan</span></td>
-          <td>Dikurangi biaya administrasi Rp 50.000</td>
-        </tr>
-        <tr>
-          <td>15&ndash;29 hari sebelum</td>
-          <td><span class="badge-orange">50% DP dikembalikan</span></td>
-          <td>Atau dapat dialihkan ke trip lain tanpa potongan</td>
-        </tr>
-        <tr>
-          <td>7&ndash;14 hari sebelum</td>
-          <td><span class="badge-orange">25% DP dikembalikan</span></td>
-          <td>Pengalihan ke trip lain tetap bisa dilakukan</td>
-        </tr>
-        <tr>
-          <td>Kurang dari 7 hari</td>
-          <td><span class="badge-red">DP tidak dapat dikembalikan</span></td>
-          <td>Dapat dialihkan ke peserta pengganti atas izin kami</td>
-        </tr>
-        <tr>
-          <td>Pembatalan di hari H</td>
-          <td><span class="badge-red">Tidak ada refund</span></td>
-          <td>&mdash;</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Peserta yang ingin <strong>mengalihkan slot</strong> kepada orang lain harus memberitahu kami minimal 3 hari sebelum keberangkatan dan mendapatkan persetujuan tertulis (via WhatsApp) dari tim kami.</p>
-    <p>Proses refund akan dilakukan dalam waktu <strong>7 hari kerja</strong> setelah pembatalan dikonfirmasi, melalui rekening bank yang sama dengan rekening pengirim pembayaran.</p>
-  </div>
-
-  <!-- SECTION 5 -->
-  <div class="legal-section" id="s5">
-    <h2><span>05</span>Pembatalan oleh Basa Basi Trip</h2>
-    <p>Kami berhak membatalkan atau menunda trip apabila terjadi kondisi berikut:</p>
-    <ul>
-      <li>Cuaca buruk atau kondisi laut yang tidak aman (ombak tinggi, angin kencang, badai)</li>
-      <li>Perintah atau larangan dari otoritas terkait (Taman Nasional, BMKG, Syahbandar)</li>
-      <li>Jumlah peserta yang terdaftar tidak memenuhi minimum keberangkatan (minimal 4 orang untuk open trip)</li>
-      <li>Keadaan kahar (force majeure) seperti bencana alam, pandemi, atau kondisi darurat nasional</li>
-      <li>Kondisi teknis kapal yang mengancam keselamatan peserta</li>
-    </ul>
-    <p>Dalam hal pembatalan oleh pihak kami:</p>
-    <ul>
-      <li>Peserta akan diberikan opsi <strong>reschedule ke tanggal lain</strong> tanpa biaya tambahan apapun</li>
-      <li>Atau <strong>pengembalian dana penuh (100%)</strong> dari total pembayaran yang telah diterima</li>
-      <li>Kami akan memberikan notifikasi pembatalan sesegera mungkin via WhatsApp</li>
-    </ul>
-    <div class="highlight-box">
-      <strong>Catatan cuaca:</strong> Pembatalan atau perubahan itinerary akibat kondisi cuaca dan keselamatan adalah keputusan final dari Kapten Kapal dan Guide kami. Keputusan ini tidak dapat digugat dan semata-mata demi keselamatan seluruh peserta.
-    </div>
-  </div>
-
-  <!-- SECTION 6 -->
-  <div class="legal-section" id="s6">
-    <h2><span>06</span>Ketentuan Keberangkatan</h2>
-    <p>Peserta wajib memperhatikan ketentuan berikut terkait keberangkatan:</p>
-    <ul>
-      <li>Hadir di titik kumpul (meeting point) sesuai waktu yang telah dikonfirmasi. Keterlambatan lebih dari 30 menit tanpa pemberitahuan dianggap membatalkan keikutsertaan tanpa refund</li>
-      <li>Membawa kartu identitas asli (KTP/paspor) yang masih berlaku</li>
-      <li>Tidak dalam kondisi mabuk atau di bawah pengaruh zat terlarang</li>
-      <li>Mengikuti seluruh briefing keselamatan yang diberikan oleh Guide dan Kapten Kapal</li>
-      <li>Mematuhi semua peraturan yang berlaku di Taman Nasional Komodo dan kawasan wisata yang dikunjungi</li>
-    </ul>
-    <p>Kami berhak menolak keberangkatan peserta yang kondisi fisik atau perilakunya dinilai dapat membahayakan diri sendiri atau peserta lain.</p>
-  </div>
-
-  <!-- SECTION 7 -->
-  <div class="legal-section" id="s7">
-    <h2><span>07</span>Tanggung Jawab dan Batasan Kewajiban</h2>
-    <p>Basa Basi Trip bertanggung jawab untuk:</p>
-    <ul>
-      <li>Menyediakan kapal, guide, dan fasilitas sesuai paket yang dijanjikan</li>
-      <li>Memastikan keselamatan peserta selama perjalanan berlangsung</li>
-      <li>Memberikan informasi yang akurat terkait itinerary dan fasilitas trip</li>
-    </ul>
-    <p>Basa Basi Trip <strong>tidak bertanggung jawab</strong> atas:</p>
-    <ul>
-      <li>Kehilangan atau kerusakan barang bawaan pribadi peserta</li>
-      <li>Biaya medis atau evakuasi yang timbul akibat kondisi kesehatan yang sudah ada sebelum trip</li>
-      <li>Keterlambatan transportasi umum (pesawat, kereta, bus) yang menyebabkan peserta tidak dapat mengikuti trip</li>
-      <li>Perubahan itinerary yang disebabkan oleh kondisi cuaca, arus laut, atau keputusan otoritas setempat</li>
-      <li>Kerugian tidak langsung atau konsekuensial yang timbul dari perubahan jadwal trip</li>
-    </ul>
-    <div class="warning-box">
-      <strong>Barang Berharga:</strong> Kami sangat menyarankan peserta untuk tidak membawa barang berharga berlebihan selama trip. Basa Basi Trip tidak bertanggung jawab atas kehilangan atau kerusakan barang pribadi di atas kapal maupun di area destinasi.
-    </div>
-  </div>
-
-  <!-- SECTION 8 -->
-  <div class="legal-section" id="s8">
-    <h2><span>08</span>Kesehatan, Keselamatan, dan Kondisi Fisik</h2>
-    <p>Demi keselamatan bersama, Peserta wajib memperhatikan hal-hal berikut:</p>
-    <ul>
-      <li>Memiliki kondisi fisik yang cukup untuk mengikuti aktivitas trip (trekking, snorkeling, naik-turun kapal)</li>
-      <li>Memberitahu kami terlebih dahulu apabila memiliki kondisi medis tertentu, alergi, atau keterbatasan fisik</li>
-      <li>Membawa obat-obatan pribadi yang diperlukan (obat mabuk laut, obat rutin, dll)</li>
-      <li>Wanita hamil dengan usia kandungan di atas 3 bulan wajib mendapatkan izin dokter sebelum mengikuti trip laut</li>
-      <li>Anak-anak di bawah 7 tahun hanya diperbolehkan ikut dengan persetujuan khusus dari kami</li>
-    </ul>
-    <p>Kami menyediakan P3K dasar dan life jacket untuk seluruh peserta. Namun kami tidak menyediakan layanan medis profesional di atas kapal. Dalam kondisi darurat medis, kami akan menghubungi layanan darurat terdekat dan membantu proses evakuasi.</p>
-  </div>
-
-  <!-- SECTION 9 -->
-  <div class="legal-section" id="s9">
-    <h2><span>09</span>Asuransi Perjalanan</h2>
-    <p>Basa Basi Trip <strong>tidak menyertakan asuransi perjalanan</strong> dalam paket yang kami tawarkan. Oleh karena itu, kami sangat menyarankan setiap Peserta untuk:</p>
-    <ul>
-      <li>Membeli asuransi perjalanan pribadi sebelum keberangkatan</li>
-      <li>Memastikan asuransi mencakup kegiatan olahraga air (snorkeling, trekking) dan evakuasi medis</li>
-      <li>Menyimpan nomor darurat asuransi dan menyampaikannya kepada Guide sebelum trip dimulai</li>
-    </ul>
-    <div class="highlight-box">
-      Asuransi perjalanan tersedia dengan harga terjangkau melalui berbagai platform (Traveloka, Tokopedia, Shopee, dll). Investasi kecil ini bisa memberikan ketenangan pikiran yang besar selama perjalanan.
-    </div>
-  </div>
-
-  <!-- SECTION 10 -->
-  <div class="legal-section" id="s10">
-    <h2><span>10</span>Hak Kekayaan Intelektual</h2>
-    <p>Seluruh konten yang terdapat di website basabasitrip.id, termasuk namun tidak terbatas pada teks, foto, desain, logo, dan video, adalah milik Basa Basi Trip dan dilindungi oleh hukum hak kekayaan intelektual yang berlaku di Indonesia.</p>
-    <p>Terkait dokumentasi (foto/video) yang diambil selama trip:</p>
-    <ul>
-      <li>Dokumentasi yang dibuat oleh fotografer/videografer kami menjadi hak milik Basa Basi Trip dan dapat digunakan untuk keperluan promosi</li>
-      <li>Dengan mengikuti trip, Peserta memberikan izin kepada kami untuk menggunakan foto/video yang menampilkan Peserta untuk keperluan promosi non-komersial</li>
-      <li>Peserta yang keberatan untuk difoto/divideo wajib memberitahu Guide sebelum trip dimulai</li>
-      <li>Dokumentasi pribadi Peserta selama trip sepenuhnya menjadi hak milik Peserta yang bersangkutan</li>
+      <li>Membayar <strong>deposit (DP) sebesar 50%</strong> dari harga paket untuk mengamankan slot.</li>
+      <li>Melampirkan <strong>foto Paspor / KTP</strong> untuk semua penumpang.</li>
+      <li>Jika ada anak yang belum memiliki KTP, dapat menggunakan <strong>KIA (Kartu Identitas Anak) atau Kartu Keluarga (KK)</strong>.</li>
     </ul>
   </div>
 
-  <!-- SECTION 11 -->
-  <div class="legal-section" id="s11">
-    <h2><span>11</span>Penyelesaian Sengketa</h2>
-    <p>Apabila terdapat perselisihan atau sengketa yang timbul dari atau berkaitan dengan penggunaan layanan Basa Basi Trip, para pihak sepakat untuk:</p>
-    <ol>
-      <li>Menyelesaikan perselisihan terlebih dahulu secara musyawarah mufakat melalui komunikasi langsung via WhatsApp atau email dalam waktu 14 hari kerja</li>
-      <li>Apabila tidak tercapai kesepakatan, perselisihan akan diselesaikan melalui mediasi oleh pihak ketiga yang disepakati bersama</li>
-      <li>Sebagai upaya terakhir, perselisihan akan diselesaikan melalui jalur hukum yang berlaku di wilayah Republik Indonesia</li>
-    </ol>
-    <p>Untuk menyampaikan keluhan atau sengketa, hubungi kami melalui:</p>
+  <div class="legal-section" id="s2"><h2><span>02</span>Pelunasan</h2>
+    <p>Pelunasan paket trip dilakukan <strong>maksimal H-3</strong> (tiga hari) sebelum keberangkatan trip.</p>
+  </div>
+
+  <div class="legal-section" id="s3"><h2><span>03</span>Reschedule (Penjadwalan Ulang)</h2>
+    <p>Pengajuan reschedule dapat dilakukan <strong>maksimal 30 hari (H-30)</strong> sebelum trip.</p>
+    <div class="highlight-box">Jika pengajuan reschedule dilakukan <strong>kurang dari 30 hari</strong> sebelum trip, maka DP yang sudah dibayarkan dinyatakan <strong>hangus</strong>.</div>
+  </div>
+
+  <div class="legal-section" id="s4"><h2><span>04</span>Pembatalan (Cancel)</h2>
+    <p>Ketentuan pembatalan trip:</p>
     <ul>
-      <li>WhatsApp: <strong>+62 857-1354-1147</strong></li>
-      <li>Email: <strong>basabasitrip@gmail.com</strong></li>
+      <li><strong>Pembatalan oleh tamu lebih dari 7 hari sebelum trip</strong> &mdash; karena alasan apapun, deposit (DP) dinyatakan hangus.</li>
+      <li><strong>Pembatalan oleh tamu kurang dari 7 hari sebelum trip</strong> &mdash; tamu tetap wajib melakukan pembayaran penuh (100%).</li>
+      <li><strong>Oper slot</strong> &mdash; paket trip yang sudah dipesan dapat digantikan oleh keluarga atau kenalan tamu (tamu mencari pengganti sendiri).</li>
+      <li><strong>Pembatalan oleh pihak travel/operator</strong> &mdash; apabila terjadi cuaca buruk atau gelombang tinggi sehingga ada larangan berlayar dari Syahbandar Kapal atau BMKG, tamu dapat melakukan <strong>reschedule dalam jangka waktu 1 tahun</strong> sejak surat edaran larangan berlayar dikeluarkan.</li>
     </ul>
   </div>
 
-  <!-- SECTION 12 -->
-  <div class="legal-section" id="s12">
-    <h2><span>12</span>Perubahan Ketentuan</h2>
-    <p>Basa Basi Trip berhak untuk mengubah, memperbarui, atau merevisi Syarat &amp; Ketentuan ini sewaktu-waktu tanpa pemberitahuan terlebih dahulu. Perubahan akan berlaku efektif sejak tanggal pembaruan yang tercantum di bagian atas halaman ini.</p>
-    <p>Peserta disarankan untuk membaca kembali Syarat &amp; Ketentuan ini secara berkala. Penggunaan layanan kami setelah perubahan diterbitkan dianggap sebagai penerimaan atas ketentuan yang diperbarui.</p>
+  <div class="legal-section" id="s5"><h2><span>05</span>Pergantian Kapal</h2>
+    <p>Apabila terjadi kerusakan mesin atau kerusakan kapal dari pihak operator kapal, maka akan dicarikan solusi <strong>kapal pengganti dengan tipe minimal sama</strong> dengan kapal yang dipesan.</p>
   </div>
 
-  <!-- CONTACT CTA -->
-  <div class="contact-cta">
-    <div>
-      <h3>Ada Pertanyaan?</h3>
-      <p>Tim kami siap menjawab pertanyaanmu tentang ketentuan booking, refund, atau hal lainnya sebelum kamu memutuskan untuk bergabung.</p>
-    </div>
-    <a href="https://wa.me/6285713541147?text=Halo%20kak%2C%20saya%20mau%20tanya%20soal%20syarat%20dan%20ketentuan%20trip%20Basa%20Basi%20Trip." class="btn-wa" target="_blank" rel="noopener">
-      Tanya via WhatsApp
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
+  <div class="legal-section" id="s6"><h2><span>06</span>Destinasi Tentatif</h2>
+    <p>Destinasi atau rute yang dikunjungi bersifat <strong>tentatif / tidak terikat</strong>, menyesuaikan dengan kondisi cuaca di lapangan dan pertimbangan keselamatan. Guide kami akan selalu mengupayakan timing dan rute terbaik untuk setiap trip.</p>
   </div>
 
-</div><!-- /content-wrap -->
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-bottom-simple">
-    <span>&copy; 2025 <a href="/">Basa Basi Trip</a>. All rights reserved.</span>
-    <div class="footer-links">
-      <a href="/syarat-ketentuan.html">Syarat &amp; Ketentuan</a>
-      <a href="/kebijakan-privasi.html">Kebijakan Privasi</a>
-      <a href="https://wa.me/6285713541147" target="_blank" rel="noopener">Hubungi Kami</a>
-    </div>
+  <div class="legal-section" id="s7"><h2><span>07</span>Persetujuan</h2>
+    <div class="highlight-box">Dengan melakukan pembayaran <strong>deposit (DP)</strong>, Anda dinyatakan telah <strong>membaca, memahami, dan menyetujui</strong> seluruh syarat dan ketentuan yang berlaku di Basa Basi Trip.</div>
   </div>
-</footer>
 
+  <div class="legal-section" id="s8"><h2><span>08</span>Hubungi Kami</h2>
+    <p>Jika ada pertanyaan terkait syarat &amp; ketentuan atau pemesanan trip, silakan hubungi:</p>
+    <ul>
+      <li><strong>WhatsApp:</strong> +62 895-6341-57789 (jam kerja 07.00&ndash;21.00 WIB)</li>
+      <li><strong>Email:</strong> basabasitrip@gmail.com</li>
+      <li><strong>Instagram:</strong> @basabasitrip</li>
+    </ul>
+  </div>
+
+  <div class="contact-cta"><div><h3>Siap Booking Trip?</h3><p>Tim kami siap bantu pilih jadwal dan paket yang paling cocok. Tanya dulu boleh, tanpa pressure.</p></div>
+    <a href="https://wa.me/62895634157789?text=Halo%20kak%2C%20saya%20mau%20tanya%20jadwal%20dan%20booking%20trip%20Basa%20Basi%20Trip." class="btn-wa" target="_blank" rel="noopener">Chat via WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</div>
+<div id="site-footer"></div>
+<script src="/script.js" defer></script>
 <script>
-window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)},{passive:true});
-var hamburger=document.getElementById('hamburger'),sidebar=document.getElementById('sidebar'),overlay=document.getElementById('sidebarOverlay'),closeBtn=document.getElementById('sidebarClose');
-function openSidebar(){sidebar.classList.add('open');overlay.classList.add('open');hamburger.classList.add('is-active');hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
-function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('open');hamburger.classList.remove('is-active');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
-hamburger.addEventListener('click',openSidebar);
-closeBtn.addEventListener('click',closeSidebar);
-overlay.addEventListener('click',closeSidebar);
-document.querySelectorAll('.sidebar a').forEach(function(a){a.addEventListener('click',closeSidebar)});
+(function(){var ls=document.querySelectorAll(".toc a");ls.forEach(function(a){a.addEventListener("click",function(e){var t=document.querySelector(this.getAttribute("href"));if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"});}});});})();
 </script>
 </body>
 </html>
