@@ -416,6 +416,7 @@
   var IMG='/images/';
   var WA_BAJO='62895634157789', WA_KAR='6285713541147', LINKTREE='https://linktr.ee/basabasitrip';
   function wa(no,pesan){return 'https://wa.me/'+no+'?text='+encodeURIComponent(pesan);}
+  function imgSrc(path){return /^https?:\/\//.test(path) ? path : IMG+path;}
 
   /* ══════════════════════════════════════════════════════════════
      DATA GALERI — silakan edit di sini.
@@ -467,12 +468,13 @@
     ]},
     { nama:'Golden Hour', cover:'molas.jpg', cta:LINKTREE, slides:[
       { img:'molas.jpg', judul:'Senja di Dermaga', lokasi:'Karimunjawa' },
-      { judul:'Sunset dari Kapal',   lokasi:'Langit jingga di tengah laut' },
-      { judul:'Siluet Phinisi',      lokasi:'Kapal melawan cahaya senja' },
-      { judul:'Sunrise Padar',       lokasi:'Cahaya pertama di puncak' },
-      { judul:'Langit Jingga Komodo',lokasi:'Sore di taman nasional' },
-      { judul:'Bintang & Milky Way', lokasi:'Malam tanpa polusi cahaya' },
-      { judul:'Golden Hour Karimun', lokasi:'Pantai keemasan' }
+      { img:'https://res.cloudinary.com/wdewspu8/image/upload/v1787201486/golden-hour1.jpg', judul:'Kapal Phinisi di Ufuk',    lokasi:'Sunset di perairan berbukit' },
+      { img:'https://res.cloudinary.com/wdewspu8/image/upload/v1787201432/golden-hour2.jpg', judul:'Siluet Sepasang Kekasih', lokasi:'Momen romantis saat senja' },
+      { img:'https://res.cloudinary.com/wdewspu8/image/upload/v1787201394/golden-hour3.jpg', judul:'Menikmati Senja di Geladak', lokasi:'Berdiri di ujung kapal' },
+      { img:'https://res.cloudinary.com/wdewspu8/image/upload/v1787201396/golden-hour4.jpg', judul:'Senyum di Atas Kapal',     lokasi:'Berlabuh dekat perkampungan nelayan' },
+      { img:'https://res.cloudinary.com/wdewspu8/image/upload/v1787201438/golden-hour5.jpg', judul:'Memandang Senja',         lokasi:'Menatap gugusan pulau dari kapal' },
+      { img:'https://res.cloudinary.com/wdewspu8/image/upload/v1787201440/golden-hour6.jpg', judul:'Santai di Bawah Layar',   lokasi:'Sore santai di atas kapal' },
+      { img:'https://res.cloudinary.com/wdewspu8/image/upload/v1787201445/golden-hour7.jpg', judul:'Kawanan Burung Senja',    lokasi:'Langit sore dihiasi burung migran' }
     ]},
     { nama:'Keseruan Trip', cover:'pinkbeach.jpg', cta:LINKTREE, slides:[
       { img:'keseruan-trip1.jpg', judul:'Foto Bareng',   lokasi:'Taka Makassar' },
@@ -500,7 +502,7 @@
     bars.innerHTML=H.slides.map(function(){return '<div class="gl-barwrap"><i></i></div>';}).join('');
     nm.textContent='Basa Basi Trip · '+H.nama;av.src=IMG+H.cover;cta.href=H.cta;playS();}
   function playS(){var s=H.slides[si];
-    if(s.img){ph.classList.remove('show');simg.style.visibility='visible';simg.src=IMG+s.img;simg.alt=s.judul;}
+    if(s.img){ph.classList.remove('show');simg.style.visibility='visible';simg.src=imgSrc(s.img);simg.alt=s.judul;}
     else{ph.classList.add('show');simg.style.visibility='hidden';}
     st.textContent=s.judul;sl.textContent='📍 '+s.lokasi;
     var kids=bars.children;for(var k=0;k<kids.length;k++){var bar=kids[k].firstElementChild;bar.style.transition='none';bar.style.width=(k<si?'100%':'0');}
